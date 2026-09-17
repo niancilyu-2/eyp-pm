@@ -32,6 +32,9 @@ code is never changed.
 
 ## For participants
 
+Testing this on your own first? Follow [docs/TEST-WALKTHROUGH.md](docs/TEST-WALKTHROUGH.md),
+a step-by-step script covering every case and lane.
+
 ### Before the workshop (at least 24 hours ahead, about 15 minutes)
 
 1. Install Claude Code on Windows or macOS and sign in. You need Git as well: on Windows,
