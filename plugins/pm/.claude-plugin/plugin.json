@@ -1,0 +1,13 @@
+{
+  "name": "pm",
+  "version": "0.1.0",
+  "description": "EYP PM workshop skills: compare public evidence and pick an opportunity (/pm:scout), turn it into a clickable prototype (/pm:prototype), write a repository-grounded PRD with an independent review (/pm:prd), and turn one of your own PM practices into a Claude skill (/pm:create-skill).",
+  "author": {
+    "name": "niancilyu-2",
+    "url": "https://github.com/niancilyu-2"
+  },
+  "homepage": "https://github.com/niancilyu-2/eyp-pm",
+  "repository": "https://github.com/niancilyu-2/eyp-pm",
+  "license": "MIT",
+  "keywords": ["product-management", "workshop", "prd", "prototype", "discovery", "skills"]
+}

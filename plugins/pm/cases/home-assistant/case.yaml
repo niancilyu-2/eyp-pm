@@ -1,0 +1,127 @@
+id: home-assistant
+name: Home Assistant
+tier: core
+persona: Nontechnical household co-admin
+mandate: Make routine configuration and recovery safer while preserving local control
+product_summary: >-
+  Home Assistant is free, open-source smart-home software that runs on a small computer
+  inside the house and controls lights, plugs, sensors, speakers and other devices without
+  depending on a company's cloud. People use it through a web browser or the companion
+  phone app to see dashboards, fix devices that stop responding, and set up automations
+  (rules such as "turn on the hallway light when motion is detected after sunset").
+repositories:
+  - role: primary
+    owner_repo: home-assistant/frontend
+    url: https://github.com/home-assistant/frontend
+    default_branch: dev
+    pinned_sha: fb419538c75a66925075be2c301c180676ad746f
+    pinned_at: "2026-09-17"
+    license: Apache-2.0
+    clone_to: sources/primary
+    sparse_paths:
+      - src/panels/lovelace
+      - src/panels/config
+      - src/panels/home
+      - src/components
+      - src/dialogs
+      - src/data
+      - src/resources
+      - src/translations
+  - role: web-reference
+    owner_repo: home-assistant/core
+    url: https://github.com/home-assistant/core
+    default_branch: dev
+    pinned_sha: 0cb1d21d32d4281dd4834f303ec6404402f3044d
+    pinned_at: "2026-09-17"
+    license: Apache-2.0
+    clone_to: null
+    note: "Context only. Not cloned (294 MB, 28k files). Read specific files via the pinned URLs below."
+    web_paths:
+      - https://github.com/home-assistant/core/tree/0cb1d21d32d4281dd4834f303ec6404402f3044d/homeassistant/components/lovelace
+      - https://github.com/home-assistant/core/tree/0cb1d21d32d4281dd4834f303ec6404402f3044d/homeassistant/components/config
+      - https://github.com/home-assistant/core/blob/0cb1d21d32d4281dd4834f303ec6404402f3044d/homeassistant/helpers/entity_registry.py
+      - https://github.com/home-assistant/core/blob/0cb1d21d32d4281dd4834f303ec6404402f3044d/homeassistant/helpers/device_registry.py
+      - https://github.com/home-assistant/core/tree/0cb1d21d32d4281dd4834f303ec6404402f3044d/homeassistant/components/automation
+      - https://github.com/home-assistant/core/tree/0cb1d21d32d4281dd4834f303ec6404402f3044d/homeassistant/components/trace
+      - https://github.com/home-assistant/core/tree/0cb1d21d32d4281dd4834f303ec6404402f3044d/homeassistant/components/backup
+      - https://github.com/home-assistant/core/tree/0cb1d21d32d4281dd4834f303ec6404402f3044d/homeassistant/components/repairs
+lanes:
+  - id: dashboards
+    name: Dashboards
+    surface: tablet web
+    viewport: { width: 1024, height: 768 }
+    territory: >-
+      The screens where a household views and edits dashboards: the default Home view,
+      dashboard views and sections, the cards that show and control devices, and the
+      in-browser editor used to add, move and configure cards.
+    repo_entry_points:
+      - src/panels/lovelace/views
+      - src/panels/lovelace/sections
+      - src/panels/lovelace/cards
+      - src/panels/lovelace/card-features
+      - src/panels/lovelace/editor
+      - src/panels/home
+      - src/panels/config/lovelace
+      - src/data/lovelace
+      - src/data/lovelace.ts
+  - id: device-entity-health-recovery
+    name: Device and entity health and recovery
+    surface: mobile web
+    viewport: { width: 390, height: 844 }
+    territory: >-
+      The settings pages and pop-ups that list devices and entities (an entity is one
+      controllable or measurable thing, such as a single light or a temperature reading),
+      show whether they are available, let someone rename, disable or re-enable them, and
+      the Repairs, Backups and System pages used when something needs to be restored.
+    repo_entry_points:
+      - src/panels/config/devices
+      - src/panels/config/entities
+      - src/panels/config/integrations
+      - src/panels/config/repairs
+      - src/panels/config/backup
+      - src/dialogs/more-info
+      - src/dialogs/repairs-flow
+      - src/data/device
+      - src/data/entity
+      - src/data/backup.ts
+      - src/data/repairs.ts
+  - id: automation-creation-troubleshooting
+    name: Automation creation and troubleshooting
+    surface: desktop web
+    viewport: { width: 1440, height: 900 }
+    territory: >-
+      The visual automation editor where triggers, conditions and actions are assembled,
+      the list of existing automations, and the trace view that shows step by step what
+      happened the last time an automation ran.
+    repo_entry_points:
+      - src/panels/config/automation
+      - src/panels/config/automation/trigger
+      - src/panels/config/automation/condition
+      - src/panels/config/automation/action
+      - src/panels/config/automation/sidebar
+      - src/panels/config/blueprint
+      - src/components/trace
+      - src/components/automation
+      - src/data/automation.ts
+      - src/data/trace.ts
+exclusions:
+  - Safety-critical device classes: locks, garage doors, alarm panels, heating and gas appliances, and medical devices. Do not use them in scenarios, prototypes or synthetic data.
+  - Cloud subscription features (Home Assistant Cloud / Nabu Casa remote access, cloud voice assistants, cloud backup locations).
+  - YAML-only power-user configuration as the primary path. Text configuration files may be mentioned as an escape hatch, but the persona works in the visual interface.
+  - Anything that requires a new core integration or changes to the home-assistant/core repository. Use existing core APIs only.
+synthetic_data_rules:
+  - Use a fictional home name such as "Willow House"; never a real street address, postcode, or map coordinates.
+  - Use generic room names (Living Room, Kitchen, Bedroom, Office, Hallway, Garden) and generic device names (Living Room Lamp, Kitchen Plug, Hallway Motion Sensor, Office Speaker).
+  - Use entity identifiers in Home Assistant's own style, for example light.living_room_lamp, sensor.kitchen_temperature, binary_sensor.hallway_motion, switch.office_desk_plug, media_player.living_room_speaker.
+  - Never include camera images, video stills, or real people's photos; if a camera card must appear, use a plain grey placeholder labelled "camera preview".
+  - Never include real names, e-mail addresses, phone numbers, Wi-Fi names, IP or MAC addresses. If a network address is unavoidable use the documentation range 192.0.2.x.
+  - Do not model any excluded device class (locks, garage doors, alarms, heating or gas, medical) even as a decoy.
+  - Do not paste text copied from real user posts, issues or reviews into prototypes; paraphrase and label sources in research notes instead.
+public_channels:
+  - { type: github-issues, url: https://github.com/home-assistant/frontend/issues, note: "Frontend (user interface) bug reports and feature requests; filter by label and by the lane's area" }
+  - { type: github-issues, url: https://github.com/home-assistant/core/issues, note: "Core issues; useful for device availability, backup and automation behaviour reports" }
+  - { type: github-discussions, url: https://github.com/home-assistant/frontend/discussions, note: "Frontend discussions, lower volume than issues" }
+  - { type: official-docs, url: https://www.home-assistant.io/docs/, note: "Official user documentation; dashboards, automations, backups and troubleshooting live under here" }
+  - { type: releases, url: https://www.home-assistant.io/blog/categories/release-notes/, note: "Monthly release blog posts; each lists interface changes with screenshots" }
+  - { type: forum, url: https://community.home-assistant.io/, note: "Official Discourse forum; the busiest public help channel" }
+  - { type: review-site, url: https://apps.apple.com/us/app/home-assistant/id1099568401, note: "Companion app store listing with public user ratings and reviews; the web interface is what the app shows" }

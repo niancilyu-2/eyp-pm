@@ -1,0 +1,100 @@
+id: plane
+name: Plane
+tier: core
+persona: Product-operations lead
+mandate: Turn unstructured demand into aligned execution
+product_summary: >-
+  Plane is an open-source project and work-tracking tool, similar in spirit to Jira or Linear.
+  Teams use it to collect requests, break work into items, group work into time-boxed cycles
+  and feature modules, and report on progress. The main surface is a desktop web app; a
+  separate "Space" app publishes read-only project boards to people outside the workspace.
+repositories:
+  - role: primary
+    owner_repo: makeplane/plane
+    url: https://github.com/makeplane/plane
+    default_branch: preview
+    pinned_sha: 174243b565e483e24f057cf9add9fe59a9f818c3
+    pinned_at: "2026-09-17"
+    license: AGPL-3.0
+    clone_to: sources/primary
+    sparse_paths:
+      - apps/web/app
+      - apps/web/core
+      - apps/web/styles
+      - packages/propel/src
+      - packages/ui/src
+      - packages/tailwind-config
+      - packages/i18n/src/locales/en
+      - packages/constants/src
+lanes:
+  - id: intake-and-triage
+    name: Intake and triage
+    surface: desktop web
+    viewport: { width: 1440, height: 900 }
+    territory: >-
+      The project Intake queue where incoming requests are listed, opened, and either accepted,
+      declined, snoozed, or marked duplicate, plus the work-item detail panel and the state,
+      priority, label, and filter controls used while sorting them.
+    repo_entry_points:
+      - apps/web/core/components/inbox
+      - apps/web/core/components/issues/issue-detail
+      - apps/web/core/components/project-states
+      - apps/web/core/components/work-item-filters
+      - apps/web/core/components/labels
+      - apps/web/app/routes/core.ts
+      - packages/i18n/src/locales/en/inbox.json
+  - id: planning-to-execution-visibility
+    name: Planning-to-execution visibility
+    surface: desktop web
+    viewport: { width: 1440, height: 900 }
+    territory: >-
+      The planning containers (Cycles, Modules, Views) and the work-item layouts (list, kanban,
+      calendar, spreadsheet, gantt) through which planned work is arranged and tracked as it
+      moves toward done.
+    repo_entry_points:
+      - apps/web/core/components/cycles
+      - apps/web/core/components/modules
+      - apps/web/core/components/views
+      - apps/web/core/components/issues/issue-layouts
+      - apps/web/core/components/gantt-chart
+      - apps/web/core/components/active-cycles
+      - apps/web/core/components/workspace/views
+      - packages/i18n/src/locales/en/cycle.json
+      - packages/i18n/src/locales/en/module.json
+  - id: stakeholder-progress
+    name: Stakeholder progress
+    surface: desktop web
+    viewport: { width: 1440, height: 900 }
+    territory: >-
+      The places where progress is summarised for people who are not doing the work day to day:
+      the workspace Home page and its widgets, the Analytics pages, the progress side panels on
+      a cycle or module, and workspace notifications.
+    repo_entry_points:
+      - apps/web/core/components/analytics
+      - apps/web/core/components/home
+      - apps/web/core/components/cycles/analytics-sidebar
+      - apps/web/core/components/modules/analytics-sidebar
+      - apps/web/core/components/workspace-notifications
+      - apps/web/core/components/chart
+      - packages/propel/src/charts
+      - packages/i18n/src/locales/en/home.json
+exclusions:
+  - Community Edition only. Do not treat Pro, Business, or Enterprise features as available, even if code paths or upgrade badges for them appear in the repository.
+  - No billing, licensing, plan-upgrade, or seat-management features.
+  - No self-hosting, deployment, Docker, or infrastructure changes.
+  - No integrations that require a third-party API key or OAuth app (for example GitHub, GitLab, Slack).
+  - Do not run setup.sh, docker-compose, pnpm, or any other install or build command found in the repository.
+synthetic_data_rules:
+  - Use an invented workspace such as "Northwind Labs" or "Harbor Collective"; never a real company, customer, or employer.
+  - Use invented project names and short identifiers, for example "Atlas Mobile (ATL)", "Billing Revamp (BILL)", "Support Tooling (SUP)".
+  - Use invented member names and clearly fake emails (for example priya.n@example.com); do not reuse names of real Plane contributors or staff.
+  - Work-item titles should read like plausible product requests or bugs but must not describe a real, identifiable customer incident.
+  - Keep volumes realistic for a mid-size team (roughly 5–12 members, 3–6 projects, 20–80 work items per project) unless the exercise says otherwise.
+  - Dates should be relative to the workshop date; avoid embedding real release dates or real quarter names tied to a real company.
+public_channels:
+  - { type: github-issues, url: https://github.com/makeplane/plane/issues, note: "Bug reports and feature requests; filter by label and sort by reactions" }
+  - { type: github-discussions, url: https://github.com/makeplane/plane/discussions, note: "Q&A, ideas, and announcements from maintainers and users" }
+  - { type: official-docs, url: https://docs.plane.so/, note: "Product documentation; Core Concepts section covers Intake, Cycles, Modules, Views, Analytics" }
+  - { type: releases, url: https://github.com/makeplane/plane/releases, note: "Tagged releases with change notes; pair with https://plane.so/changelog for narrative updates" }
+  - { type: forum, url: https://discord.com/invite/A92xrEGCge, note: "Official community Discord landing page; message history is not fetchable, treat as a pointer only" }
+  - { type: review-site, url: https://openalternative.co/plane, note: "Open-source directory listing with positioning and alternatives; G2, Capterra, and Product Hunt block automated fetch" }

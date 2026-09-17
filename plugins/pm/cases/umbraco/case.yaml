@@ -1,0 +1,81 @@
+id: umbraco
+name: Umbraco
+tier: core
+regression_case: true
+persona: Regional content-operations editor
+mandate: Reduce rework between content creation and publication
+product_summary: >-
+  Umbraco is a free, open-source content management system (CMS): the software that
+  organisations use to build and run websites. Marketing teams, editors and web agencies use it
+  to write pages, upload images and files, and publish in one or more languages. The
+  "backoffice" is the password-protected editing screen where that everyday work
+  happens; the public website is a separate layer built on top of it.
+repositories:
+  - role: primary
+    owner_repo: umbraco/Umbraco-CMS
+    url: https://github.com/umbraco/Umbraco-CMS
+    default_branch: main
+    pinned_sha: 65454d935063ced339687c6620d93e3fbbc49320
+    pinned_at: "2026-09-17"
+    license: MIT
+    clone_to: sources/primary
+    windows_long_paths: true
+    sparse_paths:
+      - src/Umbraco.Web.UI.Client/src/packages/documents
+      - src/Umbraco.Web.UI.Client/src/packages/content
+      - src/Umbraco.Web.UI.Client/src/packages/media
+      - src/Umbraco.Web.UI.Client/src/packages/language
+      - src/Umbraco.Web.UI.Client/src/packages/core
+      - src/Umbraco.Web.UI.Client/src/assets/lang
+      - src/Umbraco.Web.UI.Client/docs
+      - src/Umbraco.Core/EmbeddedResources/Lang
+lanes:
+  - id: draft-to-publish
+    name: Draft to publish
+    surface: desktop backoffice
+    viewport: { width: 1440, height: 900 }
+    territory: The path a page takes inside the content editing screen from first draft through save, preview, schedule and publish.
+    repo_entry_points:
+      - src/Umbraco.Web.UI.Client/src/packages/documents/documents/workspace
+      - src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing
+      - src/Umbraco.Web.UI.Client/src/packages/documents/documents/modals/save-modal
+      - src/Umbraco.Web.UI.Client/src/packages/content/content/workspace
+  - id: media-reuse
+    name: Media reuse
+    surface: desktop backoffice
+    viewport: { width: 1440, height: 900 }
+    territory: How images and files are uploaded, browsed in the media library, picked into pages and tracked where they are used.
+    repo_entry_points:
+      - src/Umbraco.Web.UI.Client/src/packages/media/media/collection
+      - src/Umbraco.Web.UI.Client/src/packages/media/media/property-editors/media-picker
+      - src/Umbraco.Web.UI.Client/src/packages/media/media/dropzone
+      - src/Umbraco.Web.UI.Client/src/packages/media/media/reference
+  - id: validation-and-localization
+    name: Validation and localization
+    surface: desktop backoffice
+    viewport: { width: 1440, height: 900 }
+    territory: How the editing screen reports required or invalid fields, and how one page is edited across several languages (called "variants").
+    repo_entry_points:
+      - src/Umbraco.Web.UI.Client/src/packages/core/validation
+      - src/Umbraco.Web.UI.Client/src/packages/content/content/variant-picker
+      - src/Umbraco.Web.UI.Client/src/packages/language
+      - src/Umbraco.Web.UI.Client/src/packages/core/localization
+      - src/Umbraco.Web.UI.Client/src/assets/lang
+      - src/Umbraco.Core/EmbeddedResources/Lang
+exclusions:
+  - No changes to the rendering/delivery pipeline (the part that serves pages to website visitors) or to the database schema.
+  - No commercial add-ons (Umbraco Forms, Umbraco Deploy, Umbraco Cloud) as dependencies.
+  - No marketplace packages (third-party extensions) as dependencies.
+synthetic_data_rules:
+  - Use only invented site names, page titles, media file names and people; never real client, customer or employee content.
+  - Prefer clearly fictional brands (for example "Northwind Regional Tourism" or "Harbourlight Council") so nothing can be mistaken for a real organisation.
+  - Keep example text short and neutral; no real addresses, phone numbers, email addresses or personal data.
+  - When showing several languages, use real language names (English, Danish, German, French) but invented translated copy; do not paste text from real websites.
+  - Media examples should be described by name and type (for example "hero-harbour-2400.jpg", "annual-report.pdf"); do not embed real photographs or logos.
+public_channels:
+  - { type: github-issues, url: https://github.com/umbraco/Umbraco-CMS/issues, note: "Bug reports and feature requests; filter by labels and search for backoffice terms" }
+  - { type: github-discussions, url: https://github.com/umbraco/Umbraco-CMS/discussions, note: "Longer design conversations and RFC-style proposals from maintainers and community" }
+  - { type: official-docs, url: https://docs.umbraco.com/umbraco-cms, note: "Official documentation; the Fundamentals section describes the backoffice as designed" }
+  - { type: releases, url: https://github.com/umbraco/Umbraco-CMS/releases, note: "Release notes per version; useful for seeing what changed recently in the editing experience" }
+  - { type: forum, url: https://forum.umbraco.com/, note: "Official Discourse community forum; good for how-to questions and editor complaints" }
+  - { type: review-site, url: https://slashdot.org/software/p/Umbraco/, note: "Third-party software directory with user reviews; treat ratings as anecdotal" }

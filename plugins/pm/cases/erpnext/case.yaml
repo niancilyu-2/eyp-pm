@@ -1,0 +1,152 @@
+id: erpnext
+name: ERPNext
+tier: advanced
+persona: Inventory or procurement operations manager who spends the day inside ERPNext keeping stock and purchasing records accurate
+mandate: Resolve exceptions without weakening controls or auditability
+product_summary: >-
+  ERPNext is a free, open-source business management system (an "ERP") that covers stock,
+  purchasing, selling, manufacturing and accounting in one web app. It is built on the Frappe
+  framework, a Python and JavaScript toolkit that supplies the forms, list views, workflows,
+  and permission rules that every ERPNext screen uses. It is used by small and mid-sized
+  manufacturers, distributors, retailers and service firms, either self-hosted or on Frappe Cloud.
+repositories:
+  - role: primary
+    owner_repo: frappe/erpnext
+    url: https://github.com/frappe/erpnext
+    default_branch: develop
+    pinned_sha: aebb160e76b2232914ddb0b9d4addbd896a05b83
+    pinned_at: "2026-09-17"
+    license: GPL-3.0
+    clone_to: sources/primary
+    sparse_paths:
+      - erpnext/stock
+      - erpnext/buying
+      - erpnext/setup
+      - erpnext/public
+      - erpnext/controllers
+      - erpnext/workspace_sidebar
+      - erpnext/desktop_icon
+  - role: companion
+    owner_repo: frappe/frappe
+    url: https://github.com/frappe/frappe
+    default_branch: develop
+    pinned_sha: a98db1c248a7444fca8bc9cb9b04273ca78751c3
+    pinned_at: "2026-09-17"
+    license: MIT
+    clone_to: sources/companion
+    note: "Framework that ERPNext runs on. Read it to understand forms, list views, workflows, and permissions; do not propose changes to it."
+    sparse_paths:
+      - frappe/public
+      - frappe/desk
+      - frappe/workflow
+      - frappe/core
+      - frappe/model
+lanes:
+  - id: inventory-exceptions
+    name: Inventory exceptions
+    surface: desktop web
+    viewport: { width: 1440, height: 900 }
+    territory: The screens and records an inventory manager uses when a stock quantity, movement, or valuation does not match expectations, including stock entries, stock reconciliations, material requests, warehouses, stock settings, and the stock ledger and balance reports.
+    repo_entry_points:
+      - sources/primary/erpnext/stock/doctype/stock_entry/
+      - sources/primary/erpnext/stock/doctype/stock_reconciliation/
+      - sources/primary/erpnext/stock/doctype/material_request/
+      - sources/primary/erpnext/stock/doctype/warehouse/
+      - sources/primary/erpnext/stock/doctype/stock_settings/
+      - sources/primary/erpnext/stock/doctype/repost_item_valuation/
+      - sources/primary/erpnext/stock/doctype/stock_ledger_entry/
+      - sources/primary/erpnext/stock/report/stock_ledger/
+      - sources/primary/erpnext/stock/report/stock_balance/
+      - sources/primary/erpnext/stock/report/stock_ageing/
+      - sources/primary/erpnext/stock/stock_ledger.py
+      - sources/primary/erpnext/stock/reorder_item.py
+      - sources/primary/erpnext/controllers/stock_controller.py
+      - sources/primary/erpnext/public/js/controllers/stock_controller.js
+      - sources/primary/erpnext/public/js/utils/serial_no_batch_selector.js
+      - sources/companion/frappe/public/js/frappe/form/form.js
+      - sources/companion/frappe/public/js/frappe/form/grid.js
+      - sources/companion/frappe/public/js/frappe/list/list_view.js
+  - id: purchase-approval-exceptions
+    name: Purchase-approval exceptions
+    surface: desktop web
+    viewport: { width: 1440, height: 900 }
+    territory: The purchase order, material request, supplier, and buying-settings screens together with the Frappe workflow and authorization-rule machinery that decides who may approve, amend, reject, or reopen a purchasing document.
+    repo_entry_points:
+      - sources/primary/erpnext/buying/doctype/purchase_order/
+      - sources/primary/erpnext/buying/doctype/buying_settings/
+      - sources/primary/erpnext/buying/doctype/supplier/
+      - sources/primary/erpnext/buying/doctype/request_for_quotation/
+      - sources/primary/erpnext/buying/report/purchase_order_analysis/
+      - sources/primary/erpnext/buying/report/procurement_tracker/
+      - sources/primary/erpnext/stock/doctype/material_request/
+      - sources/primary/erpnext/setup/doctype/authorization_rule/
+      - sources/primary/erpnext/setup/doctype/authorization_control/
+      - sources/primary/erpnext/controllers/buying_controller.py
+      - sources/primary/erpnext/controllers/status_updater.py
+      - sources/primary/erpnext/public/js/controllers/buying.js
+      - sources/primary/erpnext/public/js/controllers/transaction.js
+      - sources/companion/frappe/workflow/doctype/workflow/
+      - sources/companion/frappe/workflow/doctype/workflow_action/
+      - sources/companion/frappe/workflow/doctype/workflow_transition/
+      - sources/companion/frappe/workflow/page/workflow_builder/
+      - sources/companion/frappe/model/workflow.py
+      - sources/companion/frappe/public/js/frappe/form/workflow.js
+      - sources/companion/frappe/public/js/frappe/form/toolbar.js
+      - sources/companion/frappe/public/js/frappe/form/footer/form_timeline.js
+  - id: role-based-daily-navigation
+    name: Role-based daily navigation
+    surface: desktop web
+    viewport: { width: 1440, height: 900 }
+    territory: The home, Stock and Buying workspaces, the left sidebar, top navbar, search bar, notification panel, and list-view defaults that a user with a given role sees when they sign in and move between tasks during a normal working day.
+    repo_entry_points:
+      - sources/primary/erpnext/workspace_sidebar/stock.json
+      - sources/primary/erpnext/workspace_sidebar/buying.json
+      - sources/primary/erpnext/workspace_sidebar/home.json
+      - sources/primary/erpnext/desktop_icon/
+      - sources/primary/erpnext/stock/workspace/stock/
+      - sources/primary/erpnext/buying/workspace/buying/
+      - sources/primary/erpnext/setup/workspace/home/
+      - sources/primary/erpnext/stock/number_card/
+      - sources/primary/erpnext/stock/dashboard_chart/
+      - sources/primary/erpnext/stock/doctype/stock_entry/stock_entry_list.js
+      - sources/primary/erpnext/buying/doctype/purchase_order/purchase_order_list.js
+      - sources/companion/frappe/desk/doctype/workspace/
+      - sources/companion/frappe/desk/doctype/workspace_sidebar/
+      - sources/companion/frappe/desk/doctype/desktop_icon/
+      - sources/companion/frappe/desk/doctype/list_view_settings/
+      - sources/companion/frappe/desk/doctype/notification_settings/
+      - sources/companion/frappe/desk/desktop.py
+      - sources/companion/frappe/desk/notifications.py
+      - sources/companion/frappe/desk/search.py
+      - sources/companion/frappe/public/js/frappe/views/workspace/
+      - sources/companion/frappe/public/js/frappe/ui/sidebar/
+      - sources/companion/frappe/public/js/frappe/ui/toolbar/
+      - sources/companion/frappe/public/js/frappe/ui/notifications/
+      - sources/companion/frappe/core/doctype/role/
+      - sources/companion/frappe/core/doctype/role_profile/
+      - sources/companion/frappe/core/doctype/user_permission/
+      - sources/companion/frappe/core/doctype/custom_docperm/
+      - sources/companion/frappe/core/page/permission_manager/
+exclusions:
+  - Tax calculation, tax templates, and anything that changes how tax is computed or reported.
+  - Payroll and HR pay processing.
+  - Accounting policy, chart-of-accounts design, and valuation-method choices.
+  - Regulatory or legal compliance claims of any kind.
+  - Any proposal that requires changing how accounting ledger entries are created, edited, or reversed.
+  - Country-specific compliance features (regional modules, e-invoicing, statutory formats).
+  - Changes to the Frappe framework itself; treat it as read-only context.
+synthetic_data_rules:
+  - Invent one fictional company (for example "Harborline Supply Co.") and use it consistently across all lanes.
+  - Invent three to six warehouses with plain names (Main Store, Receiving Bay, Quarantine, Returns) and made-up locations.
+  - Invent items with obviously fake codes (ITM-0001 style) and generic descriptions; never use real product names or barcodes.
+  - Invent suppliers with fictional names; never use a real company, real contact, or real supplier code.
+  - Use made-up quantities and prices in a single fictional currency; never reuse figures copied from a real quote, catalogue, or invoice.
+  - Invent users with clearly fictional names and assign them ERPNext roles by name (Stock User, Stock Manager, Purchase User, Purchase Manager); never use real colleagues.
+  - Do not paste data or screenshots from any customer system; the public demo site is acceptable only for observing layout.
+public_channels:
+  - { type: github-issues, url: https://github.com/frappe/erpnext/issues, note: "Bug reports and feature requests for ERPNext; filter by label stock or buying" }
+  - { type: github-issues, url: https://github.com/frappe/frappe/issues, note: "Framework issues covering forms, list views, workflow, and permissions; use in place of GitHub Discussions, which are not enabled on either repo" }
+  - { type: official-docs, url: https://docs.frappe.io/erpnext/, note: "User manual; Stock and Buying sections describe each screen step by step" }
+  - { type: releases, url: https://github.com/frappe/erpnext/releases, note: "Release notes; useful for spotting recent changes to stock and purchasing screens" }
+  - { type: forum, url: https://discuss.frappe.io/, note: "Community Discourse forum; the largest source of real user questions and workarounds" }
+  - { type: review-site, url: https://www.softwaresuggest.com/erpnext, note: "Third-party listing with user reviews; treat ratings as indicative only" }

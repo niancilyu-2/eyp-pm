@@ -1,0 +1,104 @@
+id: immich
+name: Immich
+tier: core
+persona: Household media steward
+mandate: Make the product easier for less-technical family members without weakening privacy or media integrity
+product_summary: >-
+  Immich is free, open-source software for backing up, browsing and sharing a family's
+  photos and videos on a computer the household controls instead of a big company's cloud.
+  One technically confident person runs the server part at home; everyone else uses the
+  mobile app (iPhone and Android) to upload phone photos automatically and the web app in a
+  browser to browse, search, organise and share.
+repositories:
+  - role: primary
+    owner_repo: immich-app/immich
+    url: https://github.com/immich-app/immich
+    default_branch: main
+    pinned_sha: 9994eb3bedc77a63e652cb4195d843433696d036
+    pinned_at: "2026-09-17"
+    license: AGPL-3.0
+    clone_to: sources/primary
+    sparse_paths:
+      - web/src
+      - mobile/lib
+      - docs/docs
+      - i18n
+      - design
+lanes:
+  - id: backup-status-confidence
+    name: Backup and status confidence
+    surface: mobile app
+    viewport: { width: 390, height: 844 }
+    territory: >-
+      The mobile app screens that show whether phone photos and videos have been uploaded
+      to the family server, which phone albums are included, what the app is doing right
+      now, and the related settings.
+    repo_entry_points:
+      - mobile/lib/pages/backup
+      - mobile/lib/widgets/backup
+      - mobile/lib/presentation/widgets/backup
+      - mobile/lib/presentation/pages/asset_troubleshoot.page.dart
+      - mobile/lib/presentation/pages/download_info.page.dart
+      - mobile/lib/pages/settings
+      - docs/docs/features/mobile-backup.md
+      - docs/docs/features/mobile-app.mdx
+  - id: finding-organizing-media
+    name: Finding and organizing media
+    surface: desktop web
+    viewport: { width: 1440, height: 900 }
+    territory: >-
+      The web pages used in a desktop browser to scroll the photo timeline, search, and
+      group photos into albums, folders, tags, people and places.
+    repo_entry_points:
+      - web/src/routes/(user)/photos
+      - web/src/routes/(user)/search
+      - web/src/routes/(user)/explore
+      - web/src/routes/(user)/albums
+      - web/src/routes/(user)/folders
+      - web/src/routes/(user)/tags
+      - web/src/routes/(user)/people
+      - web/src/routes/(user)/places
+      - web/src/lib/components/timeline
+      - web/src/lib/components/album-page
+      - web/src/lib/components/faces-page
+      - docs/docs/features/searching.md
+      - docs/docs/features/tags.md
+      - docs/docs/features/folder-view.md
+  - id: private-sharing-collaboration
+    name: Private sharing and collaboration
+    surface: mobile app
+    viewport: { width: 390, height: 844 }
+    territory: >-
+      The mobile app screens for sharing with other people on the same server and with
+      outsiders: shared albums, partner sharing, shared links, and album activity such as
+      comments and likes.
+    repo_entry_points:
+      - mobile/lib/pages/library/shared_link
+      - mobile/lib/pages/library/partner
+      - mobile/lib/widgets/shared_link
+      - mobile/lib/widgets/album
+      - mobile/lib/widgets/activities
+      - mobile/lib/presentation/pages/album_options.page.dart
+      - mobile/lib/presentation/pages/partner_detail.page.dart
+      - mobile/lib/presentation/pages/user_selection.page.dart
+      - mobile/lib/presentation/pages/activities.page.dart
+      - docs/docs/features/sharing.md
+      - docs/docs/features/partner-sharing.md
+exclusions:
+  - No changes to storage or encryption internals (how files are stored on disk or protected).
+  - No claims about privacy guarantees beyond what the official documentation states.
+  - No machine-learning model work (face recognition, smart search models, duplicate detection models).
+  - No work on the server back end (the server/ folder is deliberately not included).
+synthetic_data_rules:
+  - Use synthetic media only; never real photos, real faces or personal images, even your own.
+  - Use public information only; do not quote private chats, emails or non-public documents.
+  - Invent people, device names, album names, dates and counts; do not reuse names of real Immich users or maintainers.
+  - Use neutral placeholder imagery (solid colour blocks, gradients, simple SVG shapes) in place of photo thumbnails.
+public_channels:
+  - { type: github-issues, url: "https://github.com/immich-app/immich/issues", note: "Bug reports and feature requests; use the search box with lane words and the label filters" }
+  - { type: github-discussions, url: "https://github.com/immich-app/immich/discussions", note: "Q&A and feature-request categories; longer threads than issues" }
+  - { type: official-docs, url: "https://docs.immich.app/", note: "Official documentation with screenshots; Features section covers backup, sharing, search" }
+  - { type: releases, url: "https://github.com/immich-app/immich/releases", note: "Release notes per version; breaking changes and new UI are called out; blog at https://immich.app/blog" }
+  - { type: forum, url: "https://forums.truenas.com/search?q=immich", note: "Discourse-style forum where home-server users discuss running Immich; also try https://forums.unraid.net/search/?q=immich" }
+  - { type: review-site, url: "https://play.google.com/store/apps/details?id=app.alextran.immich", note: "Android store listing with user reviews and ratings; iOS listing at https://apps.apple.com/us/app/immich/id1613945652" }
+  - { type: reddit, url: "https://www.reddit.com/r/immich.rss", note: "often blocks automated fetch; use search snippets and label them unverified" }
