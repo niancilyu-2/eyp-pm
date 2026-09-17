@@ -120,3 +120,19 @@ feeds:
     - { name: "Shortcut", page: "https://www.shortcut.com/pricing", wayback: "https://archive.org/wayback/available?url=www.shortcut.com/pricing&timestamp={yyyymmdd}" }
     - { name: "Huly", page: "https://huly.io/pricing", wayback: "https://archive.org/wayback/available?url=huly.io/pricing&timestamp={yyyymmdd}" }
   reddit_rss_optional: "https://www.reddit.com/r/selfhosted.rss"   # facilitator opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl if the facilitator says so
+  forum_top_json: null   # no Discourse forum (see forum_search_json)
+  forum_tag_top_json: []
+  hackernews_comments: "https://hn.algolia.com/api/v1/search?query={query}&tags=comment&hitsPerPage=10"   # "plane" alone matches aircraft; pair it with a lane word
+  app_store_lookup:
+    - { app: "Plane: Projects, Wiki, AI", id: 6657986465, url: "https://itunes.apple.com/lookup?id=6657986465&country=us", fields: "averageUserRating, userRatingCount, version, releaseNotes, currentVersionReleaseDate" }
+  wikipedia_pageviews: []   # no English Wikipedia article; page summary for Plane_(software) returns 404
+  roadmap:
+    own:
+      # github-projects omitted: https://github.com/orgs/makeplane/projects lists no public projects
+      - { type: github-milestones, url: "https://github.com/makeplane/plane/milestones" }
+      - { type: roadmap-page, url: "https://github.com/makeplane/plane/discussions/categories/roadmap" }   # official Roadmap discussions category; plane.so/roadmap and plane.canny.io do not exist
+    competitor_jobs:
+      - { name: "Linear", type: ashby, url: "https://api.ashbyhq.com/posting-api/job-board/linear" }
+      - { name: "Jira", type: page, url: "https://www.atlassian.com/company/careers/all-jobs" }
+      - { name: "Shortcut", type: page, url: "https://www.shortcut.com/careers" }   # no Ashby, Greenhouse or Lever board under shortcut; the Ashby clubhouse board belongs to the audio app, not Shortcut
+      # Huly omitted: huly.io/careers and hulylabs.com/careers return 404, and no Ashby, Greenhouse or Lever board exists under huly or hulylabs

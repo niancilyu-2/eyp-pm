@@ -77,14 +77,34 @@ Set `stage.current: discovery`, `stage.status: in-progress`,
 
 Follow `${CLAUDE_PLUGIN_ROOT}/resources/research-guide.md` exactly. Record the start time.
 Tell the participant once what a rung is: one kind of public source, and the ladder is
-the order you read them in. Read the `feeds:` block of the case's `case.yaml`. Pick two or three lane terms with the
+the order you read them in. Read the `feeds:` block of the case's `case.yaml`. The
+sources it can hold, all public and keyless:
+
+| Key in `feeds:` | What it gives |
+|---|---|
+| `forum_search_json`, `forum_top_json`, `forum_tag_top_json` | the product forum: search results, this year's top threads, top threads per tag |
+| `github_discussions_top` | GitHub Discussions ranked by upvotes |
+| `github_issues_top`, `github_issues_top_companion` | GitHub issues ranked by reactions (API); `_html` twins for when the API is rate-limited |
+| `lemmy_search`, `lemmy_communities` | Lemmy posts by search and by community, with scores |
+| `mastodon_tags` | recent posts under the product's hashtags |
+| `hackernews_search`, `hackernews_comments` | Hacker News stories and comments with points |
+| `app_store_reviews`, `app_store_lookup` | Apple App Store review text, rating counts, current version and release notes |
+| `adoption` | GitHub stars, Docker Hub pulls, PyPI or NuGet downloads |
+| `wikipedia_pageviews` | monthly Wikipedia article views, a public-interest trend |
+| `roadmap.own` | the product's own project boards, milestones, or roadmap page |
+| `roadmap.competitor_jobs` | competitors' live job postings, a roadmap tell |
+| `competitors` | competitor pricing or feature pages, today and a year ago via Wayback |
+| `reddit_rss_optional` | one subreddit feed, only if the facilitator has switched it on |
+
+A key set to `null` or `[]` means that source does not exist for this case; say so once
+and move on. Pick two or three lane terms with the
 participant (one question) and walk the ladder in order: forum search JSON and GitHub
 (discussions by upvotes, issues by reactions), then Lemmy, Mastodon tags, and Hacker
 News, then App Store reviews, then adoption numbers, then competitor pages today versus
 their Wayback snapshot from a year ago, then official release notes, and only then search
 snippets if `readiness.search` is `ok`. Reddit only if `readiness.reddit_rss` is true.
 
-Respect the budget: 16 fetches, 8 searches, stop at 8 usable items or when the
+Respect the budget: 20 fetches, 8 searches, stop at 8 usable items or when the
 participant says time is up. As you read, fill the quote bank (research guide, "Quote
 bank"): verbatim, role not handle, linked to a signal, only from text fetched in this
 session. Log every item with an ID, label, rung, URL, dates, and

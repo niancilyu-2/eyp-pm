@@ -4,7 +4,14 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.3.2 (unreleased)
+## 0.4.0 (unreleased)
+
+- Five more keyless sources per case: forum top and per-tag lists, Hacker News comments,
+  App Store lookup with release notes, Wikipedia pageviews, and a roadmap rung combining
+  the product's own boards with competitors' job postings. Fetch budget raised to 20.
+- Scout skill lists every source key and what it gives.
+
+## 0.3.2
 
 - GitHub issues rung falls back to HTML search pages when the shared-IP API limit is hit.
 

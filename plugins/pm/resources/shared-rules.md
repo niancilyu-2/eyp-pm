@@ -143,7 +143,7 @@ separators and keep it under 100 characters. Omit any field that does not apply 
 
 | Stage | Format |
 |---|---|
-| Discovery | `Scout · step 5/10 · fetches 6/16 · searches 0/8 · items 5 · quotes 3/8 · 14 min · sources clean` |
+| Discovery | `Scout · step 5/10 · fetches 6/20 · searches 0/8 · items 5 · quotes 3/8 · 14 min · sources clean` |
 | Prototype | `Prototype · step 7/11 · path html · revision 0 · 22 min · sources clean` |
 | PRD | `PRD · step 4/7 · REQ 6 · AC 9 · findings 0 · 18 min · sources clean` |
 | Capstone | `Capstone · step 5/8 · skill meeting-recap · test pending · 12 min` |

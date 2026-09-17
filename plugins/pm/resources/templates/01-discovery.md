@@ -6,7 +6,7 @@
 | Case · lane | <case id> · <lane id> |
 | Persona · mandate | <persona> · <mandate> |
 | Pinned sources | <owner/repo @ sha> (primary); <owner/repo @ sha> (companion, if any) |
-| Research window | started <time> · ended <time> · fetches <n>/16 · searches <n>/8 |
+| Research window | started <time> · ended <time> · fetches <n>/20 · searches <n>/8 |
 | Selected opportunity | OPP-### |
 
 ## 1. Problem framing

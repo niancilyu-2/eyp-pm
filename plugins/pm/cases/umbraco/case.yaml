@@ -100,3 +100,23 @@ feeds:
     - { name: "Kentico", page: "https://www.kentico.com/platform/how-to-buy", wayback: "https://archive.org/wayback/available?url=www.kentico.com/platform/how-to-buy&timestamp={yyyymmdd}" }
     - { name: "Sanity", page: "https://www.sanity.io/pricing", wayback: "https://archive.org/wayback/available?url=www.sanity.io/pricing&timestamp={yyyymmdd}" }
   reddit_rss_optional: "https://www.reddit.com/r/umbraco.rss"   # facilitator opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl if the facilitator says so
+  forum_top_json: "https://forum.umbraco.com/top.json?period=yearly"
+  forum_tag_top_json:   # forum has no publishing, validation or language tags; these are the closest lane-relevant tags with yearly top topics
+    - { tag: media-management, url: "https://forum.umbraco.com/tag/media-management/l/top.json?period=yearly" }
+    - { tag: bellissima, url: "https://forum.umbraco.com/tag/bellissima/l/top.json?period=yearly" }   # the current backoffice UI
+    - { tag: feature-suggestions, url: "https://forum.umbraco.com/tag/feature-suggestions/l/top.json?period=yearly" }
+    - { tag: users-permissions, url: "https://forum.umbraco.com/tag/users-permissions/l/top.json?period=yearly" }
+  hackernews_comments: "https://hn.algolia.com/api/v1/search?query={query}&tags=comment&hitsPerPage=10"
+  app_store_lookup: []   # no official Umbraco mobile app
+  wikipedia_pageviews:
+    - { article: "Umbraco", url: "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Umbraco/monthly/{start}/{end}" }
+  roadmap:
+    own:
+      - { type: github-projects, url: "https://github.com/orgs/umbraco/projects" }
+      - { type: roadmap-page, url: "https://umbraco.com/products/knowledge-center/roadmap/" }   # canonical URL; umbraco.com/products/roadmap/ redirects here
+      # github-milestones omitted: umbraco/Umbraco-CMS has no open milestones
+    competitor_jobs:
+      - { name: "Storyblok", type: greenhouse, url: "https://boards-api.greenhouse.io/v1/boards/storyblok/jobs" }
+      - { name: "WordPress.com", type: page, url: "https://automattic.com/work-with-us/" }   # Automattic runs its own careers site; no Ashby, Greenhouse or Lever board
+      - { name: "Kentico", type: page, url: "https://jobs.kentico.com/overview" }   # own careers site; no Ashby, Greenhouse or Lever board
+      - { name: "Sanity", type: ashby, url: "https://api.ashbyhq.com/posting-api/job-board/sanity" }

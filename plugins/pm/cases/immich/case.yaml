@@ -127,3 +127,19 @@ feeds:
     - { name: "Google Photos (Google One plans)", page: "https://one.google.com/about/plans", wayback: "https://archive.org/wayback/available?url=one.google.com/about/plans&timestamp={yyyymmdd}" }
     - { name: "Synology Photos", page: "https://www.synology.com/en-us/dsm/feature/photos", wayback: "https://archive.org/wayback/available?url=www.synology.com/en-us/dsm/feature/photos&timestamp={yyyymmdd}" }
   reddit_rss_optional: "https://www.reddit.com/r/immich.rss"   # facilitator opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl if the facilitator says so
+  forum_top_json: null   # the TrueNAS Discourse is only a proxy forum and has no immich tag (checked https://forums.truenas.com/tags.json), so its yearly top list would not be about Immich
+  forum_tag_top_json: []   # no immich tag on forums.truenas.com; /tag/immich/l/top.json returns 404
+  hackernews_comments: "https://hn.algolia.com/api/v1/search?query={query}&tags=comment&hitsPerPage=10"
+  app_store_lookup:
+    - { app: "Immich", id: 1613945652, url: "https://itunes.apple.com/lookup?id=1613945652&country=us", fields: "averageUserRating, userRatingCount, version, releaseNotes, currentVersionReleaseDate" }
+  wikipedia_pageviews: []   # no English Wikipedia article; page summary for Immich returns 404
+  roadmap:
+    own:
+      - { type: github-projects, url: "https://github.com/orgs/immich-app/projects" }
+      - { type: github-milestones, url: "https://github.com/immich-app/immich/milestones" }
+      - { type: roadmap-page, url: "https://immich.app/roadmap" }
+    competitor_jobs:
+      - { name: "Ente Photos", type: page, url: "https://jobs.ente.com" }   # no Ashby, Greenhouse or Lever board under ente, ente-io or enteio
+      - { name: "PhotoPrism", type: page, url: "https://www.photoprism.app/jobs" }
+      - { name: "Google Photos (Google One plans)", type: page, url: "https://www.google.com/about/careers/applications/jobs/results/" }
+      - { name: "Synology Photos", type: page, url: "https://www.synology.com/en-us/company/career" }

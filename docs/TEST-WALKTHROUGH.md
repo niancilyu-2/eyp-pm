@@ -25,7 +25,7 @@ Type `/pm:scout`. On the first run it:
 Choose *stop after setup* to continue another day, or *continue* to go straight on.
 
 From here every reply ends with a status line:
-`Scout · step 5/10 · fetches 6/16 · searches 0/8 · items 5 · quotes 3/8 · 14 min · sources clean`.
+`Scout · step 5/10 · fetches 6/20 · searches 0/8 · items 5 · quotes 3/8 · 14 min · sources clean`.
 If it ever says `sources CHANGED`, stop and note the step.
 
 ## 3. Pick a case and lane

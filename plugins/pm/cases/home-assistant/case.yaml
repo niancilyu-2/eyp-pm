@@ -153,3 +153,25 @@ feeds:
     - { name: "Homey", page: "https://homey.app/en-us/homey-pro", wayback: "https://archive.org/wayback/available?url=homey.app/en-us/homey-pro&timestamp={yyyymmdd}" }
     - { name: "openHAB", page: "https://www.openhab.org", wayback: "https://archive.org/wayback/available?url=www.openhab.org&timestamp={yyyymmdd}" }
   reddit_rss_optional: "https://www.reddit.com/r/homeassistant.rss"   # facilitator opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl if the facilitator says so
+  forum_top_json: "https://community.home-assistant.io/top.json?period=yearly"
+  forum_tag_top_json:
+    - { tag: dashboard, url: "https://community.home-assistant.io/tag/dashboard/l/top.json?period=yearly" }
+    - { tag: devices, url: "https://community.home-assistant.io/tag/devices/l/top.json?period=yearly" }
+    - { tag: backup, url: "https://community.home-assistant.io/tag/backup/l/top.json?period=yearly" }
+    - { tag: automation, url: "https://community.home-assistant.io/tag/automation/l/top.json?period=yearly" }
+  hackernews_comments: "https://hn.algolia.com/api/v1/search?query={query}&tags=comment&hitsPerPage=10"
+  app_store_lookup:
+    - { app: "Home Assistant", id: 1099568401, url: "https://itunes.apple.com/lookup?id=1099568401&country=us", fields: "averageUserRating, userRatingCount, version, releaseNotes, currentVersionReleaseDate" }
+  wikipedia_pageviews:
+    - { article: "Home_Assistant", url: "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Home_Assistant/monthly/{start}/{end}" }
+  roadmap:
+    own:
+      - { type: github-projects, url: "https://github.com/orgs/home-assistant/projects" }
+      - { type: github-milestones, url: "https://github.com/home-assistant/frontend/milestones" }
+      - { type: github-milestones, url: "https://github.com/home-assistant/core/milestones" }
+      - { type: roadmap-page, url: "https://www.home-assistant.io/blog/categories/roadmap/" }   # half-yearly roadmap posts from the Home Assistant founders
+    competitor_jobs:
+      - { name: "Samsung SmartThings", type: page, url: "https://www.samsung.com/us/careers/" }   # smartthings.com/careers returns 404
+      # Hubitat omitted: hubitat.com/pages/careers returns 404, the homepage has no jobs link, and no Ashby, Greenhouse or Lever board exists under hubitat
+      - { name: "Homey", type: page, url: "https://homey.app/en-us/careers/" }
+      # openHAB omitted: community project run by the openHAB Foundation e.V.; neither openhab.org nor openhabfoundation.org has a jobs or careers page

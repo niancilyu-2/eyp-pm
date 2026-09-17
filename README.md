@@ -16,10 +16,11 @@ Claude supplies evidence, options, drafts, and challenges. The PM makes every ac
 product decision, and every stage records which was which.
 
 The Discovery stage is built around a source ladder: keyless public feeds that most desk
-research never touches. Forum search JSON, GitHub discussions ranked by upvotes and issues
-ranked by reactions, Lemmy and Mastodon, Hacker News, Apple App Store review feeds,
-Docker Hub and package download counts, and Wayback Machine snapshots of competitor pricing
-pages from a year ago. Every item carries its URL, dates, and weight, and the stage ends
+research never touches. Forum search and top-thread lists, GitHub discussions ranked by upvotes and issues
+ranked by reactions, Lemmy and Mastodon, Hacker News stories and comments, Apple App Store
+reviews and release notes, Docker Hub and package download counts, Wikipedia pageview
+trends, the product's own roadmap boards, competitors' live job postings, and Wayback
+Machine snapshots of competitor pricing pages from a year ago. Every item carries its URL, dates, and weight, and the stage ends
 with a triangulation table showing which themes appear across several sources and a quote
 bank of users' own words that follows the work into the PRD. No logins, no API keys, no
 scraping.

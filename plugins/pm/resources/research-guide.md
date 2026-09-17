@@ -12,7 +12,7 @@ time. Record the start time with `date` and show elapsed time at the research ch
 
 | Budget | Limit |
 |---|---|
-| Feed and page fetches | 16 |
+| Feed and page fetches | 20 |
 | Web searches (if the search tool works) | 8 |
 | Stop when | the coverage table is met, the fetch budget is spent, or the participant says time is up |
 
@@ -34,12 +34,15 @@ If a rung is unavailable, log the gap (`GAP: <source>, <reason>`) and move on.
 
 Each case's `case.yaml` has a `feeds:` block with ready-made URL templates. Replace
 `{query}` with a URL-encoded lane term (two or three words) and `{yyyymmdd}` with a date
-about a year ago. Walk the rungs in this order. Rungs 1 to 4 and 6: at most two fetches each. Rung 5: one
-competitor, three fetches; a second competitor only if budget remains.
+about a year ago. Walk the rungs in this order. Rungs 1 to 4 and 6: at most three fetches each. Rung 5: one
+roadmap source plus one competitor comparison (three fetches); more only if budget
+remains.
 
 **Rung 1. Community voice, structured.**
 - `forum_search_json`: the product's Discourse forum returns JSON with post blurbs,
   authors, dates, and like counts. Sort mentally by likes and recency.
+- `forum_top_json` and `forum_tag_top_json`: what the forum itself ranked highest this
+  year, overall and per tag. One fetch of the lane's tag often beats three searches.
 - `github_discussions_top`: GitHub Discussions sorted by upvotes. Feature requests with
   hundreds of upvotes and years of comments are demand signals with a paper trail.
 - `github_issues_top`: the GitHub search API ranked by thumbs-up reactions. Read
@@ -59,10 +62,14 @@ competitor, three fetches; a second competitor only if budget remains.
   voice, sometimes a bug report before it reaches GitHub.
 - `hackernews_search`: launch and release threads collect comparisons with competitors.
   Points and comment counts are public.
+- `hackernews_comments`: the same search over comments. This is where the quotable
+  opinions are; stories only give you titles.
 
 **Rung 3. Review voice.**
 - `app_store_reviews`: Apple's public review feed for the product's mobile app, with
   ratings, titles, dates, and full text. Read the most recent twenty and the one-star ones.
+- `app_store_lookup`: the same app's rating count, average, current version, and release
+  notes in one call. Release notes tell you what the maker shipped last.
 - Review directories listed under `public_channels` (OpenAlternative, Slashdot, App Store
   listing pages). G2, Capterra, Trustpilot, and Product Hunt block automated reading; do
   not try.
@@ -70,8 +77,16 @@ competitor, three fetches; a second competitor only if budget remains.
 **Rung 4. Demand and adoption numbers.**
 - `adoption`: GitHub stars and open issues, Docker Hub pull counts, PyPI or NuGet
   downloads. One number each, with the date. These are market signals, not user signals.
+- `wikipedia_pageviews`: monthly views of the product's Wikipedia article for the last
+  year, when an article exists. A rough public-interest trend; compare with a competitor
+  if both have articles.
 
-**Rung 5. Competitor time travel.**
+**Rung 5. Competitor time travel and roadmap tells.**
+- `roadmap.own`: the product's own public project boards, milestones, or roadmap page.
+  Read it before proposing anything, so you do not rediscover what is already planned.
+- `roadmap.competitor_jobs`: competitors' live job postings from their public applicant
+  systems (Ashby, Greenhouse, Lever) or careers pages. Titles and team names say what they
+  are building next. Log as `Inference`, never as a fact about their roadmap.
 - `competitors`: pricing, features, or product pages. For one of them, fetch today's page, then the Wayback `available` URL to get a
   snapshot from about a year ago, then fetch that snapshot. Note what changed: plans,
   prices, features added or removed, positioning words. Label the comparison `Evidence`
