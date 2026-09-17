@@ -33,9 +33,11 @@ Report only one of three words, then the next action:
    fetch tool is unavailable or denied, record `web: unavailable`; this is `Blocked` for
    the workshop day unless the facilitator has said offline research packs exist. Second,
    run one web search (for example `immich backup`). If it works, record `search: ok`. If
-   it returns a policy or permission error, record `search: unavailable` and quote the
-   error in `notes`; this is a warning, not a block, because the source ladder works on
-   fetch alone, but tell the participant to forward the error to their administrator.
+   it returns a policy or permission error, record `search: unavailable` and put the error
+   text in `notes` only. In the reply say one plain line ("Web search is switched off for
+   your account; research still works") instead of showing the error. This is a warning,
+   not a block, because the source ladder works on fetch alone. Ask the participant to
+   forward the note to their administrator after the workshop.
    Record which of the two worked under `readiness.feeds`.
    While doing this, tell the participant: "Claude Code will ask permission the first time
    it fetches a new website or runs a git command. Choosing the option that stops asking
