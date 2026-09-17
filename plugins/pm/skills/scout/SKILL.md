@@ -52,7 +52,10 @@ repositories. If a case was pre-selected during readiness, say so and offer to k
 Ask for the case, then the lane (two questions, not one). Save `case.id`, `case.lane`,
 and `case.chosen_at` to `session.yaml`.
 
-Give a short orientation from the case's `orientation.md`: what the product is, who the
+Before the orientation, define three words in one line each, because they recur all
+day: repository (the product's source code, kept in a folder), pinned commit (a fixed
+snapshot of that code from a set date), and sources clean (nothing in that folder has
+changed). Then give a short orientation from the case's `orientation.md`: what the product is, who the
 persona is, the lane's territory, surface, and viewport, and the two or three repository
 folders most relevant to the lane. Keep it under 200 words. Do not offer opinions about
 what the problems are.
@@ -73,7 +76,8 @@ Set `stage.current: discovery`, `stage.status: in-progress`,
 ## Step 5: Public research pass (the source ladder)
 
 Follow `${CLAUDE_PLUGIN_ROOT}/resources/research-guide.md` exactly. Record the start time.
-Read the `feeds:` block of the case's `case.yaml`. Pick two or three lane terms with the
+Tell the participant once what a rung is: one kind of public source, and the ladder is
+the order you read them in. Read the `feeds:` block of the case's `case.yaml`. Pick two or three lane terms with the
 participant (one question) and walk the ladder in order: forum search JSON and GitHub
 (discussions by upvotes, issues by reactions), then Lemmy, Mastodon tags, and Hacker
 News, then App Store reviews, then adoption numbers, then competitor pages today versus
@@ -128,7 +132,7 @@ yours; note the difference without arguing.
 
 ## Step 10: Save and close
 
-- Complete the draft and copy it to `outputs/01-discovery.md`: status `approved` (or `provisional` if the research
+- Complete the draft, copy it to `outputs/01-discovery.md`, delete the draft: status `approved` (or `provisional` if the research
   was cut short or coverage was weak; say so in the status line and in section 2),
   selected opportunity, assumptions, open questions, decision record.
 - Update `session.yaml`: `stages.discovery` (`status: approved`, `revision` +1,

@@ -68,8 +68,10 @@ Keep the draft saved as you go.
 
 ## Step 3: Scope check-in (participant check-in 1)
 
-Present goals, non-goals, expected behaviour, alternate states, the three candidate
-quotes (ask which two to keep), and the acceptance criteria list in plain language. Show **Claude's recommendation** (including anything you
+Two turns, each under about 300 words. First turn: the problem statement, the three
+candidate quotes (ask which two to keep), goals, and non-goals. Second turn: expected
+behaviour, alternate states, and the acceptance criteria as short yes/no items, with any
+number or threshold explained in plain words. Show **Claude's recommendation** (including anything you
 think is over- or under-scoped) and **Your decision**. The participant approves or edits.
 Apply edits, then record `D-###`.
 
@@ -112,7 +114,7 @@ confirms the open product questions. Record `D-###`.
 ## Step 7: Save and close
 
 - Set the PRD status to `ready-for-engineering-review`; fill section 11 and Appendix A;
-  copy the draft to `outputs/03-prd.md`.
+  copy the draft to `outputs/03-prd.md` and delete the draft.
 - Complete `outputs/03-prd-review.md` with the approved dispositions.
 - Update `session.yaml`: `stages.prd` (`status: approved`, `revision` +1, `approved_at`),
   `stage.current: done`, `stage.status: approved`.

@@ -119,7 +119,8 @@ and patterns from Step 3 and list them in section 6 of the notes. Set
 
 ## Step 8: Walkthrough (PM design critique)
 
-Open the file for the participant if not already open. Walk the main path and each state
+Ask the participant to open the file if they have not said so. Record only what they
+report. Walk the main path and each state
 together, using the checklist in `prototype-html-guide.md`: labels, navigation, keyboard,
 state clarity, obvious contrast, scope. Record findings in section 8 of the notes. This is
 a design critique, not customer validation; say so once.
@@ -129,7 +130,7 @@ a design critique, not customer validation; say so once.
 Propose one change tied to a discovery item (`SIG-###`/`CON-###`) or a walkthrough
 finding. Make at least one change after approval, in the HTML (either path; if Design
 produced the file, edit the exported HTML directly or ask the participant to make the
-change in Design and re-export). Record before and after in section 9.
+change in Design and re-export). Record before and after in section 9 and show `revision 1` in this reply's usage line.
 
 ## Step 10: Prototype check-in (participant check-in 2)
 
@@ -140,8 +141,8 @@ Record `D-###`.
 
 ## Step 11: Save and close
 
-- Complete the draft and copy it to `outputs/02-prototype.md` (status `approved`, all 11
-  sections).
+- Complete the draft, copy it to `outputs/02-prototype.md`, delete the draft (status
+  `approved`, all 11 sections).
 - Update `session.yaml`: `stages.prototype` (`status: approved`, `revision` +1,
   `approved_at`, `path`), `stage.current: prd`, `stage.status: not-started`.
 - Source check; record `clean_at_end`.

@@ -112,7 +112,7 @@ or `approved`:
 - Offer **Resume** (continue from the last recorded step and the current draft file) or
   **Restart** (begin the stage again).
 - Drafts are written under `.pm/drafts/` (same file names as `outputs/`). At the approve
-  step, copy the draft over the `outputs/` file and increment `revision`. The prototype
+  step, copy the draft over the `outputs/` file, increment `revision`, and delete the draft. The prototype
   HTML is the one exception, because the Design export lands in `outputs/prototype/`
   directly: on restart, copy the approved `index.html` to `.pm/drafts/index.approved.html`
   first, and restore it if the restart is abandoned.

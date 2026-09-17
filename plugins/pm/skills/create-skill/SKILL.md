@@ -89,7 +89,9 @@ Show the result in one line. If it fails, fix and re-run.
 Follow the testing section of `project-skill-template.md`: the participant opens a new
 Claude Code session in the same folder, confirms `/<slug>` appears in `/skills`, runs it
 with the agreed public or synthetic input, and pastes the result back here. Wait for the
-paste. If nothing comes back, record `not tested`; never infer success.
+paste. If nothing comes back, record `not tested`; never infer success. Record only what
+the participant reports; do not write that the skill appeared in `/skills` unless they say
+so.
 
 Review the pasted result against: trigger clarity, missing context, output usefulness,
 unsupported assumptions, PM decision ownership, scope.
@@ -100,7 +102,8 @@ Propose at most one revision from the review, or explain why none is needed. Pre
 **Claude's recommendation** and **Your decision**. After the participant approves, apply
 it and re-run the validate command. Then ask the participant to state, in their words,
 what the skill automates and what remains their judgment, and to confirm the skill
-provides the intended help.
+provides the intended help. Copy those answers into the summary exactly as typed, as
+separate quotations. Do not merge or extend them.
 
 ## Step 8: Summary and close
 

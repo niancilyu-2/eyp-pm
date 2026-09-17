@@ -4,7 +4,16 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.3.0 (unreleased)
+## 0.3.1 (unreleased)
+
+- Fixes from a cold-read review and a simulated participant run: drafts live in
+  `.pm/drafts/` and are promoted on approval; clone reuse and case-switch handling; fetch
+  budget arithmetic for competitor comparisons; coverage-based stop rule; schema and
+  ownership corrections; plain-language definitions for repository, pinned commit, sources
+  clean, and rung; check-ins capped at about 300 words and the PRD scope check split in two;
+  record only observed participant actions; quote answers verbatim.
+
+## 0.3.0
 
 - Quote bank: verbatim user quotes (`QUO-###`) captured during the research pass from
   fetched text only, stored in the discovery file, shown at the priority and flow

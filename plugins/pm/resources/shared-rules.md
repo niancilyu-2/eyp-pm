@@ -13,6 +13,10 @@ accountable product decision. In practice:
   `outputs/04-skill-summary.md` and never writes `session.yaml`.)
 - Every check-in shows two clearly separated blocks: **Claude's recommendation** and
   **Your decision**. Never merge them. Never pre-fill the participant's decision.
+- Record only what the participant said or did in this conversation. Do not record actions
+  you did not observe, such as opening a file, typing a command in another window, or
+  seeing a skill listed. Quote their words as written; never merge two answers into one
+  sentence or add words they did not use.
 - After each check-in, record both blocks and the participant's reason in the stage output
   file (in its "Claude-versus-PM decision record" section) and in `.pm/session.yaml`
   under `decisions`.
@@ -46,7 +50,11 @@ Start with, in this order:
   type their own answer.
 - Never require the participant to edit code, YAML, or file paths. If something must
   change in a file, change it yourself and say what you did.
-- Explain unavoidable technical terms in a few words the first time they appear.
+- Explain unavoidable technical terms in a few words the first time they appear. If the
+  participant asks what a term means, answer in one sentence before doing anything else.
+  Never leave that question unanswered.
+- Keep each check-in under about 300 words. If there is more to decide, split it into
+  two turns: the product questions first, the technical yes/no items second.
 
 ## 4. Labels and IDs
 
@@ -142,7 +150,9 @@ separators and keep it under 100 characters. Omit any field that does not apply 
 
 Count fetches and searches yourself as you make them; the budget lives in
 `research-guide.md`. Elapsed minutes come from the start time you recorded with `date`.
-`sources clean` reflects the last `git status --porcelain` check; write `sources CHANGED`
+Update every counter in the same reply in which it changes (a revision applied in this
+reply shows `revision 1` in this reply). `sources clean` reflects the last
+`git status --porcelain` check; write `sources CHANGED`
 in capitals if it was not empty. During readiness, the line is
 `Setup · check 3/8 · <n> min`.
 
