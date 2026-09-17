@@ -33,6 +33,9 @@ Contradictions: <one line each, citing the IDs that disagree, or "none">
 ## 3. Evidence log
 <One block per SIG-### in the research-guide format.>
 
+## 3b. Quote bank
+<One block per QUO-### in the research-guide format. Target 8 across at least 3 rungs. Mark single-voice themes and partial quotes.>
+
 ## 4. Repository constraints
 <One block per CON-### with a repository path at the pinned commit.>
 
@@ -40,6 +43,7 @@ Contradictions: <one line each, citing the IDs that disagree, or "none">
 ### OPP-001: <title>
 - For: <actor> · Job: <job>
 - Supported by: <SIG/CON IDs>
+- In their words: <QUO IDs>
 - Evidence strength / user impact / mandate fit / delivery constraints / uncertainty: <one short phrase each>
 ### OPP-002: <title>
 …

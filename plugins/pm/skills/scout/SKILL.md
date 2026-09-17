@@ -24,7 +24,7 @@ problem framing, evidence quality, the selected opportunity, the roadmap order, 
 uncertainty you accept.
 
 Then state the stage boundary from the shared rules. From here on, end every reply with
-the usage line described in shared rules section 9 (`Scout · step n/10 · fetches · searches · items · minutes · sources`).
+the usage line described in shared rules section 9 (`Scout · step n/10 · fetches · searches · items · quotes · minutes · sources`).
 
 ## Step 1: Readiness and workspace
 
@@ -78,7 +78,9 @@ their Wayback snapshot from a year ago, then official release notes, and only th
 snippets if `readiness.search` is `ok`. Reddit only if `readiness.reddit_rss` is true.
 
 Respect the budget: 16 fetches, 8 searches, stop at 8 usable items or when the
-participant says time is up. Log every item with an ID, label, rung, URL, dates, and
+participant says time is up. As you read, fill the quote bank (research guide, "Quote
+bank"): verbatim, role not handle, linked to a signal, only from text fetched in this
+session. Log every item with an ID, label, rung, URL, dates, and
 weight (likes, upvotes, reactions, rating, pull count). Keep a running draft in
 `outputs/01-discovery.md` from `${CLAUDE_PLUGIN_ROOT}/resources/templates/01-discovery.md`
 so nothing is lost if the session is interrupted. Tell the participant which rung you are
@@ -106,14 +108,15 @@ choose an extra search, do it (within budget) and return here once.
 ## Step 8: Draft three opportunities
 
 Write exactly three `OPP-###` entries. Each names one actor and one job, cites its
-supporting IDs, and gives one short phrase for each of the five lenses: evidence strength,
+supporting IDs and the quote IDs that voice it, and gives one short phrase for each of the five lenses: evidence strength,
 user impact, mandate fit, delivery constraints, uncertainty. Do not compute a score. Check
 each against the case `exclusions`; drop and replace anything excluded.
 
 ## Step 9: Priority check-in (participant check-in 2)
 
 Recommend a `Now / Next / Later` order with one sentence of reasoning per slot and the main
-trade-off between the top two. Show **Claude's recommendation** and **Your decision**
+trade-off between the top two. Under each slot show the strongest quote for that
+opportunity so the participant decides against real words, not only your summary. Show **Claude's recommendation** and **Your decision**
 separately. Ask the participant to choose the `Now` opportunity and give their reason in
 their own words. Record `D-###`. The participant's choice wins even if it differs from
 yours; note the difference without arguing.

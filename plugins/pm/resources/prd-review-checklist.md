@@ -11,24 +11,27 @@ The reviewer reads only; it returns findings as text. `/pm:prd` writes them to
 1. **Traceability.** Every `REQ-###` links to the selected `OPP-###` and to at least one
    `SIG-###`, `CON-###`, or an approved prototype screen or state. Every `AC-###` links to a
    `REQ-###`. Flag orphans in either direction.
-2. **Unsupported technical claims.** Every technical statement is labelled `Verified`,
+2. **Quote provenance.** Every quotation in the PRD carries a `QUO-###` that exists in
+   `01-discovery.md` section 3b with a URL, and the wording matches that entry. Flag any
+   quote that appears only in the PRD or differs from the bank.
+3. **Unsupported technical claims.** Every technical statement is labelled `Verified`,
    `Inferred`, or `Engineering-owned`. For `Verified`, open the cited path in `sources/` and
    confirm it exists and says what the PRD claims. Flag invented file names, APIs, or data
    models. Flag estimates, story points, dates, or costs anywhere in the document.
-3. **Missing states or permissions.** The approved main path and the two alternate states
+4. **Missing states or permissions.** The approved main path and the two alternate states
    from `02-prototype.md` appear in the PRD. Loading, empty, error, permission, and
    recovery behaviour is either specified or explicitly marked out of scope. Role and
    permission behaviour is stated where the product has roles.
-4. **Untestable acceptance criteria.** Each `AC-###` describes an observable outcome a
+5. **Untestable acceptance criteria.** Each `AC-###` describes an observable outcome a
    tester could confirm without interpreting intent. Flag vague words ("fast", "intuitive",
    "appropriate") without a measurable condition.
-5. **Scope conflicts.** Goals, non-goals, and requirements agree with each other and with
+6. **Scope conflicts.** Goals, non-goals, and requirements agree with each other and with
    the approved discovery and prototype scope. Flag requirements that belong to another
    lane or that widen scope beyond the prototype.
-6. **Delivery risks.** Note relevant risks visible from the repository or the PRD itself:
+7. **Delivery risks.** Note relevant risks visible from the repository or the PRD itself:
    data migration, breaking changes to existing behaviour, privacy or security implications,
    accessibility gaps, and dependencies on other components. Do not propose architecture.
-7. **Blocking open questions.** Any `OPEN-###` whose answer would change product scope,
+8. **Blocking open questions.** Any `OPEN-###` whose answer would change product scope,
    user behaviour, data or security behaviour, or acceptance criteria must be flagged as
    **blocking**. Others are nonblocking engineering questions.
 
@@ -41,7 +44,7 @@ The reviewer reads only; it returns findings as text. `/pm:prd` writes them to
 ## Findings
 | ID | Severity | Area | Finding | Where | Suggested disposition |
 |---|---|---|---|---|---|
-| RV-001 | blocking / major / minor | traceability / technical-claim / states / acceptance / scope / risk / open-question | <one sentence> | <section or ID in 03-prd.md> | <fix in PRD / convert to engineering question / accept with note> |
+| RV-001 | blocking / major / minor | traceability / quote / technical-claim / states / acceptance / scope / risk / open-question | <one sentence> | <section or ID in 03-prd.md> | <fix in PRD / convert to engineering question / accept with note> |
 
 ## Verified touchpoints
 | Path | Exists | Matches claim |

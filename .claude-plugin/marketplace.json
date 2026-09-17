@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "EYP PM workshop: a Claude Code plugin that takes product managers from public evidence to a clickable prototype to an engineering-ready PRD, plus a skill-creation capstone.",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "plugins": [
     {
       "name": "pm",
       "source": "./plugins/pm",
       "description": "Discovery, rapid prototyping, PRD handoff, and a skill-creation capstone for product managers. Commands: /pm:scout, /pm:prototype, /pm:prd, /pm:create-skill.",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "category": "productivity",
       "keywords": ["product-management", "workshop", "prd", "prototype", "discovery"]
     }

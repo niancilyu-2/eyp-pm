@@ -37,7 +37,9 @@ rules section 9 (`Prototype · step n/11 · path · revision · minutes · sourc
 
 ## Step 1: Confirm the flow (short conversational questions)
 
-Ask, one at a time or in pairs, with options drawn from the opportunity and the lane:
+First show the two or three quotes from the discovery quote bank that belong to the
+selected opportunity, so the actor and job are confirmed against users' own words.
+Then ask, one at a time or in pairs, with options drawn from the opportunity and the lane:
 
 1. Who is the one actor, and what is the one job in their words?
 2. Where does the task start, and what does "done" look like?

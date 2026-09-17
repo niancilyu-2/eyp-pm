@@ -20,8 +20,9 @@ research never touches. Forum search JSON, GitHub discussions ranked by upvotes 
 ranked by reactions, Lemmy and Mastodon, Hacker News, Apple App Store review feeds,
 Docker Hub and package download counts, and Wayback Machine snapshots of competitor pricing
 pages from a year ago. Every item carries its URL, dates, and weight, and the stage ends
-with a triangulation table showing which themes appear across several sources. No logins,
-no API keys, no scraping.
+with a triangulation table showing which themes appear across several sources and a quote
+bank of users' own words that follows the work into the PRD. No logins, no API keys, no
+scraping.
 
 This is a workshop kit for 15–20 participants working individually, not a production
 product-management system. No programming is required and the selected product's source

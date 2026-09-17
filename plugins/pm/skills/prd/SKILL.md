@@ -60,13 +60,16 @@ Rules:
 - Open questions get `OPEN-###` with an owner and a yes/no on whether the answer changes
   scope, user behaviour, data or security behaviour, or acceptance criteria.
 - Appendix A lists touchpoints with labels and paths.
+- Voice of the customer: propose three quotes from the discovery quote bank (section 3b)
+  for section 1. The participant picks two at the scope check-in. Copy them verbatim with
+  their `QUO-###`, role, channel, date, and URL. Never edit a quote.
 
 Keep the draft saved as you go.
 
 ## Step 3: Scope check-in (participant check-in 1)
 
-Present goals, non-goals, expected behaviour, alternate states, and the acceptance
-criteria list in plain language. Show **Claude's recommendation** (including anything you
+Present goals, non-goals, expected behaviour, alternate states, the three candidate
+quotes (ask which two to keep), and the acceptance criteria list in plain language. Show **Claude's recommendation** (including anything you
 think is over- or under-scoped) and **Your decision**. The participant approves or edits.
 Apply edits, then record `D-###`.
 

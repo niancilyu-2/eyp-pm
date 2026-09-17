@@ -95,6 +95,40 @@ in the forum, in App Store reviews, and as a 500-upvote discussion is a differen
 claim from one that appears once. Themes that appear in only one place stay in the log
 but are marked single-source. Put this table in section 2 of the discovery file.
 
+## Quote bank
+
+While walking the ladder, collect the participant's future evidence in the users' own
+words. Target eight quotes across at least three rungs. Quotes come only from text you
+fetched in this session: forum post bodies, GitHub issue and discussion bodies and
+comments, App Store review text, Lemmy and Mastodon posts, Hacker News comments. A search
+snippet is never a quote.
+
+Rules:
+
+- Verbatim. At most 40 words. Mark cuts with an ellipsis. Do not fix grammar or spelling.
+- If the fetched page was truncated, log what you have and add `partial`. Never complete a
+  sentence from memory.
+- Author as a role, not a handle: "a forum user", "an App Store reviewer", "a GitHub
+  commenter", "a Mastodon user". The URL keeps it traceable. Remove any email address or
+  personal name inside the quote.
+- Every quote links to the signal it supports (`SIG-###`). A quote with no signal gets its
+  own signal first.
+- Prefer quotes that describe a situation or a workaround over quotes that only praise or
+  complain. Prefer recent over old. Note when a quote is the only voice for its theme.
+
+Format:
+
+```text
+QUO-003 · supports SIG-002 · App Store review (rung 3) · 2026-08-16 · accessed 2026-10-01
+  "…the widget is great but I still open the app twice a day to check whether last night's
+  photos actually went up."
+  Source: https://apps.apple.com/us/app/immich/id1613945652 · rating 5/5 · an App Store reviewer
+```
+
+Show one or two quotes per rung as you go so the participant hears the voice early. Put
+the full bank in section 3b of the discovery file and list quote IDs under each
+opportunity in section 5.
+
 ## Logging an item
 
 Every item gets a stable ID and one line per field:
@@ -128,8 +162,8 @@ Rules:
 
 ## Research check-in (first participant check-in)
 
-Show, in this order: coverage against the table above, the triangulation table,
-contradictions, gaps (including which rungs were unreachable), elapsed time, and one plain
+Show, in this order: coverage against the table above, the triangulation table, the two
+strongest quotes, contradictions, gaps (including which rungs were unreachable), elapsed time, and one plain
 sentence on whether you think the problem framing is good enough to continue. Then ask the
 participant to decide: continue, do one more targeted fetch (say which rung), or narrow
 the framing. Record the decision as `D-###`.
