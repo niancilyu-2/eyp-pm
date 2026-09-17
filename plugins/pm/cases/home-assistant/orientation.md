@@ -61,6 +61,8 @@ Core (`home-assistant/core`) is read online only, never cloned. Open the pinned 
 5. **GitHub discussions** (frontend) – lower volume; occasionally useful for design rationale.
 6. **App store listing** – reviews are short; read them for wording, not counts. Label any search-engine snippets from sites that block fetching as unverified.
 
+**Public feeds.** The `feeds:` block in case.yaml lists keyless sources checked for this case: community forum search JSON, Lemmy, Mastodon tags, Hacker News, App Store reviews, GitHub issues ranked by reactions, Docker Hub pulls, and Wayback snapshots of competitor pages. The scout skill walks them in that order. Each is a starting point only.
+
 ## Cautions
 
 - Public information only; do not sign in anywhere or scrape private groups.

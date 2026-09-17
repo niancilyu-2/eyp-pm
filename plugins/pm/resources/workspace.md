@@ -54,7 +54,7 @@ Why this shape: a plain shallow clone cannot target a commit, and full working t
 these products run 160–300 MB. Sparse plus partial fetch pulls only the folders the case
 needs (typically 15–60 MB) and lands exactly on the pinned commit.
 
-Record in `session.yaml` → `sources[]`: `pinned_sha`, `verified_sha` (from `git rev-parse
+Record under `sources[]` in `session.yaml`: `pinned_sha`, `verified_sha` (from `git rev-parse
 HEAD`), and `method: sparse-clone`.
 
 Entries with `role: web-reference` and `clone_to: null` are **not cloned**. Read specific

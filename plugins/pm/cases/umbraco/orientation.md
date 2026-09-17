@@ -41,6 +41,8 @@ The backoffice is written in TypeScript using Lit web components; the server is 
 6. **Review directory**: https://slashdot.org/software/p/Umbraco/. Anecdotal; use it for the vocabulary users choose, not for counts.
 7. **Reddit**: no fetchable URL passed our checks; if you use search-engine snippets from r/umbraco, label them unverified.
 
+**Public feeds.** The `feeds:` block at the end of `case.yaml` lists keyless URLs checked with plain HTTP on 2026-09-17: GitHub issue and Discussions search, the forum's `search.json`, Lemmy, the `#umbraco` Mastodon tag, Hacker News, GitHub and NuGet adoption counts, and four competitor pricing pages with Wayback lookups. Replace `{query}` with a lane term and `{yyyymmdd}` with a date one year back. The scout skill walks them in that order; treat results as leads. Reddit is an opt-in RSS line for the facilitator only.
+
 ## Cautions
 
 - Use public information only. Do not log in to anyone's live site or use client data.

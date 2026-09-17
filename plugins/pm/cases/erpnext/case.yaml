@@ -150,3 +150,24 @@ public_channels:
   - { type: releases, url: https://github.com/frappe/erpnext/releases, note: "Release notes; useful for spotting recent changes to stock and purchasing screens" }
   - { type: forum, url: https://discuss.frappe.io/, note: "Community Discourse forum; the largest source of real user questions and workarounds" }
   - { type: review-site, url: https://www.softwaresuggest.com/erpnext, note: "Third-party listing with user reviews; treat ratings as indicative only" }
+feeds:
+  github_issues_top: "https://api.github.com/search/issues?q=repo:frappe/erpnext+is:issue+{query}&sort=reactions-%2B1&per_page=10"
+  github_issues_top_companion: "https://api.github.com/search/issues?q=repo:frappe/frappe+is:issue+{query}&sort=reactions-%2B1&per_page=10"
+  github_discussions_top: null
+  forum_search_json: "https://discuss.frappe.io/search.json?q={query}"
+  lemmy_search: "https://lemmy.world/api/v3/search?q={query}&type_=Posts&sort=TopYear&limit=10"
+  lemmy_communities: []
+  mastodon_tags:
+    - { instance: mastodon.social, tag: erpnext, url: "https://mastodon.social/api/v1/timelines/tag/erpnext?limit=20" }
+    - { instance: fosstodon.org, tag: erpnext, url: "https://fosstodon.org/api/v1/timelines/tag/erpnext?limit=20" }
+  hackernews_search: "https://hn.algolia.com/api/v1/search?query={query}&tags=story&hitsPerPage=10"
+  app_store_reviews: []
+  adoption:
+    - { type: github-repo, url: "https://api.github.com/repos/frappe/erpnext", fields: "stargazers_count, open_issues_count, pushed_at" }
+    - { type: docker-hub, url: "https://hub.docker.com/v2/repositories/frappe/erpnext/", fields: "pull_count, last_updated" }
+  competitors:
+    - { name: "Odoo", page: "https://www.odoo.com/pricing", wayback: "https://archive.org/wayback/available?url=odoo.com/pricing&timestamp={yyyymmdd}" }
+    - { name: "Dolibarr", page: "https://www.dolibarr.org/", wayback: "https://archive.org/wayback/available?url=dolibarr.org&timestamp={yyyymmdd}" }
+    - { name: "Zoho Inventory", page: "https://www.zoho.com/us/inventory/pricing/", wayback: "https://archive.org/wayback/available?url=www.zoho.com/us/inventory/pricing/&timestamp={yyyymmdd}" }
+    - { name: "Katana", page: "https://katanamrp.com/pricing/", wayback: "https://archive.org/wayback/available?url=katanamrp.com/pricing/&timestamp={yyyymmdd}" }
+  reddit_rss_optional: "https://www.reddit.com/r/ERPNext.rss"   # facilitator opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl if the facilitator says so

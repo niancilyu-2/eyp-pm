@@ -49,6 +49,8 @@ Cone-mode sparse checkout also keeps files directly inside `frappe/`, so `frappe
 5. **Release notes, github.com/frappe/erpnext/releases.** Scan the last few releases for anything touching your lane so you do not propose what already shipped.
 6. **Review sites.** Use for tone and recurring themes only; ratings are not evidence.
 
+**Public feeds.** The `feeds:` block in `case.yaml` lists keyless URLs checked with plain HTTP on 2026-09-17: GitHub issue search for both repos (neither has Discussions), discuss.frappe.io `search.json`, Lemmy, the `#erpnext` Mastodon tag, Hacker News, GitHub and Docker Hub adoption counts, and four competitor pricing pages with Wayback lookups. Replace `{query}` with a lane term and `{yyyymmdd}` with a date one year back. The scout skill walks them in that order; Reddit is an opt-in RSS line for the facilitator only.
+
 ## Cautions
 
 - Use public information only. Do not import data, screenshots, or process descriptions from a real employer or client.

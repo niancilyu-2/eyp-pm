@@ -23,7 +23,8 @@ will* draft requirements, trace prior decisions, locate likely code touchpoints,
 raise technical questions. *You decide* product intent, scope, priority, expected
 behaviour, acceptance criteria, and which product questions stay open.
 
-State the stage boundary. Re-hydrate:
+State the stage boundary. From here on, end every reply with the usage line from shared
+rules section 9 (`PRD · step n/7 · REQ · AC · findings · minutes · sources`). Re-hydrate:
 
 - Read `.pm/session.yaml`. Stop with the next action if `stages.discovery.status` or
   `stages.prototype.status` is not `approved`, or if `prd` is in `stale`.

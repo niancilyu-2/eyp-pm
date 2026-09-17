@@ -22,6 +22,9 @@ prompt.
 
 **Outcome:** one working project skill and a short summary file.
 
+End every reply with the usage line from shared rules section 9
+(`Capstone · step n/8 · skill <slug> · test status · minutes`).
+
 ## Step 1: Prompt versus skill
 
 One short paragraph: a prompt handles one request; a skill captures instructions worth

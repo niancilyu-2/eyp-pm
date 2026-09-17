@@ -23,7 +23,8 @@ contradictions, identify repository constraints, and draft options. *You decide*
 problem framing, evidence quality, the selected opportunity, the roadmap order, and the
 uncertainty you accept.
 
-Then state the stage boundary from the shared rules.
+Then state the stage boundary from the shared rules. From here on, end every reply with
+the usage line described in shared rules section 9 (`Scout · step n/10 · fetches · searches · items · minutes · sources`).
 
 ## Step 1: Readiness and workspace
 
@@ -66,16 +67,25 @@ record `clean_at_start`.
 Set `stage.current: discovery`, `stage.status: in-progress`,
 `stages.discovery.status: in-progress`.
 
-## Step 5: Public research pass
+## Step 5: Public research pass (the source ladder)
 
-Follow `${CLAUDE_PLUGIN_ROOT}/resources/research-guide.md` exactly: record the start time,
-respect the budget (12 searches, 10 fetches, stop at 8 usable items or when the participant
-says time is up), use the case's `public_channels` in ranked order, and log every item with
-an ID and label. Keep a running draft in `outputs/01-discovery.md` using
-`${CLAUDE_PLUGIN_ROOT}/resources/templates/01-discovery.md` so nothing is lost if the
-session is interrupted.
+Follow `${CLAUDE_PLUGIN_ROOT}/resources/research-guide.md` exactly. Record the start time.
+Read the `feeds:` block of the case's `case.yaml`. Pick two or three lane terms with the
+participant (one question) and walk the ladder in order: forum search JSON and GitHub
+(discussions by upvotes, issues by reactions), then Lemmy, Mastodon tags, and Hacker
+News, then App Store reviews, then adoption numbers, then competitor pages today versus
+their Wayback snapshot from a year ago, then official release notes, and only then search
+snippets if `readiness.search` is `ok`. Reddit only if `readiness.reddit_rss` is true.
 
-Tell the participant when you start, roughly every four actions, and when you stop.
+Respect the budget: 16 fetches, 8 searches, stop at 8 usable items or when the
+participant says time is up. Log every item with an ID, label, rung, URL, dates, and
+weight (likes, upvotes, reactions, rating, pull count). Keep a running draft in
+`outputs/01-discovery.md` from `${CLAUDE_PLUGIN_ROOT}/resources/templates/01-discovery.md`
+so nothing is lost if the session is interrupted. Tell the participant which rung you are
+on as you go, and show one striking number or quote per rung so they can see the breadth.
+
+When the ladder is done, build the triangulation table (research guide, "Triangulation")
+before anything else.
 
 ## Step 6: Repository constraints
 
@@ -86,8 +96,9 @@ persona.
 
 ## Step 7: Research check-in (participant check-in 1)
 
-Present, in this order: coverage table, contradictions, gaps, elapsed time, and one
-sentence of your view on whether the framing is good enough. Then show two blocks,
+Present, in this order: coverage table, triangulation table, contradictions, gaps and
+unreachable rungs, elapsed time, and one sentence of your view on whether the framing is
+good enough. Then show two blocks,
 **Claude's recommendation** and **Your decision**, and ask the participant to choose:
 continue, do one specified extra search, or narrow the framing. Record `D-###`. If they
 choose an extra search, do it (within budget) and return here once.
@@ -123,6 +134,8 @@ yours; note the difference without arguing.
 
 - Web unavailable mid-stage: log the gap, continue with repository constraints and any
   items already collected, and save a `provisional` file. Never fabricate a source.
+- One rung refuses or rate-limits: log `GAP` for that rung and move to the next. Do not
+  retry in a loop.
 - GitHub unreachable for cloning: use the facilitator copy path in `workspace.md`.
 - Source folder changed: follow the source-protection steps in `workspace.md`; do not
   reset it.

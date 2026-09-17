@@ -44,7 +44,7 @@
 ## 9. Revision made
 - Change: <…>
 - Tied to: <SIG-### / finding #>
-- Before → after: <one line>
+- Before and after: <one line>
 
 ## 10. Remaining limitations
 - <…>

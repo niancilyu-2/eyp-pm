@@ -8,8 +8,8 @@ Report only one of three words, then the next action:
 
 | Result | Meaning |
 |---|---|
-| `Ready` | Everything works, including Claude Design. |
-| `Ready with fallback` | Everything works except Claude Design; the HTML path will be used. |
+| `Ready` | Everything works, including web search and Claude Design. |
+| `Ready with fallback` | Fetch works but web search or Claude Design does not; the source ladder and the HTML path cover both. |
 | `Blocked` | Something required is missing. State the single next action. |
 
 ## Checks, in order
@@ -28,10 +28,15 @@ Report only one of three words, then the next action:
    `browser_test: confirmed | unconfirmed`. Unconfirmed is a warning, not a block;
    tell them they can double-click the file in their file manager later. Delete the file
    afterwards.
-5. **Public web.** Fetch one public page you can verify, for example
-   `https://github.com/immich-app/immich/releases`. If the fetch tool is unavailable or
-   denied, record `web: unavailable`. This is `Blocked` for the workshop day unless the
-   facilitator has said offline research packs exist; say so.
+5. **Public web, two parts.** First, fetch one JSON feed you can verify, for example
+   `https://hn.algolia.com/api/v1/search?query=immich&tags=story&hitsPerPage=1`. If the
+   fetch tool is unavailable or denied, record `web: unavailable`; this is `Blocked` for
+   the workshop day unless the facilitator has said offline research packs exist. Second,
+   run one web search (for example `immich backup`). If it works, record `search: ok`. If
+   it returns a policy or permission error, record `search: unavailable` and quote the
+   error in `notes`; this is a warning, not a block, because the source ladder works on
+   fetch alone, but tell the participant to forward the error to their administrator.
+   Record which of the two worked under `readiness.feeds`.
    While doing this, tell the participant: "Claude Code will ask permission the first time
    it fetches a new website or runs a git command. Choosing the option that stops asking
    for this session will save you many clicks tomorrow."

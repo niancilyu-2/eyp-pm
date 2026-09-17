@@ -15,6 +15,14 @@ tests it once, and revises it once.
 Claude supplies evidence, options, drafts, and challenges. The PM makes every accountable
 product decision, and every stage records which was which.
 
+The Discovery stage is built around a source ladder: keyless public feeds that most desk
+research never touches. Forum search JSON, GitHub discussions ranked by upvotes and issues
+ranked by reactions, Lemmy and Mastodon, Hacker News, Apple App Store review feeds,
+Docker Hub and package download counts, and Wayback Machine snapshots of competitor pricing
+pages from a year ago. Every item carries its URL, dates, and weight, and the stage ends
+with a triangulation table showing which themes appear across several sources. No logins,
+no API keys, no scraping.
+
 This is a workshop kit for 15–20 participants working individually, not a production
 product-management system. No programming is required and the selected product's source
 code is never changed.
@@ -30,8 +38,8 @@ code is never changed.
    --version` fails.
 2. Create a **new empty folder** for the workshop, for example `pm-workshop` on your
    Desktop. Do not use an existing project folder.
-3. Open a terminal in that folder (Windows: right-click the folder → *Open in Terminal*;
-   macOS: right-click → *New Terminal at Folder*) and run `claude`.
+3. Open a terminal in that folder (Windows: right-click the folder and choose *Open in Terminal*;
+   macOS: right-click and choose *New Terminal at Folder*) and run `claude`.
 4. Inside Claude Code, install the plugin:
 
    ```text
@@ -103,12 +111,18 @@ pm-workshop/
 
 - Confirm every participant reported `Ready` or `Ready with fallback`.
 - If your organisation is on an Enterprise plan and you want Claude Design, an owner must
-  enable it in *Organization settings → Artifacts* beforehand. Without it, every participant
+  enable it in *Organization settings*, then *Artifacts* beforehand. Without it, every participant
   gets the HTML path, which works fine.
 - Prepare offline copies of the five sparse clones (zip each `sources/primary` and
   `sources/companion` folder from a completed readiness run) in case the venue network
   blocks GitHub. `/pm:scout` knows how to accept a facilitator copy and verifies the commit.
 - Have the plugin version handy: participants see it at the start of `/pm:scout`.
+- Check that web search is allowed for participants' accounts. On Google Cloud Vertex AI
+  deployments an organisation policy can disallow `web_search` for the model; the readiness
+  check reports `search: unavailable` and quotes the error. The source ladder works on fetch
+  alone, so this is a warning, but ask the administrator to allow it if you can.
+- Decide whether to allow the Reddit RSS switch. Claude Code's fetch tool refuses reddit.com;
+  the only Reddit path is one `curl` of a subreddit RSS feed, off by default.
 
 ### Time budget
 
@@ -125,6 +139,8 @@ saves a clearly labelled *provisional* file rather than a fabricated one.
 | Clone fails on Windows with a path-too-long error | The clone procedure sets `core.longpaths true`; if it still fails, run `git config --global core.longpaths true` and rerun `/pm:scout`. |
 | GitHub unreachable | Give the participant your zipped copy of the case's `sources/` folder; `/pm:scout` verifies the commit and records the copy. |
 | Web fetch denied or unavailable | Research cannot run. Check the account's web tool settings; as a last resort pair the participant with someone whose fetch works and share findings verbally. |
+| Web search returns a policy error | Fetch still works, so the source ladder runs. Forward the quoted error to the administrator (on Vertex AI: allow `web_search` for the model). |
+| A feed rung returns 403 or 429 | Expected for some hosts on some networks. The skill logs a gap and moves on; do not retry in a loop. |
 | `/design` does nothing | Readiness records `unavailable`; `/pm:prototype` uses the HTML path automatically. |
 | `sources/` shows modified files | The skill stops and explains. Do not reset it silently; re-clone into a fresh folder if needed. |
 | Session got long or confused | `/clear` and rerun the current stage command; it resumes from saved files. |
@@ -174,7 +190,8 @@ claude --plugin-dir ./plugins/pm      # then type / to see the pm: commands
   statements are `Verified`, `Inferred`, or `Engineering-owned`. No composite scores, RICE,
   ARR, PERT, estimates, story points, dates, or costs.
 - The research pass is a quick public scan, not customer validation or representative
-  social listening. The prototype walkthrough is a PM design critique, not user testing.
+  social listening. It reads published feeds and APIs that need no key, respects rate
+  limits, and never logs in, bypasses a CAPTCHA, or loops over pages. The prototype walkthrough is a PM design critique, not user testing.
 - Prototypes are non-distributable workshop artifacts. Source files are never copied out of
   the pinned repositories, which keep their own licences (Immich and Plane AGPL-3.0, Home
   Assistant Apache-2.0, Umbraco MIT, ERPNext GPL-3.0, Frappe MIT).

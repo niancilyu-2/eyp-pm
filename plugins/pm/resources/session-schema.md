@@ -16,7 +16,10 @@ readiness:
   status: ready                  # ready | ready-with-fallback | blocked | not-run
   checked_at: "2026-10-01T09:14:00Z"
   git: ok                        # ok | missing
-  web: ok                        # ok | unavailable
+  web: ok                        # ok | unavailable            (fetch tool)
+  search: ok                     # ok | unavailable            (web search tool)
+  feeds: [fetch, search]         # which of the two worked
+  reddit_rss: false              # facilitator switch; true only if the facilitator said so
   browser_test: confirmed        # confirmed | unconfirmed
   design: unknown                # available | unavailable | unknown  (participant typed /design)
   stopped_after_setup: true      # participant chose to stop after readiness

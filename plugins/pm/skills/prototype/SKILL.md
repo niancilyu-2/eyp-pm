@@ -22,7 +22,8 @@ Three lines: *You will practise* shaping one flow and improving it through criti
 usability improvements. *You decide* the actor and job, the scope, the experience
 trade-offs, and which revisions to accept.
 
-State the stage boundary. Then re-hydrate:
+State the stage boundary. From here on, end every reply with the usage line from shared
+rules section 9 (`Prototype · step n/11 · path · revision · minutes · sources`). Then re-hydrate:
 
 - Read `.pm/session.yaml`. If `stages.discovery.status` is not `approved` (a `provisional`
   discovery counts as approved), or `prototype` is listed in `stale`, stop and say which
@@ -71,10 +72,10 @@ with sections 1–6 filled.
 
 Read `readiness.design` from `session.yaml`.
 
-- `available` → **Step 6a (Claude Design)**. Mention that the HTML path is available if
+- `available`: go to **Step 6a (Claude Design)**. Mention that the HTML path is available if
   Design gives trouble.
-- `unavailable` → **Step 7 (HTML)**. Say the HTML path is being used and why.
-- `unknown` → ask the participant to type `/design` once and report; record the answer,
+- `unavailable`: go to **Step 7 (HTML)**. Say the HTML path is being used and why.
+- `unknown`: ask the participant to type `/design` once and report; record the answer,
   then route as above.
 
 ## Step 6a: Claude Design
@@ -125,7 +126,7 @@ a design critique, not customer validation; say so once.
 Propose one change tied to a discovery item (`SIG-###`/`CON-###`) or a walkthrough
 finding. Make at least one change after approval, in the HTML (either path; if Design
 produced the file, edit the exported HTML directly or ask the participant to make the
-change in Design and re-export). Record before → after in section 9.
+change in Design and re-export). Record before and after in section 9.
 
 ## Step 10: Prototype check-in (participant check-in 2)
 

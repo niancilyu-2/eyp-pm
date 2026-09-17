@@ -35,6 +35,8 @@ The household media steward is the person who set Immich up for the family and f
 6. **App store listings**: Android https://play.google.com/store/apps/details?id=app.alextran.immich and iOS https://apps.apple.com/us/app/immich/id1613945652. Read recent user reviews; they are short and often written by less-technical family members.
 7. **Reddit**: https://www.reddit.com/r/immich.rss. Reddit often blocks automated fetching; rely on search-engine snippets and label anything from it as unverified.
 
+**Public feeds.** The `feeds:` block in case.yaml lists keyless sources checked for this case: the TrueNAS forum search JSON, Lemmy, Mastodon tags, Hacker News, App Store reviews, GitHub issues ranked by reactions, Docker Hub pulls, and Wayback snapshots of competitor pricing pages. The scout skill walks them in that order. Treat each as a starting point, not a verdict.
+
 ## Cautions
 
 - Use public information only. Do not quote private chats, emails or anything behind a login.

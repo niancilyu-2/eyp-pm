@@ -6,7 +6,7 @@
 | Case · lane | <case id> · <lane id> |
 | Persona · mandate | <persona> · <mandate> |
 | Pinned sources | <owner/repo @ sha> (primary); <owner/repo @ sha> (companion, if any) |
-| Research window | started <time> · ended <time> · searches <n>/12 · fetches <n>/10 |
+| Research window | started <time> · ended <time> · fetches <n>/16 · searches <n>/8 |
 | Selected opportunity | OPP-### |
 
 ## 1. Problem framing
@@ -19,6 +19,13 @@
 | Market or competitor observations | 2 | | |
 | Official product or release signal | 1 | | |
 | Verified repository constraints | 2 | | |
+
+Rungs reached: <list of ladder rungs that returned results; note any that were unreachable>
+
+Triangulation:
+| Theme | Rung 1 (forum, GitHub) | Rung 2 (Lemmy, Mastodon, HN) | Rung 3 (reviews) | Rung 4 to 6 (numbers, competitors, official) | Single-source? |
+|---|---|---|---|---|---|
+| | SIG-### | | | | |
 
 Gaps: <GAP lines or "none">
 Contradictions: <one line each, citing the IDs that disagree, or "none">

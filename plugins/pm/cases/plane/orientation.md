@@ -43,6 +43,8 @@ Not included: the API server (`apps/api`, Django/Python), the Space and Admin ap
 6. **Hacker News search**: https://hn.algolia.com/?q=plane.so. Launch threads collect comparisons with Jira and Linear.
 7. **OpenAlternative listing**: https://openalternative.co/plane. Positioning and alternatives. G2, Capterra, Product Hunt, and Reddit block automated fetching; if you use search-engine snippets from them, label them unverified.
 
+**Public feeds.** The `feeds:` block in case.yaml lists keyless sources checked for this case: Lemmy, Mastodon tags, Hacker News, App Store reviews of the Plane mobile app, GitHub issues ranked by reactions, Docker Hub pulls, and Wayback snapshots of competitor pricing pages. There is no forum search JSON; the community is on Discord. The scout skill walks them in that order. Each is a starting point only.
+
 ## Cautions
 
 - Public information only. Do not sign in to anyone's Plane workspace or use private data.
