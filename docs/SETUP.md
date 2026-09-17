@@ -121,7 +121,7 @@ Open a terminal in `pm-workshop`, type `claude`, then:
 | | `/clear` |
 | PRD | `/pm:prd` |
 | | `/clear` |
-| Capstone | `/pm:create-skill` |
+| Capstone (after the workshop, on your own) | `/pm:create-skill` |
 
 Every reply ends with a status line such as `Scout · step 5/10 · fetches 6/20 · 14 min`.
 

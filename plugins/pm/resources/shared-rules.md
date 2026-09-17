@@ -132,8 +132,8 @@ Suggested time budget for the workshop day (the facilitator may change it):
 | Discovery (`/pm:scout`) | 60 |
 | Prototype (`/pm:prototype`) | 60 |
 | PRD (`/pm:prd`) | 45 |
-| Capstone (`/pm:create-skill`) | 30 |
-| Breaks and buffer | 30 |
+| Capstone demo (`/pm:create-skill`, facilitator shows it; participants run it later on their own) | 15 |
+| Breaks and buffer | 45 |
 
 ## 9. Usage line
 

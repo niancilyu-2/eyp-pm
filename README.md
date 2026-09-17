@@ -8,9 +8,10 @@ One Claude Code plugin, `pm`, that takes product managers through a connected ex
 3. **PRD.** Turn the approved prototype into an engineering handoff grounded in the
    product's repository, with an independent read-only review. `/pm:prd`
 
-The workshop closes with a separate 30-minute capstone, `/pm:create-skill`, in which each
-participant turns one of their own repeatable PM practices into a small project skill,
-tests it once, and revises it once.
+The kit also includes `/pm:create-skill`, a capstone in which a PM turns one of their own
+repeatable practices into a small project skill, tests it once, and revises it once. In
+the workshop the facilitator demonstrates it; participants take it home and run it on
+their own.
 
 Claude supplies evidence, options, drafts, and challenges. The PM makes every accountable
 product decision, and every stage records which was which.
@@ -75,7 +76,7 @@ commands in order. Run `/clear` between stages; everything you approved is saved
 | Discovery | `/pm:scout` | 60 min | `outputs/01-discovery.md`, one selected opportunity |
 | Prototype | `/pm:prototype` | 60 min | `outputs/02-prototype.md`, `outputs/prototype/index.html` |
 | PRD | `/pm:prd` | 45 min | `outputs/03-prd.md`, `outputs/03-prd-review.md` |
-| Capstone | `/pm:create-skill` | 30 min | `.claude/skills/<your-skill>/SKILL.md`, `outputs/04-skill-summary.md` |
+| Capstone (demo, run later on your own) | `/pm:create-skill` | 15 min demo | `.claude/skills/<your-skill>/SKILL.md`, `outputs/04-skill-summary.md` |
 
 Each stage opens by telling you what you will practise, what Claude will do, and what you
 decide. Each check-in shows Claude's recommendation and your decision side by side.
@@ -136,7 +137,9 @@ pm-workshop/
 
 ### Time budget
 
-Setup 15 · Discovery 60 · Prototype 60 · PRD 45 · Capstone 30 · breaks and buffer 30.
+Setup 15 · Discovery 60 · Prototype 60 · PRD 45 · Capstone demo 15 · breaks and buffer 45.
+Participants do not run the capstone live; show it once and point them to the walkthrough
+for running it afterwards.
 Claude cannot see a clock; the skills count actions and you call time. A stage cut short
 saves a clearly labelled *provisional* file rather than a fabricated one.
 

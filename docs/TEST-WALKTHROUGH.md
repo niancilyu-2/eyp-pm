@@ -1,7 +1,8 @@
 # Test walkthrough
 
-How to run the whole flow yourself. Readiness and Discovery take about 75 minutes. All
-four stages take about three and a half hours. Everything Claude produces lands in files you can open in
+How to run the whole flow yourself. Readiness and Discovery take about 75 minutes. The
+three workshop stages take about three hours; the capstone is a 30-minute exercise you do
+afterwards. Everything Claude produces lands in files you can open in
 any text editor.
 
 Not installed yet? Do [SETUP.md](SETUP.md) first.
@@ -116,9 +117,10 @@ Engineering-owned; no estimates, delivery dates, or story points; status reads
 
 Files: `outputs/03-prd.md`, `outputs/03-prd-review.md`. Type `/clear`.
 
-## 7. Capstone: `/pm:create-skill` (30 min)
+## 7. Capstone: `/pm:create-skill` (30 min, on your own after the workshop)
 
-Independent of the other stages. Bring one repeated task from your job, or paste a
+The facilitator demonstrates this stage on the day; you run it yourself afterwards in the
+same folder. Independent of the other stages. Bring one repeated task from your job, or paste a
 checklist you already use.
 
 Claude asks four questions, shows a proposed skill at the **scope check-in**, then writes

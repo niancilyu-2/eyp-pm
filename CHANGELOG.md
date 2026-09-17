@@ -4,7 +4,11 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.4.0 (unreleased)
+## 0.4.1 (unreleased)
+
+- Capstone repositioned as a facilitator demo and take-home exercise; time budget adjusted.
+
+## 0.4.0
 
 - Five more keyless sources per case: forum top and per-tag lists, Hacker News comments,
   App Store lookup with release notes, Wikipedia pageviews, and a roadmap rung combining
