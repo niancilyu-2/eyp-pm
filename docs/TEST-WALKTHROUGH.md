@@ -10,6 +10,9 @@ looks wrong, note the step number and what you saw; that is the most useful feed
 
 ## 1. What you need
 
+Never used Claude Code? Do [SETUP.md](SETUP.md) first; it covers installing, signing in,
+and the handful of keys you need. Then come back here.
+
 - A laptop running Windows 10 or 11, or macOS.
 - Claude Code installed and signed in. Your plan must allow web fetching. Web search and
   Claude Design are optional.

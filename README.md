@@ -32,8 +32,10 @@ code is never changed.
 
 ## For participants
 
-Testing this on your own first? Follow [docs/TEST-WALKTHROUGH.md](docs/TEST-WALKTHROUGH.md),
-a step-by-step script covering every case and lane.
+New to Claude Code? Start with [docs/SETUP.md](docs/SETUP.md), a 30-minute setup guide
+for first-time terminal users. Testing the whole flow? Follow
+[docs/TEST-WALKTHROUGH.md](docs/TEST-WALKTHROUGH.md), a step-by-step script covering every
+case and lane.
 
 ### Before the workshop (at least 24 hours ahead, about 15 minutes)
 
