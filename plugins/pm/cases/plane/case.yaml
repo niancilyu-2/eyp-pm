@@ -106,9 +106,7 @@ feeds:
   lemmy_communities:
     - selfhosted@lemmy.world
     - opensource@lemmy.ml
-  mastodon_tags:
-    - { instance: mastodon.social, tag: projectmanagement, url: "https://mastodon.social/api/v1/timelines/tag/projectmanagement?limit=20" }
-    - { instance: mastodon.social, tag: jira, url: "https://mastodon.social/api/v1/timelines/tag/jira?limit=20" }
+  mastodon_tags: []   # no product hashtag has posts; #plane is aircraft. Log the gap.
   hackernews_search: "https://hn.algolia.com/api/v1/search?query={query}&tags=story&hitsPerPage=10"
   app_store_reviews:
     - { app: "Plane: Projects, Wiki, AI", id: 6657986465, url: "https://itunes.apple.com/us/rss/customerreviews/id=6657986465/sortBy=mostRecent/json" }

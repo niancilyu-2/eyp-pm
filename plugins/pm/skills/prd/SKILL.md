@@ -48,15 +48,15 @@ framework behaviour (forms, workflow, permissions) but do not propose changes to
 
 ## Step 2: Draft the PRD
 
-Start from `${CLAUDE_PLUGIN_ROOT}/resources/templates/03-prd.md`. Fill every section.
-Rules:
+Start from `${CLAUDE_PLUGIN_ROOT}/resources/templates/03-prd.md` as `.pm/drafts/03-prd.md`.
+Fill every section. Apply the case's `exclusions` from `case.yaml`. Rules:
 
 - Every `REQ-###` traces to the selected `OPP-###` and to a `SIG-###`, `CON-###`, or an
   approved prototype screen or state. Every `AC-###` traces to a `REQ-###` and is written
   as an observable Given / When / Then.
 - Include the approved main path and both alternate states; specify or explicitly exclude
   loading, empty, error, permission, and recovery behaviour.
-- No estimates, story points, dates, or costs anywhere.
+- No estimates, story points, delivery dates, or costs anywhere.
 - Open questions get `OPEN-###` with an owner and a yes/no on whether the answer changes
   scope, user behaviour, data or security behaviour, or acceptance criteria.
 - Appendix A lists touchpoints with labels and paths.
@@ -111,7 +111,8 @@ confirms the open product questions. Record `D-###`.
 
 ## Step 7: Save and close
 
-- Set the PRD status to `ready-for-engineering-review`; fill section 11 and Appendix A.
+- Set the PRD status to `ready-for-engineering-review`; fill section 11 and Appendix A;
+  copy the draft to `outputs/03-prd.md`.
 - Complete `outputs/03-prd-review.md` with the approved dispositions.
 - Update `session.yaml`: `stages.prd` (`status: approved`, `revision` +1, `approved_at`),
   `stage.current: done`, `stage.status: approved`.

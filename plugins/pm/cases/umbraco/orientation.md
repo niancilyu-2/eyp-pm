@@ -8,7 +8,7 @@ The backoffice is organised into **sections** (Content, Media, Settings and so o
 
 ## Who the persona is
 
-The persona is a **regional content-operations editor**. They look after a region's slice of a larger multi-language website: several editors feed them drafts, and they are responsible for getting those drafts checked, translated where needed and live on time. They are confident in the backoffice but are not developers. Their mandate for this case is to **reduce rework between content creation and publication**: the loops where a page bounces back for missing fields, wrong images, unfinished translations or an unclear publish state. Treat the mandate as the lens; do not assume in advance which loop matters most.
+The persona is a **regional content-operations editor**. They look after a region's slice of a larger multi-language website: several editors feed them drafts, and they are responsible for getting those drafts checked, translated where needed and live on time. They are confident in the backoffice but are not developers. Their mandate for this case is to **reduce rework between content creation and publication**. Treat the mandate as the lens; do not assume in advance which loop matters most.
 
 ## The three lanes
 
@@ -20,7 +20,7 @@ The persona is a **regional content-operations editor**. They look after a regio
 
 ## Repository map
 
-The backoffice is written in TypeScript using Lit web components; the server is written in C#/.NET. This case clones only the folders below.
+The backoffice is written in TypeScript (a web programming language); the server is written in C#/.NET. This case clones only the folders below.
 
 - `src/Umbraco.Web.UI.Client/src/packages/documents`: everything about pages (documents): tree, workspace, publishing actions, blueprints.
 - `src/Umbraco.Web.UI.Client/src/packages/content`: the shared editing machinery that both documents and media build on, including the variant picker.
@@ -33,7 +33,7 @@ The backoffice is written in TypeScript using Lit web components; the server is 
 
 ## Where to start public research
 
-1. **GitHub issues**: https://github.com/umbraco/Umbraco-CMS/issues. Search terms tied to each lane ("publish", "schedule", "media picker", "variant", "mandatory", "validation") plus words editors use ("confusing", "lost", "again"). Sort by most commented and by recent.
+1. **GitHub issues**: https://github.com/umbraco/Umbraco-CMS/issues. Search terms tied to each lane ("publish", "schedule", "media picker", "variant", "mandatory", "validation"). Sort by most commented and by recent.
 2. **Community forum (Discourse)**: https://forum.umbraco.com/. Search the same terms; look for threads where non-developers describe their workflow.
 3. **GitHub discussions**: https://github.com/umbraco/Umbraco-CMS/discussions. Longer proposals and RFCs; useful to see what maintainers already have in flight so you do not duplicate it.
 4. **Official docs**: https://docs.umbraco.com/umbraco-cms. Read "Fundamentals" for how the backoffice is meant to work; gaps between docs and forum posts are worth noting.
@@ -41,7 +41,7 @@ The backoffice is written in TypeScript using Lit web components; the server is 
 6. **Review directory**: https://slashdot.org/software/p/Umbraco/. Anecdotal; use it for the vocabulary users choose, not for counts.
 7. **Reddit**: no fetchable URL passed our checks; if you use search-engine snippets from r/umbraco, label them unverified.
 
-**Public feeds.** The `feeds:` block at the end of `case.yaml` lists keyless URLs checked with plain HTTP on 2026-09-17: GitHub issue and Discussions search, the forum's `search.json`, Lemmy, the `#umbraco` Mastodon tag, Hacker News, GitHub and NuGet adoption counts, and four competitor pricing pages with Wayback lookups. Replace `{query}` with a lane term and `{yyyymmdd}` with a date one year back. The scout skill walks them in that order; treat results as leads. Reddit is an opt-in RSS line for the facilitator only.
+**Public feeds.** The `feeds:` block at the end of `case.yaml` lists keyless URLs checked with plain HTTP on 2026-09-17: GitHub issue and Discussions search, the forum's `search.json`, Lemmy, the `#umbraco` Mastodon tag, Hacker News, GitHub and NuGet adoption counts, and four competitor pricing pages with Wayback lookups. Replace `{query}` with a lane term and `{yyyymmdd}` with a date one year back.The scout skill walks them in the order given in the research guide. Reddit is an opt-in RSS line for the facilitator only.
 
 ## Cautions
 

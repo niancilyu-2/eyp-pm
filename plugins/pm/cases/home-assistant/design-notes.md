@@ -15,24 +15,24 @@
 
 Paths are inside `sources/primary`; all Verified at the pinned commit.
 
-- `src/resources/theme/core.globals.ts` – Verified. Border radius scale (`--ha-border-radius-sm` to `-pill`), spacing scale (`--ha-space-1` = 4px to `--ha-space-20` = 80px), animation durations, reduced-motion override.
-- `src/resources/theme/typography.globals.ts` – Verified. Roboto body font, monospace code font, 14px base, size scale `--ha-font-size-xs` to `-5xl`, weights, line heights.
-- `src/resources/theme/color/color.globals.ts` – Verified. Named colours such as `--primary-color` and `--accent-color` (#ff9800), text and state colours, and a separate `darkColorStyles` block for dark mode.
-- `src/resources/theme/color/` (`core.globals.ts`, `semantic.globals.ts`, `index.ts`) – Verified. Primitive colour ramps (`--ha-color-primary-40` style) and the semantic layer built on them.
-- `src/resources/theme/semantic.globals.ts` and `main.globals.ts` – Verified. Shadow levels for light and dark; header height (56px), text opacities, phone safe areas.
-- `src/resources/theme/theme.ts` – Verified. Assembles the above into the global stylesheet.
-- `src/resources/ha-icons.ts`, `src/resources/icon-metadata.ts` – Verified. Material Design Icons setup.
-- `src/components/` – Verified. Shared `ha-*` components: `ha-card.ts`, `ha-button.ts`, `ha-dialog.ts`, `ha-alert.ts`, `ha-switch.ts`, `ha-list-item.ts`, `ha-settings-row.ts`, `ha-expansion-panel.ts`, `ha-bottom-sheet.ts`, plus `tile/`, `chips/`, `data-table/`, `ha-form/`, `trace/`.
-- `src/panels/lovelace/cards/` – Verified. Every built-in dashboard card; shows how cards compose the components above.
+- `src/resources/theme/core.globals.ts`: Verified. Border radius scale (`--ha-border-radius-sm` to `-pill`), spacing scale (`--ha-space-1` = 4px to `--ha-space-20` = 80px), animation durations, reduced-motion override.
+- `src/resources/theme/typography.globals.ts`: Verified. Roboto body font, monospace code font, 14px base, size scale `--ha-font-size-xs` to `-5xl`, weights, line heights.
+- `src/resources/theme/color/color.globals.ts`: Verified. Named colours such as `--primary-color` and `--accent-color` (#ff9800), text and state colours, and a separate `darkColorStyles` block for dark mode.
+- `src/resources/theme/color/` (`core.globals.ts`, `semantic.globals.ts`, `index.ts`): Verified. Primitive colour ramps (`--ha-color-primary-40` style) and the semantic layer built on them.
+- `src/resources/theme/semantic.globals.ts` and `main.globals.ts`: Verified. Shadow levels for light and dark; header height (56px), text opacities, phone safe areas.
+- `src/resources/theme/theme.ts`: Verified. Assembles the above into the global stylesheet.
+- `src/resources/ha-icons.ts`, `src/resources/icon-metadata.ts`: Verified. Material Design Icons setup.
+- `src/components/`: Verified. Shared `ha-*` components: `ha-card.ts`, `ha-button.ts`, `ha-dialog.ts`, `ha-alert.ts`, `ha-switch.ts`, `ha-list-item.ts`, `ha-settings-row.ts`, `ha-expansion-panel.ts`, `ha-bottom-sheet.ts`, plus `tile/`, `chips/`, `data-table/`, `ha-form/`, `trace/`.
+- `src/panels/lovelace/cards/`: Verified. Every built-in dashboard card; shows how cards compose the components above.
 - The repository's `gallery/` folder (not in the sparse checkout) is published as the design site linked below.
 
 ## Public UI references
 
-- https://demo.home-assistant.io/ – live, clickable demo of dashboards, settings and automations.
-- https://design.home-assistant.io/ – official design site: components, colours, typography, concepts.
-- https://www.home-assistant.io/dashboards/ – user docs for dashboards with current screenshots.
-- https://www.home-assistant.io/dashboards/cards/ – catalogue of card types with screenshots.
-- https://developers.home-assistant.io/docs/frontend/design/ – short developer-facing design guidelines.
+- https://demo.home-assistant.io/: live, clickable demo of dashboards, settings and automations.
+- https://design.home-assistant.io/: official design site: components, colours, typography, concepts.
+- https://www.home-assistant.io/dashboards/: user docs for dashboards with current screenshots.
+- https://www.home-assistant.io/dashboards/cards/: catalogue of card types with screenshots.
+- https://developers.home-assistant.io/docs/frontend/design/: short developer-facing design guidelines.
 
 ## Synthetic data guidance
 

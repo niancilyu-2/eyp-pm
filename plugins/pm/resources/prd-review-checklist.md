@@ -17,7 +17,8 @@ The reviewer reads only; it returns findings as text. `/pm:prd` writes them to
 3. **Unsupported technical claims.** Every technical statement is labelled `Verified`,
    `Inferred`, or `Engineering-owned`. For `Verified`, open the cited path in `sources/` and
    confirm it exists and says what the PRD claims. Flag invented file names, APIs, or data
-   models. Flag estimates, story points, dates, or costs anywhere in the document.
+   models. Flag estimates, story points, delivery dates or deadlines, or costs anywhere in the
+   document.
 4. **Missing states or permissions.** The approved main path and the two alternate states
    from `02-prototype.md` appear in the PRD. Loading, empty, error, permission, and
    recovery behaviour is either specified or explicitly marked out of scope. Role and

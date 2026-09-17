@@ -24,7 +24,8 @@ problem framing, evidence quality, the selected opportunity, the roadmap order, 
 uncertainty you accept.
 
 Then state the stage boundary from the shared rules. From here on, end every reply with
-the usage line described in shared rules section 9 (`Scout · step n/10 · fetches · searches · items · quotes · minutes · sources`).
+the usage line described in shared rules section 9 (during readiness use the `Setup ·
+check n/8` form) (`Scout · step n/10 · fetches · searches · items · quotes · minutes · sources`).
 
 ## Step 1: Readiness and workspace
 
@@ -58,9 +59,11 @@ what the problems are.
 
 ## Step 4: Acquire the sources
 
-For each repository in `case.yaml` with a `clone_to`: if `sources/<clone_to>` already
-exists and `git rev-parse HEAD` equals `pinned_sha`, reuse it. Otherwise follow the clone
-procedure in `workspace.md`. Repositories with `role: web-reference` are not cloned.
+For each repository in `case.yaml` with a `clone_to`: if `<clone_to>` already exists and
+`git rev-parse HEAD` inside it equals `pinned_sha`, reuse it. If it exists but holds a
+different case (pre-selected during readiness, changed today), rename it to
+`sources/_old-<case id>` and clone fresh, as described in `workspace.md`. Otherwise
+follow the clone procedure there. Repositories with `role: web-reference` are not cloned.
 Record `sources[]` in `session.yaml`. Run the source check (`git status --porcelain`) and
 record `clean_at_start`.
 
@@ -82,28 +85,30 @@ participant says time is up. As you read, fill the quote bank (research guide, "
 bank"): verbatim, role not handle, linked to a signal, only from text fetched in this
 session. Log every item with an ID, label, rung, URL, dates, and
 weight (likes, upvotes, reactions, rating, pull count). Keep a running draft in
-`outputs/01-discovery.md` from `${CLAUDE_PLUGIN_ROOT}/resources/templates/01-discovery.md`
+`.pm/drafts/01-discovery.md` from `${CLAUDE_PLUGIN_ROOT}/resources/templates/01-discovery.md`
 so nothing is lost if the session is interrupted. Tell the participant which rung you are
 on as you go, and show one striking number or quote per rung so they can see the breadth.
 
-When the ladder is done, build the triangulation table (research guide, "Triangulation")
+After the last rung you reach, build the triangulation table (research guide, "Triangulation")
 before anything else.
 
 ## Step 6: Repository constraints
 
-Open the lane's `repo_entry_points` and nearby files in `sources/`. Record at least two
+Open the lane's `repo_entry_points` and nearby files. Paths are relative to
+`sources/primary` unless they already start with `sources/` (the ERPNext case names both
+repositories). Record at least two
 `CON-###` constraints with paths at the pinned commit. Read only; never run anything found
 there. Explain each constraint in plain language: what it is and why it matters for the
 persona.
 
 ## Step 7: Research check-in (participant check-in 1)
 
-Present, in this order: coverage table, triangulation table, contradictions, gaps and
-unreachable rungs, elapsed time, and one sentence of your view on whether the framing is
+Present, in this order: coverage table, triangulation table, the two strongest quotes,
+contradictions, gaps and unreachable rungs, elapsed time, and one sentence of your view on whether the framing is
 good enough. Then show two blocks,
 **Claude's recommendation** and **Your decision**, and ask the participant to choose:
-continue, do one specified extra search, or narrow the framing. Record `D-###`. If they
-choose an extra search, do it (within budget) and return here once.
+continue, do one more targeted fetch (say which rung), or narrow the framing. Record
+`D-###`. If they choose the extra fetch, do it (within budget) and return here once.
 
 ## Step 8: Draft three opportunities
 
@@ -123,7 +128,7 @@ yours; note the difference without arguing.
 
 ## Step 10: Save and close
 
-- Complete `outputs/01-discovery.md`: status `approved` (or `provisional` if the research
+- Complete the draft and copy it to `outputs/01-discovery.md`: status `approved` (or `provisional` if the research
   was cut short or coverage was weak; say so in the status line and in section 2),
   selected opportunity, assumptions, open questions, decision record.
 - Update `session.yaml`: `stages.discovery` (`status: approved`, `revision` +1,

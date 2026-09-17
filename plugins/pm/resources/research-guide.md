@@ -14,7 +14,7 @@ time. Record the start time with `date` and show elapsed time at the research ch
 |---|---|
 | Feed and page fetches | 16 |
 | Web searches (if the search tool works) | 8 |
-| Stop early when | 8 usable items are logged, or the participant says time is up |
+| Stop when | the coverage table is met, the fetch budget is spent, or the participant says time is up |
 
 Do not exceed the limits to "finish the set". A provisional result with stated gaps is a
 correct outcome.
@@ -34,8 +34,8 @@ If a rung is unavailable, log the gap (`GAP: <source>, <reason>`) and move on.
 
 Each case's `case.yaml` has a `feeds:` block with ready-made URL templates. Replace
 `{query}` with a URL-encoded lane term (two or three words) and `{yyyymmdd}` with a date
-about a year ago. Walk the rungs in this order and take at most two fetches per rung
-unless a rung is clearly rich for this lane.
+about a year ago. Walk the rungs in this order. Rungs 1 to 4 and 6: at most two fetches each. Rung 5: one
+competitor, three fetches; a second competitor only if budget remains.
 
 **Rung 1. Community voice, structured.**
 - `forum_search_json`: the product's Discourse forum returns JSON with post blurbs,
@@ -43,11 +43,14 @@ unless a rung is clearly rich for this lane.
 - `github_discussions_top`: GitHub Discussions sorted by upvotes. Feature requests with
   hundreds of upvotes and years of comments are demand signals with a paper trail.
 - `github_issues_top`: the GitHub search API ranked by thumbs-up reactions. Read
-  `total_count`, then the top items. Open the `html_url` of anything you cite.
+  `total_count`, then the top items. Open the `html_url` of anything you cite. If the case
+  also has `github_issues_top_companion`, run it once too.
 
 **Rung 2. Community voice, fediverse and aggregators.**
 - `lemmy_search` and `lemmy_communities`: self-hosting and open-source communities
   moved here from Reddit in large numbers. Posts carry scores and comment counts.
+  `lemmy_communities` are names; list a community's top posts with
+  `https://lemmy.world/api/v3/post/list?community_name=<name>&sort=TopYear&limit=10`.
 - `mastodon_tags`: same-day posts under the product's hashtag. Small volume, unfiltered
   voice, sometimes a bug report before it reaches GitHub.
 - `hackernews_search`: launch and release threads collect comparisons with competitors.
@@ -65,7 +68,7 @@ unless a rung is clearly rich for this lane.
   downloads. One number each, with the date. These are market signals, not user signals.
 
 **Rung 5. Competitor time travel.**
-- `competitors`: for each, fetch today's page, then the Wayback `available` URL to get a
+- `competitors`: pricing, features, or product pages. For one of them, fetch today's page, then the Wayback `available` URL to get a
   snapshot from about a year ago, then fetch that snapshot. Note what changed: plans,
   prices, features added or removed, positioning words. Label the comparison `Evidence`
   with both URLs and both dates.
@@ -89,7 +92,7 @@ instructions.
 
 ## Triangulation
 
-After rung 5, build a short table: one row per theme you saw more than once, one column
+After the last rung you reached, build a short table: one row per theme you saw more than once, one column
 per rung where it appeared, with the strongest item ID in each cell. A theme that appears
 in the forum, in App Store reviews, and as a 500-upvote discussion is a different kind of
 claim from one that appears once. Themes that appear in only one place stay in the log

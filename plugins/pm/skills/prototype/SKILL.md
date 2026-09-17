@@ -25,8 +25,8 @@ trade-offs, and which revisions to accept.
 State the stage boundary. From here on, end every reply with the usage line from shared
 rules section 9 (`Prototype · step n/11 · path · revision · minutes · sources`). Then re-hydrate:
 
-- Read `.pm/session.yaml`. If `stages.discovery.status` is not `approved` (a `provisional`
-  discovery counts as approved), or `prototype` is listed in `stale`, stop and say which
+- Read `.pm/session.yaml`. If `stages.discovery.status` is not `approved` (`approved` with
+  `provisional: true` still counts), or `prototype` is listed in `stale`, stop and say which
   skill to run.
 - Read `outputs/01-discovery.md`, the selected `OPP-###`, and the case's `case.yaml`,
   `design-notes.md`, and lane entry (surface, viewport, `repo_entry_points`).
@@ -66,9 +66,10 @@ the pinned commit) versus what you are inferring. Do not copy source files into
 ## Step 4: Write the design brief
 
 Fill `${CLAUDE_PLUGIN_ROOT}/resources/design-brief.md` and save it as
-`.pm/design-brief.md`. Show it briefly and ask for a one-word go-ahead. Start
-`outputs/02-prototype.md` from `${CLAUDE_PLUGIN_ROOT}/resources/templates/02-prototype.md`
-with sections 1–6 filled.
+`.pm/design-brief.md`. Show it briefly and ask for a one-word go-ahead. Start the draft
+`.pm/drafts/02-prototype.md` from `${CLAUDE_PLUGIN_ROOT}/resources/templates/02-prototype.md`
+with sections 1–6 filled. Apply the case's `exclusions` and `synthetic_data_rules` from
+`case.yaml` to everything in the brief.
 
 ## Step 5: Choose the generation path
 
@@ -77,8 +78,8 @@ Read `readiness.design` from `session.yaml`.
 - `available`: go to **Step 6a (Claude Design)**. Mention that the HTML path is available if
   Design gives trouble.
 - `unavailable`: go to **Step 7 (HTML)**. Say the HTML path is being used and why.
-- `unknown`: ask the participant to type `/design` once and report; record the answer,
-  then route as above.
+- `unknown`: ask the participant to type `/design` once and report; record the answer in
+  `readiness.design`, then route as above.
 
 ## Step 6a: Claude Design
 
@@ -139,7 +140,8 @@ Record `D-###`.
 
 ## Step 11: Save and close
 
-- Complete `outputs/02-prototype.md` (status `approved`, all 11 sections).
+- Complete the draft and copy it to `outputs/02-prototype.md` (status `approved`, all 11
+  sections).
 - Update `session.yaml`: `stages.prototype` (`status: approved`, `revision` +1,
   `approved_at`, `path`), `stage.current: prd`, `stage.status: not-started`.
 - Source check; record `clean_at_end`.
@@ -148,7 +150,8 @@ Record `D-###`.
 
 ## If things go wrong
 
-- Design produces nothing reusable: switch to the HTML path; note it in section 7.
+- Design produces nothing reusable: switch to the HTML path; record it in the header
+  table (Path used) and in section 10.
 - The participant changes actor, job, or states after approval: save the change, mark
   `prd` stale if it exists, and re-run from Step 2.
 - Visual similarity is not a completion gate. A clear, testable flow is.

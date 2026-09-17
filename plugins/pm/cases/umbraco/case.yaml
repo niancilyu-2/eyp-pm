@@ -19,7 +19,6 @@ repositories:
     pinned_at: "2026-09-17"
     license: MIT
     clone_to: sources/primary
-    windows_long_paths: true
     sparse_paths:
       - src/Umbraco.Web.UI.Client/src/packages/documents
       - src/Umbraco.Web.UI.Client/src/packages/content
@@ -85,8 +84,7 @@ feeds:
   github_discussions_top: "https://github.com/umbraco/Umbraco-CMS/discussions?discussions_q={query}+sort%3Atop"
   forum_search_json: "https://forum.umbraco.com/search.json?q={query}"
   lemmy_search: "https://lemmy.world/api/v3/search?q={query}&type_=Posts&sort=TopYear&limit=10"
-  lemmy_communities:
-    - { name: umbraco_community, instance: lemmy.world, url: "https://lemmy.world/api/v3/community?name=umbraco_community@lemmy.world" }
+  lemmy_communities: []   # umbraco_community@lemmy.world exists but has no posts
   mastodon_tags:
     - { instance: fosstodon.org, tag: umbraco, url: "https://fosstodon.org/api/v1/timelines/tag/umbraco?limit=20" }
     - { instance: mastodon.social, tag: umbraco, url: "https://mastodon.social/api/v1/timelines/tag/umbraco?limit=20" }

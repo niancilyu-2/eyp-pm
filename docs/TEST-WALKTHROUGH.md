@@ -1,7 +1,7 @@
 # Test walkthrough
 
-How to run the whole flow yourself. Setup and Discovery take about 45 minutes. All four
-stages take about three hours. Everything Claude produces lands in files you can open in
+How to run the whole flow yourself. Readiness and Discovery take about 75 minutes. All
+four stages take about three and a half hours. Everything Claude produces lands in files you can open in
 any text editor.
 
 Not installed yet? Do [SETUP.md](SETUP.md) first.
@@ -111,7 +111,7 @@ for each finding, fix it in the PRD, turn it into an engineering question, or ac
 with a note. Blocking findings must be fixed.
 
 Check: technical statements are labelled Verified with a file path, Inferred, or
-Engineering-owned; no estimates, dates, or story points; status reads
+Engineering-owned; no estimates, delivery dates, or story points; status reads
 `ready-for-engineering-review`.
 
 Files: `outputs/03-prd.md`, `outputs/03-prd-review.md`. Type `/clear`.

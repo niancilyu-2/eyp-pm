@@ -38,18 +38,18 @@ Companion, `sources/companion/` (frappe/frappe):
 - `frappe/core`: users, roles, role profiles, permission rules, and the Permission Manager page.
 - `frappe/model`: the document lifecycle, including where workflow and permission checks are applied.
 
-Cone-mode sparse checkout also keeps files directly inside `frappe/`, so `frappe/permissions.py` and `frappe/hooks.py` will appear.
+The partial download also keeps files directly inside `frappe/`, so `frappe/permissions.py` and `frappe/hooks.py` will appear.
 
 ## Where to start public research
 
-1. **Community forum, discuss.frappe.io.** Highest volume of real user questions. Search phrases such as "stock reconciliation negative", "purchase order workflow stuck", "role cannot see", "workspace sidebar"; sort by latest and read the replies, not just the opening post.
+1. **Community forum, discuss.frappe.io.** Highest volume of real user questions. Search the lane's nouns ("stock reconciliation", "material request", "purchase order workflow", "role permission", "workspace sidebar"); sort by latest and read the replies, not just the opening post.
 2. **GitHub issues, frappe/erpnext.** Filter by labels `stock` and `buying`; try `is:issue is:open "material request"`. Note which issues were closed as "working as intended" versus fixed.
 3. **Official docs, docs.frappe.io/erpnext.** Read the Stock and Buying manual pages for your lane's record types first; they say what the product is supposed to do.
 4. **GitHub issues, frappe/frappe.** For workflow, permission, list-view, and sidebar behaviour, search here instead of the ERPNext repo.
 5. **Release notes, github.com/frappe/erpnext/releases.** Scan the last few releases for anything touching your lane so you do not propose what already shipped.
 6. **Review sites.** Use for tone and recurring themes only; ratings are not evidence.
 
-**Public feeds.** The `feeds:` block in `case.yaml` lists keyless URLs checked with plain HTTP on 2026-09-17: GitHub issue search for both repos (neither has Discussions), discuss.frappe.io `search.json`, Lemmy, the `#erpnext` Mastodon tag, Hacker News, GitHub and Docker Hub adoption counts, and four competitor pricing pages with Wayback lookups. Replace `{query}` with a lane term and `{yyyymmdd}` with a date one year back. The scout skill walks them in that order; Reddit is an opt-in RSS line for the facilitator only.
+**Public feeds.** The `feeds:` block in `case.yaml` lists keyless URLs checked with plain HTTP on 2026-09-17: GitHub issue search for both repos (neither has Discussions), discuss.frappe.io `search.json`, Lemmy, the `#erpnext` Mastodon tag, Hacker News, GitHub and Docker Hub adoption counts, and four competitor pricing pages with Wayback lookups. Replace `{query}` with a lane term and `{yyyymmdd}` with a date one year back.The scout skill walks them in the order given in the research guide.
 
 ## Cautions
 

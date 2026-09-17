@@ -22,8 +22,8 @@ You are a **product-operations lead**. You do not own one product area; you own 
 
 The repository is a monorepo (many apps and packages in one place). The sparse checkout pulls only:
 
-- `apps/web/app`: page shells and the route table for the web app (written in React with React Router and Vite). `routes/core.ts` maps every URL to its page file; a good index of what screens exist.
-- `apps/web/core`: the bulk of the web UI: `components/` (one folder per feature), `layouts/`, `store/` (in-memory state using MobX), `services/` (calls to the API server), `hooks/`.
+- `apps/web/app`: page shells and the route table for the web app (written in React, a common web framework). `routes/core.ts` maps every URL to its page file; a good index of what screens exist.
+- `apps/web/core`: the bulk of the web UI: `components/` (one folder per feature), `layouts/`, `store/` (the app's in-memory state), `services/` (calls to the API server), `hooks/`.
 - `apps/web/styles`: global CSS for the web app; imports the theme and adds a few overrides.
 - `packages/propel/src`: Plane's current design system, "Propel": buttons, dialogs, menus, tabs, tables, toasts, charts, empty states, and the icon set. Includes a Storybook story describing the design philosophy.
 - `packages/ui/src`: the older shared component library (`@plane/ui`) that many screens still use: dropdowns, modals, form fields, breadcrumbs, avatars, tables.
@@ -43,7 +43,7 @@ Not included: the API server (`apps/api`, Django/Python), the Space and Admin ap
 6. **Hacker News search**: https://hn.algolia.com/?q=plane.so. Launch threads collect comparisons with Jira and Linear.
 7. **OpenAlternative listing**: https://openalternative.co/plane. Positioning and alternatives. G2, Capterra, Product Hunt, and Reddit block automated fetching; if you use search-engine snippets from them, label them unverified.
 
-**Public feeds.** The `feeds:` block in case.yaml lists keyless sources checked for this case: Lemmy, Mastodon tags, Hacker News, App Store reviews of the Plane mobile app, GitHub issues ranked by reactions, Docker Hub pulls, and Wayback snapshots of competitor pricing pages. There is no forum search JSON; the community is on Discord. The scout skill walks them in that order. Each is a starting point only.
+**Public feeds.** The `feeds:` block in case.yaml lists keyless sources checked for this case: Lemmy, Mastodon tags, Hacker News, App Store reviews of the Plane mobile app, GitHub issues ranked by reactions, Docker Hub pulls, and Wayback snapshots of competitor pricing pages. There is no forum search JSON; the community is on Discord.The scout skill walks them in the order given in the research guide. Each is a starting point only.
 
 ## Cautions
 

@@ -21,7 +21,7 @@ the case id, lane id, and selected opportunity id; and the review checklist.
    acceptance criteria to requirements, prototype states to PRD states.
 4. Judge acceptance criteria by whether a tester could confirm them without interpreting
    intent.
-5. Flag any estimate, story point, date, or cost as a finding.
+5. Flag any estimate, story point, delivery date or deadline, or cost as a finding.
 6. Classify every open question: blocking if its answer changes product scope, user
    behaviour, data or security behaviour, or acceptance criteria; otherwise nonblocking.
 

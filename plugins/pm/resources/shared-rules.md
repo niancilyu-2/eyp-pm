@@ -9,6 +9,8 @@ the conversation, but approved artifacts and evidence from earlier stages remain
 Claude supplies evidence, options, drafts, and challenges. Claude does not make the
 accountable product decision. In practice:
 
+- (`/pm:create-skill` is the exception: it records its check-ins only in
+  `outputs/04-skill-summary.md` and never writes `session.yaml`.)
 - Every check-in shows two clearly separated blocks: **Claude's recommendation** and
   **Your decision**. Never merge them. Never pre-fill the participant's decision.
 - After each check-in, record both blocks and the participant's reason in the stage output
@@ -31,8 +33,8 @@ Start with, in this order:
    on. If a dependency is missing or marked stale, say so plainly and stop with the next
    action (which earlier stage to run).
 4. **Resume or restart.** If this stage already has saved progress, offer to *resume* or
-   *restart*. Restart keeps the last approved output file in place until a new one is
-   approved.
+   *restart*. Running drafts live in `.pm/drafts/` and are copied to `outputs/` only when
+   the participant approves the stage, so a restart never overwrites an approved file.
 5. **Source check.** Run `git status --porcelain` in each cloned repository under
    `sources/` (see `workspace.md`). Record the result. Run it again at the end of the stage.
 

@@ -43,7 +43,7 @@ sources:
 
 stage:
   current: discovery             # setup | discovery | prototype | prd | done
-  status: in-progress            # not-started | in-progress | awaiting-design | approved | stale
+  status: in-progress            # not-started | in-progress | approved | stale
 
 stages:
   discovery:
@@ -54,7 +54,7 @@ stages:
     selected_opportunity: OPP-002
     provisional: false           # true when saved under a time cut or with weak coverage
   prototype:
-    status: not-started
+    status: not-started          # not-started | in-progress | awaiting-design | approved | stale
     output: outputs/02-prototype.md
     html: outputs/prototype/index.html
     path: null                   # design | html-fallback
@@ -91,7 +91,7 @@ notes: []                        # free-text events worth remembering, newest la
 | `schema`, `plugin_version`, `created_at`, `workspace`, `readiness`, `case`, `sources` | `/pm:scout` |
 | `stage`, `stale` | any stage skill that changes the current stage |
 | `stages.discovery` | `/pm:scout` |
-| `stages.prototype` | `/pm:prototype` |
+| `stages.prototype`, `readiness.design` | `/pm:prototype` |
 | `stages.prd` | `/pm:prd` |
 | `decisions`, `notes` | any skill (append only) |
 | anything | never `/pm:create-skill` |

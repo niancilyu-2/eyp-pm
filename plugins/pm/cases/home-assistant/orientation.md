@@ -6,15 +6,15 @@ Home Assistant is free, open-source smart-home software. It runs on a small comp
 
 Key terms:
 
-- **Integration** – the connector for one brand or protocol.
-- **Device** – one physical thing, such as a motion sensor.
-- **Entity** – one controllable or measurable part of a device, such as its "motion detected" reading or battery level. Everything on screen is built from entities.
-- **Dashboard** – a page of cards showing and controlling entities. ("Lovelace" is its old name, still used in folder names.)
-- **Automation** – a rule made of triggers ("when"), conditions ("only if") and actions ("do").
-- **Repairs** – a built-in page listing problems the system has detected, each with a suggested fix.
-- **Backup** – a restorable copy of the configuration.
+- **Integration**: the connector for one brand or protocol.
+- **Device**: one physical thing, such as a motion sensor.
+- **Entity**: one controllable or measurable part of a device, such as its "motion detected" reading or battery level. Everything on screen is built from entities.
+- **Dashboard**: a page of cards showing and controlling entities. ("Lovelace" is its old name, still used in folder names.)
+- **Automation**: a rule made of triggers ("when"), conditions ("only if") and actions ("do").
+- **Repairs**: a built-in page listing problems the system has detected, each with a suggested fix.
+- **Backup**: a restorable copy of the configuration.
 
-The frontend is written in TypeScript using Lit web components; the backend ("core") is Python and is read online for this case, not cloned.
+The frontend is written in TypeScript (a web programming language); the backend ("core") is Python and is read online for this case, not cloned.
 
 ## Who the persona is
 
@@ -32,36 +32,36 @@ A nontechnical household co-admin. Someone else set the system up; this person h
 
 Frontend (`home-assistant/frontend`, cloned sparsely to `sources/primary`):
 
-- `src/panels/lovelace` – dashboard rendering and editor; frontend written in TypeScript/Lit web components.
-- `src/panels/config` – every Settings page: devices, entities, integrations, automations, backups, repairs and more.
-- `src/panels/home` – the newer default Home page shown before a household builds a dashboard.
-- `src/components` – shared building blocks prefixed `ha-` (cards, buttons, dialogs, pickers, alerts, trace viewer).
-- `src/dialogs` – pop-ups such as entity detail ("more-info"), repairs flows, restart and quick search.
-- `src/data` – the frontend's calls to the backend; shows which core capabilities the interface already reaches.
-- `src/resources` – global styles, theme tokens (colours, spacing, typography), icons and dark mode.
-- `src/translations` – `en.json`, the source of every English string in the interface.
+- `src/panels/lovelace`: dashboard rendering and editor.
+- `src/panels/config`: every Settings page: devices, entities, integrations, automations, backups, repairs and more.
+- `src/panels/home`: the newer default Home page shown before a household builds a dashboard.
+- `src/components`: shared building blocks prefixed `ha-` (cards, buttons, dialogs, pickers, alerts, trace viewer).
+- `src/dialogs`: pop-ups such as entity detail ("more-info"), repairs flows, restart and quick search.
+- `src/data`: the frontend's calls to the backend; shows which core capabilities the interface already reaches.
+- `src/resources`: global styles, theme tokens (colours, spacing, typography), icons and dark mode.
+- `src/translations`: `en.json`, the source of every English string in the interface.
 
 Core (`home-assistant/core`) is read online only, never cloned. Open the pinned links:
 
-- `homeassistant/components/lovelace` – how dashboards are stored and served.
-- `homeassistant/components/config` – backend endpoints behind the Settings pages (entity and device editing, automation saving).
-- `homeassistant/helpers/entity_registry.py` – what the system records about each entity (name, disabled state, area).
-- `homeassistant/helpers/device_registry.py` – the same for devices.
-- `homeassistant/components/automation` – how automations are loaded and run.
-- `homeassistant/components/trace` – how automation run traces are recorded.
-- `homeassistant/components/backup` – backup creation, storage locations and restore.
-- `homeassistant/components/repairs` – the issue list behind the Repairs page.
+- `homeassistant/components/lovelace`: how dashboards are stored and served.
+- `homeassistant/components/config`: backend endpoints behind the Settings pages (entity and device editing, automation saving).
+- `homeassistant/helpers/entity_registry.py`: what the system records about each entity (name, disabled state, area).
+- `homeassistant/helpers/device_registry.py`: the same for devices.
+- `homeassistant/components/automation`: how automations are loaded and run.
+- `homeassistant/components/trace`: how automation run traces are recorded.
+- `homeassistant/components/backup`: backup creation, storage locations and restore.
+- `homeassistant/components/repairs`: the issue list behind the Repairs page.
 
 ## Where to start public research
 
-1. **Community forum** (`community.home-assistant.io`) – the busiest channel. Search phrases a household would type ("became unavailable", "dashboard disappeared", "automation not triggering", "restore backup"). Note dates; the interface changes monthly.
-2. **GitHub issues** for `frontend` and `core` – use label filters and terms matching each lane (`dashboard`, `automation editor`, `repairs`, `backup`). Read closed issues too.
-3. **Official docs** – confirm what the product already does before assuming a gap. Start at `/dashboards/`, `/docs/automation/`, `/docs/automation/troubleshooting/`, `/integrations/backup/`, `/integrations/repairs/` and `/common-tasks/general/`.
-4. **Release blog** – skim the last six monthly posts for changes in your lane.
-5. **GitHub discussions** (frontend) – lower volume; occasionally useful for design rationale.
-6. **App store listing** – reviews are short; read them for wording, not counts. Label any search-engine snippets from sites that block fetching as unverified.
+1. **Community forum** (`community.home-assistant.io`): the busiest channel. Search the lane's nouns ("backup", "restore", "dashboard", "automation", "entity", "device"). Note dates; the interface changes monthly.
+2. **GitHub issues** for `frontend` and `core`: use label filters and terms matching each lane (`dashboard`, `automation editor`, `repairs`, `backup`). Read closed issues too.
+3. **Official docs**: confirm what the product already does before assuming a gap. Start at `/dashboards/`, `/docs/automation/`, `/docs/automation/troubleshooting/`, `/integrations/backup/`, `/integrations/repairs/` and `/common-tasks/general/`.
+4. **Release blog**: skim the last six monthly posts for changes in your lane.
+5. **GitHub discussions** (frontend): lower volume; occasionally useful for design rationale.
+6. **App store listing**: reviews are short; read them for wording, not counts. Label any search-engine snippets from sites that block fetching as unverified.
 
-**Public feeds.** The `feeds:` block in case.yaml lists keyless sources checked for this case: community forum search JSON, Lemmy, Mastodon tags, Hacker News, App Store reviews, GitHub issues ranked by reactions, Docker Hub pulls, and Wayback snapshots of competitor pages. The scout skill walks them in that order. Each is a starting point only.
+**Public feeds.** The `feeds:` block in case.yaml lists keyless sources checked for this case: community forum search JSON, Lemmy, Mastodon tags, Hacker News, App Store reviews, GitHub issues ranked by reactions, Docker Hub pulls, and Wayback snapshots of competitor pages.The scout skill walks them in the order given in the research guide. Each is a starting point only.
 
 ## Cautions
 

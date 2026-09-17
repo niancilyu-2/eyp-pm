@@ -7,8 +7,8 @@ repository. The participant creates an **empty folder**, opens a terminal there,
 `claude`. The skill cannot change folders, so `/pm:scout` must verify the current folder:
 
 - It is empty, or contains only `.claude/`, `.pm/`, `outputs/`, `sources/`, or `.gitkeep`.
-- It is **not** inside another git repository (`git rev-parse --show-toplevel` must fail or
-  point at the folder itself once `sources/` are cloned).
+- It is **not** inside a git repository: `git rev-parse --show-toplevel` run in the folder
+  must fail. Cloning into `sources/` later does not change this.
 - Claude can create a file in it (write and delete `.pm/.write-test`).
 
 If any check fails, report `Blocked` with the single next action ("create a new empty folder
@@ -33,7 +33,11 @@ Layout created by setup:
 ## Cloning a case repository (sparse, pinned)
 
 Read the repository entries from the case's `case.yaml`. For each entry with a `clone_to`
-that is not `null`, run the following from the workshop folder. Replace the placeholders
+that is not `null`: if `<clone_to>` already exists and `git rev-parse HEAD` inside it
+equals `pinned_sha`, reuse it. If it exists but holds a different repository or commit
+(for example the participant pre-selected another case), say so, rename it to
+`sources/_old-<previous case id>`, and clone fresh. Do the same for a leftover
+`sources/companion`. Then run the following from the workshop folder. Replace the placeholders
 from `case.yaml`. On Windows use the same commands in PowerShell or Git Bash; add the
 long-path setting shown.
 
@@ -107,8 +111,11 @@ or `approved`:
 
 - Offer **Resume** (continue from the last recorded step and the current draft file) or
   **Restart** (begin the stage again).
-- On restart, keep the last approved output file untouched until a new version is approved,
-  then overwrite it and increment `revision`.
+- Drafts are written under `.pm/drafts/` (same file names as `outputs/`). At the approve
+  step, copy the draft over the `outputs/` file and increment `revision`. The prototype
+  HTML is the one exception, because the Design export lands in `outputs/prototype/`
+  directly: on restart, copy the approved `index.html` to `.pm/drafts/index.approved.html`
+  first, and restore it if the restart is abandoned.
 - Never delete a previous approved output without saying so.
 
 ## Stale handling
