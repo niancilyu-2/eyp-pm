@@ -4,7 +4,11 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.3.1 (unreleased)
+## 0.3.2 (unreleased)
+
+- GitHub issues rung falls back to HTML search pages when the shared-IP API limit is hit.
+
+## 0.3.1
 
 - Fixes from a cold-read review and a simulated participant run: drafts live in
   `.pm/drafts/` and are promoted on approval; clone reuse and case-switch handling; fetch

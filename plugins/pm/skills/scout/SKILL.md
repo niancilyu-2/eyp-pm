@@ -146,8 +146,9 @@ yours; note the difference without arguing.
 
 - Web unavailable mid-stage: log the gap, continue with repository constraints and any
   items already collected, and save a `provisional` file. Never fabricate a source.
-- One rung refuses or rate-limits: log `GAP` for that rung and move to the next. Do not
-  retry in a loop.
+- The GitHub API returns 403 or 429: switch to the `_html` templates in `feeds:` at once;
+  everyone in the room shares one address and the limit. Any other rung that refuses or
+  rate-limits: log `GAP` and move to the next. Do not retry in a loop.
 - GitHub unreachable for cloning: use the facilitator copy path in `workspace.md`.
 - Source folder changed: follow the source-protection steps in `workspace.md`; do not
   reset it.

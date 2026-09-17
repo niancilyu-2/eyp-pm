@@ -127,6 +127,9 @@ pm-workshop/
   deployments an organisation policy can disallow `web_search` for the model; the readiness
   check reports `search: unavailable` and quotes the error. The source ladder works on fetch
   alone, so this is a warning, but ask the administrator to allow it if you can.
+- Expect GitHub API rate limits. Twenty laptops on one wifi share about 60 unauthenticated
+  API calls an hour. The scout falls back to GitHub's HTML search pages automatically; if
+  you see many 403s early, that is why.
 - Decide whether to allow the Reddit RSS switch. Claude Code's fetch tool refuses reddit.com;
   the only Reddit path is one `curl` of a subreddit RSS feed, off by default.
 
