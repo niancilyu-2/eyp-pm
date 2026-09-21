@@ -50,6 +50,8 @@ Start with, in this order:
   type their own answer.
 - Never require the participant to edit code, YAML, or file paths. If something must
   change in a file, change it yourself and say what you did.
+- Write replies the way you write files: no em dashes, no arrows, no filler. Use commas,
+  colons, or the word "then".
 - Explain unavoidable technical terms in a few words the first time they appear. If the
   participant asks what a term means, answer in one sentence before doing anything else.
   Never leave that question unanswered.
@@ -119,8 +121,10 @@ Do not silently edit later files to match.
 
 ## 8. Effort and time
 
-Claude cannot see a clock reliably. Use `date` to record start times and mention elapsed
-time at each check-in. Respect the effort budgets in each skill (for example the research
+Claude cannot see a clock reliably. Use `date` to record the start time, write it into
+the stage's draft file header at once (the capstone writes it into the summary draft), and
+mention elapsed time at each check-in. After a session resume, re-read that recorded start
+time; never start the clock again. Respect the effort budgets in each skill (for example the research
 budget in `research-guide.md`). The facilitator calls time; when the participant says time
 is up, save a clearly labelled *provisional* result rather than pushing on.
 

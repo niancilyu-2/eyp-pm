@@ -4,7 +4,14 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.5.0 (unreleased)
+## 0.5.1 (unreleased)
+
+- README rewritten as a participant-facing front page.
+- Start time is written into the stage draft and re-read after a resume, so elapsed minutes
+  survive a restart. Replies follow the same no-dash, no-arrow rule as files. Walkthrough
+  notes the permission prompt when the capstone writes its skill file.
+
+## 0.5.0
 
 - Research rigour: skew per rung and a "Who we heard from" paragraph, counting rules with
   bases and one signal per underlying item, recurrence labels, a counter-evidence fetch per

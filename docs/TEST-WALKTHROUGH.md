@@ -124,7 +124,8 @@ same folder. Independent of the other stages. Bring one repeated task from your 
 checklist you already use.
 
 Claude asks four questions, shows a proposed skill at the **scope check-in**, then writes
-`.claude/skills/<name>/SKILL.md` and validates it.
+`.claude/skills/<name>/SKILL.md` and validates it. Claude Code asks permission before
+writing that file even if you allowed edits earlier; choose Yes.
 
 To test: open a second terminal in the same folder, type `claude`, type `/skills` and
 find your command, run it with sample input. Paste the result back into the first window.
