@@ -70,6 +70,12 @@ remains.
   ratings, titles, dates, and full text. Read the most recent twenty and the one-star ones.
 - `app_store_lookup`: the same app's rating count, average, current version, and release
   notes in one call. Release notes tell you what the maker shipped last.
+- `play_store_page`: Google Play has no public review feed and its listing cannot be read
+  by the fetch tool. Ask the participant to open the page in their browser, tap "See all
+  reviews", sort by most recent, and paste three to five reviews with their star ratings
+  and dates. Log each as `Evidence` with the listing URL and the note `pasted by
+  participant`. Record the total review count shown on the page. Do not attempt to fetch
+  or parse the page yourself.
 - Review directories listed under `public_channels` (OpenAlternative, Slashdot, App Store
   listing pages). G2, Capterra, Trustpilot, and Product Hunt block automated reading; do
   not try.

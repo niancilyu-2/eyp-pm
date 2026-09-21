@@ -4,7 +4,12 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.4.1 (unreleased)
+## 0.4.2 (unreleased)
+
+- Android reviews: `play_store_page` per case with an Android app; the participant pastes
+  reviews from the browser and Claude logs them as participant-pasted evidence.
+
+## 0.4.1
 
 - Capstone repositioned as a facilitator demo and take-home exercise; time budget adjusted.
 

@@ -1,6 +1,6 @@
 {
   "name": "pm",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "EYP PM workshop skills: compare public evidence and pick an opportunity (/pm:scout), turn it into a clickable prototype (/pm:prototype), write a repository-grounded PRD with an independent review (/pm:prd), and turn one of your own PM practices into a Claude skill (/pm:create-skill).",
   "author": {
     "name": "niancilyu-2",

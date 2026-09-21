@@ -181,6 +181,7 @@ feeds:
     - { tag: permissions, url: "https://discuss.frappe.io/tag/permissions/l/top.json?period=yearly" }
   hackernews_comments: "https://hn.algolia.com/api/v1/search?query={query}&tags=comment&hitsPerPage=10"
   app_store_lookup: []   # no official ERPNext mobile app
+  play_store_page: null   # no official app
   wikipedia_pageviews:
     - { article: "ERPNext", url: "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/ERPNext/monthly/{start}/{end}" }
   roadmap:

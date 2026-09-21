@@ -125,6 +125,7 @@ feeds:
   hackernews_comments: "https://hn.algolia.com/api/v1/search?query={query}&tags=comment&hitsPerPage=10"   # "plane" alone matches aircraft; pair it with a lane word
   app_store_lookup:
     - { app: "Plane: Projects, Wiki, AI", id: 6657986465, url: "https://itunes.apple.com/lookup?id=6657986465&country=us", fields: "averageUserRating, userRatingCount, version, releaseNotes, currentVersionReleaseDate" }
+  play_store_page: { app: "Plane: Projects, Wiki, AI", package: com.plane.so, url: "https://play.google.com/store/apps/details?id=com.plane.so" }   # participant opens and pastes reviews; not fetched
   wikipedia_pageviews: []   # no English Wikipedia article; page summary for Plane_(software) returns 404
   roadmap:
     own:

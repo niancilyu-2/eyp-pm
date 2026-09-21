@@ -162,6 +162,7 @@ feeds:
   hackernews_comments: "https://hn.algolia.com/api/v1/search?query={query}&tags=comment&hitsPerPage=10"
   app_store_lookup:
     - { app: "Home Assistant", id: 1099568401, url: "https://itunes.apple.com/lookup?id=1099568401&country=us", fields: "averageUserRating, userRatingCount, version, releaseNotes, currentVersionReleaseDate" }
+  play_store_page: { app: "Home Assistant", package: io.homeassistant.companion.android, url: "https://play.google.com/store/apps/details?id=io.homeassistant.companion.android" }   # participant opens and pastes reviews; not fetched
   wikipedia_pageviews:
     - { article: "Home_Assistant", url: "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Home_Assistant/monthly/{start}/{end}" }
   roadmap:

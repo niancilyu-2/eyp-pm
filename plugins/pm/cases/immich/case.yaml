@@ -132,6 +132,7 @@ feeds:
   hackernews_comments: "https://hn.algolia.com/api/v1/search?query={query}&tags=comment&hitsPerPage=10"
   app_store_lookup:
     - { app: "Immich", id: 1613945652, url: "https://itunes.apple.com/lookup?id=1613945652&country=us", fields: "averageUserRating, userRatingCount, version, releaseNotes, currentVersionReleaseDate" }
+  play_store_page: { app: "Immich", package: app.alextran.immich, url: "https://play.google.com/store/apps/details?id=app.alextran.immich" }   # participant opens and pastes reviews; not fetched
   wikipedia_pageviews: []   # no English Wikipedia article; page summary for Immich returns 404
   roadmap:
     own:

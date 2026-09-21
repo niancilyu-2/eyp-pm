@@ -89,6 +89,7 @@ sources it can hold, all public and keyless:
 | `mastodon_tags` | recent posts under the product's hashtags |
 | `hackernews_search`, `hackernews_comments` | Hacker News stories and comments with points |
 | `app_store_reviews`, `app_store_lookup` | Apple App Store review text, rating counts, current version and release notes |
+| `play_store_page` | Google Play listing for the participant to open and paste reviews from; Claude does not fetch it |
 | `adoption` | GitHub stars, Docker Hub pulls, PyPI or NuGet downloads |
 | `wikipedia_pageviews` | monthly Wikipedia article views, a public-interest trend |
 | `roadmap.own` | the product's own project boards, milestones, or roadmap page |
