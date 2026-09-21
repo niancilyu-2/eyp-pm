@@ -4,7 +4,15 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.4.2 (unreleased)
+## 0.5.0 (unreleased)
+
+- Research rigour: skew per rung and a "Who we heard from" paragraph, counting rules with
+  bases and one signal per underlying item, recurrence labels, a counter-evidence fetch per
+  theme, and constraints that cite commit, path, line range, and a quoted line marked "to
+  confirm with engineering". The PRD stage reopens each constraint before labelling
+  anything Verified.
+
+## 0.4.2
 
 - Android reviews: `play_store_page` per case with an Android app; the participant pastes
   reviews from the browser and Claude logs them as participant-pasted evidence.

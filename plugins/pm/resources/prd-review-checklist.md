@@ -16,7 +16,9 @@ The reviewer reads only; it returns findings as text. `/pm:prd` writes them to
    quote that appears only in the PRD or differs from the bank.
 3. **Unsupported technical claims.** Every technical statement is labelled `Verified`,
    `Inferred`, or `Engineering-owned`. For `Verified`, open the cited path in `sources/` and
-   confirm it exists and says what the PRD claims. Flag invented file names, APIs, or data
+   confirm it exists and says what the PRD claims. For every `CON-###`, check that it names a
+   path, a line range, a quoted line, and the status "to confirm with engineering"; flag any
+   that do not. Flag invented file names, APIs, or data
    models. Flag estimates, story points, delivery dates or deadlines, or costs anywhere in the
    document.
 4. **Missing states or permissions.** The approved main path and the two alternate states

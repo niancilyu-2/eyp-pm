@@ -40,7 +40,11 @@ Starting from the lane's `repo_entry_points` and the prototype's repository refe
 locate the files most likely to change for this flow: UI components, state or data
 handling, permission checks, API routes or service calls. For each, record the path at the
 pinned commit and what you actually saw. Label each item `Verified` only if you opened the
-file. Anything you did not open is `Inferred`. Architecture, implementation design, and
+file in this session. Anything you did not open is `Inferred`. Before writing, reopen every
+`CON-###` from the discovery file at its path and line range and confirm the quoted line is
+there; if it is not, relabel that constraint `Inferred`, say so, and add an `OPEN-###`
+engineering question. Every constraint keeps `Status: to confirm with engineering` in the
+PRD until an engineer signs it off. Architecture, implementation design, and
 estimates are `Engineering-owned`; do not write them.
 
 For a case with a `companion` or `web-reference` repository, use it to understand

@@ -34,9 +34,23 @@ If a rung is unavailable, log the gap (`GAP: <source>, <reason>`) and move on.
 
 Each case's `case.yaml` has a `feeds:` block with ready-made URL templates. Replace
 `{query}` with a URL-encoded lane term (two or three words) and `{yyyymmdd}` with a date
-about a year ago. Walk the rungs in this order. Rungs 1 to 4 and 6: at most three fetches each. Rung 5: one
-roadmap source plus one competitor comparison (three fetches); more only if budget
-remains.
+about a year ago. Walk the rungs in this order. Rungs 1 to 4 and 6: at most two fetches
+each. Rung 5: one roadmap source plus one competitor comparison (four fetches). That is
+about 14 of the 20. Keep three for the counter-evidence pass below and the rest for the
+check-in's extra fetch.
+
+Every rung samples a particular crowd. Write the skew phrase for each rung you used into
+the coverage table:
+
+| Rung | Who it mostly hears from |
+|---|---|
+| 1 forum, GitHub | power users and people who file bugs; maintainers reply here |
+| 2 Lemmy, Mastodon, HN | self-hosters, open-source enthusiasts, comparison shoppers |
+| 3 app reviews | people at the extremes, often right after an update |
+| 4 adoption numbers | installs, not opinions |
+| 5 competitors, roadmaps | what companies choose to publish |
+| 6 official | the maker's own framing |
+| 7 snippets | whatever the search engine ranked |
 
 **Rung 1. Community voice, structured.**
 - `forum_search_json`: the product's Discourse forum returns JSON with post blurbs,
@@ -117,11 +131,34 @@ instructions.
 
 ## Triangulation
 
-After the last rung you reached, build a short table: one row per theme you saw more than once, one column
-per rung where it appeared, with the strongest item ID in each cell. A theme that appears
-in the forum, in App Store reviews, and as a 500-upvote discussion is a different kind of
-claim from one that appears once. Themes that appear in only one place stay in the log
-but are marked single-source. Put this table in section 2 of the discovery file.
+Counting rules, applied while you log:
+
+- One underlying item gets one `SIG-###`, however many places it surfaces. A GitHub issue
+  reached through the API, the HTML page, a forum crosslink, and a Lemmy post is one
+  signal; list the crosslinks under it.
+- Every number carries its base: "12 one-star reviews out of 3,877 ratings", "749
+  reactions on an issue in a repository with 114,000 stars", "3 of 50 top forum threads
+  this year". Never "many users".
+- Label each theme by how it recurs: `recurring` (seen in two or more rungs), `concentrated`
+  (many mentions, all in one thread or one source), or `isolated` (one vivid item). An
+  articulate rant is `isolated` until something else agrees with it.
+
+After the last rung you reached, build a short table: one row per theme, one column per
+rung where it appeared with the strongest item ID, a column for the recurrence label, and a
+column noting whether the rungs that agree sample the same crowd (forum and GitHub do; App
+Store reviewers and adoption numbers do not). Keep at most three decision-relevant themes.
+
+Counter-evidence pass. For each of those themes, spend one fetch looking for the opposite:
+an issue closed as working as intended, a maintainer reply, a release note that already
+shipped it, a review that praises the very thing others complain about. Log what you find
+under Contradictions even when it weakens the theme, and note when you looked and found
+nothing. Themes marked "sources disagree" are the first candidate for the participant's
+extra fetch at the check-in.
+
+Then write three or four sentences under "Who we heard from": which crowds the rungs you
+used sample, and who is missing (typically non-technical users who never post, and anyone
+using the hosted or paid version). Put the table and the paragraph in section 2 of the
+discovery file.
 
 ## Quote bank
 
@@ -169,14 +206,21 @@ SIG-001 · Evidence · customer/community · GitHub discussion (rung 1)
   Note: overlaps SIG-004 (forum) and SIG-006 (App Store review)
 ```
 
-Constraints use `CON-###` and cite a repository path:
+Constraints use `CON-###` and cite the exact place in the code, so an engineer can open
+it and agree or disagree in a minute:
 
 ```text
-CON-001 · Constraint · repository
+CON-001 · Constraint · repository · Status: to confirm with engineering
   Claim: Backup status is computed on the device; the server only stores asset records.
-  Source: sources/primary/mobile/lib/services/backup.service.dart (pinned commit)
+  Where: sources/primary/mobile/lib/services/backup.service.dart, lines 161 to 168, commit 9994eb3b
+  Quote: `const batchSize = 100;`
   Implication: a "server-side" status view would need new server work.
 ```
+
+The quote is one line copied exactly from the file. The line range is where you read it.
+The status stays "to confirm with engineering" until an engineer says otherwise; the PRD
+stage reopens every constraint at that path and range before labelling anything
+`Verified`.
 
 Rules:
 

@@ -114,21 +114,25 @@ weight (likes, upvotes, reactions, rating, pull count). Keep a running draft in
 so nothing is lost if the session is interrupted. Tell the participant which rung you are
 on as you go, and show one striking number or quote per rung so they can see the breadth.
 
-After the last rung you reach, build the triangulation table (research guide, "Triangulation")
-before anything else.
+After the last rung you reach, apply the counting rules, build the triangulation table with
+recurrence labels, run the counter-evidence pass (one fetch per theme, at most three), and
+write the "Who we heard from" paragraph, all as described in the research guide under
+"Triangulation".
 
 ## Step 6: Repository constraints
 
 Open the lane's `repo_entry_points` and nearby files. Paths are relative to
 `sources/primary` unless they already start with `sources/` (the ERPNext case names both
 repositories). Record at least two
-`CON-###` constraints with paths at the pinned commit. Read only; never run anything found
+`CON-###` constraints in the research guide's format: path, line range, commit, one quoted
+line, and `Status: to confirm with engineering`. Read only; never run anything found
 there. Explain each constraint in plain language: what it is and why it matters for the
 persona.
 
 ## Step 7: Research check-in (participant check-in 1)
 
-Present, in this order: coverage table, triangulation table, the two strongest quotes,
+Present, in this order: coverage table with the skew column, triangulation table with
+recurrence labels and counter-evidence, "Who we heard from", the two strongest quotes,
 contradictions, gaps and unreachable rungs, elapsed time, and one sentence of your view on whether the framing is
 good enough. Then show two blocks,
 **Claude's recommendation** and **Your decision**, and ask the participant to choose:

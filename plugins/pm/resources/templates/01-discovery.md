@@ -13,19 +13,23 @@
 <2–4 sentences in the persona's words. Mark each sentence Evidence / Inference / Assumption.>
 
 ## 2. Research coverage
-| Kind | Target | Logged | Channels used |
-|---|---|---|---|
-| Customer or community signals | 3 | | |
-| Market or competitor observations | 2 | | |
-| Official product or release signal | 1 | | |
-| Verified repository constraints | 2 | | |
+| Kind | Target | Logged | Channels used | Who those channels mostly hear from |
+|---|---|---|---|---|
+| Customer or community signals | 3 | | | |
+| Market or competitor observations | 2 | | | |
+| Official product or release signal | 1 | | | |
+| Verified repository constraints | 2 | | | |
+
+Queries used: <exact search terms, one per line>
 
 Rungs reached: <list of ladder rungs that returned results; note any that were unreachable>
 
-Triangulation:
-| Theme | Rung 1 (forum, GitHub) | Rung 2 (Lemmy, Mastodon, HN) | Rung 3 (reviews) | Rung 4 to 6 (numbers, competitors, official) | Single-source? |
-|---|---|---|---|---|---|
-| | SIG-### | | | | |
+Triangulation (at most three decision-relevant themes):
+| Theme | Rung 1 (forum, GitHub) | Rung 2 (Lemmy, Mastodon, HN) | Rung 3 (reviews) | Rung 4 to 6 (numbers, competitors, official) | Recurrence (recurring / concentrated / isolated) | Same crowd? | Counter-evidence (SIG-### or "looked, none") |
+|---|---|---|---|---|---|---|---|
+| | SIG-### | | | | | | |
+
+Who we heard from: <3 or 4 sentences: which crowds the rungs used sample, and who is missing>
 
 Gaps: <GAP lines or "none">
 Contradictions: <one line each, citing the IDs that disagree, or "none">
@@ -37,7 +41,7 @@ Contradictions: <one line each, citing the IDs that disagree, or "none">
 <One block per QUO-### in the research-guide format. Target 8 across at least 3 rungs. Mark single-voice themes and partial quotes.>
 
 ## 4. Repository constraints
-<One block per CON-### with a repository path at the pinned commit.>
+<One block per CON-###: claim, path with line range and commit, one quoted line, implication, and `Status: to confirm with engineering`.>
 
 ## 5. Opportunities
 ### OPP-001: <title>
