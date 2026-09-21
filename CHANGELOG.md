@@ -4,7 +4,13 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.5.1 (unreleased)
+## 0.6.0 (unreleased)
+
+- Repositioned as a distributable skill package. README is a package front page with a
+  flow diagram and a traceability diagram; facilitation material moved to
+  `docs/FACILITATOR.md`. Manifest descriptions updated.
+
+## 0.5.1
 
 - README rewritten as a participant-facing front page.
 - Start time is written into the stage draft and re-read after a resume, so elapsed minutes
