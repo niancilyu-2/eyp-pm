@@ -8,7 +8,7 @@ Plane ships in a free, self-hostable **Community Edition** and in paid tiers; th
 
 ## Who the persona is
 
-The user they design for is a **product-operations lead**. They do not own one product area; they own the system by which requests get in, get sorted, get planned, and get reported on. Your brief on their behalf is to *turn unstructured demand into aligned execution*: asks from sales, support, leadership, and engineers should end up as a plan people believe and a status stakeholders can read without asking. They use Plane daily, configure it for others, and are usually the person answering "where does this go?" and "how is that going?"
+The user you design for is a **product-operations lead**. They do not own one product area; they own the system by which requests get in, get sorted, get planned, and get reported on. Your brief on their behalf is to *turn unstructured demand into aligned execution*: asks from sales, support, leadership, and engineers should end up as a plan people believe and a status stakeholders can read without asking. They use Plane daily, configure it for others, and are usually the person answering "where does this go?" and "how is that going?"
 
 ## The three lanes
 
