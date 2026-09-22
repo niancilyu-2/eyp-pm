@@ -56,7 +56,8 @@ Before the orientation, define three words in one line each, because they recur 
 day: repository (the product's source code, kept in a folder), pinned commit (a fixed
 snapshot of that code from a set date), and sources clean (nothing in that folder has
 changed). Then give a short orientation from the case's `orientation.md`: what the product is in two
-sentences, who the persona is, and how the chosen lane works in this product today, as a
+sentences, who the persona is (the user the PM designs for; the PM stays a PM, and the
+mandate is their brief on that user's behalf), and how the chosen lane works in this product today, as a
 concrete walk-through an editor or operator would recognise ("you write a page, pick the
 languages it applies to, and press Save and Publish; a small confirmation appears"). Name
 the two or three repository folders most relevant to the lane, and define every product

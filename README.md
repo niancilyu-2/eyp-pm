@@ -20,7 +20,7 @@ changed. One PM can run it alone; a group can run it together.
 - [Requirements](#requirements)
 - [Getting started](#getting-started)
 - [Products you can work on](#products-you-can-work-on)
-- [How research works](#how-research-works)
+- [Evidence and traceability](#evidence-and-traceability)
 - [Principles and limits](#principles-and-limits)
 - [Documentation](#documentation)
 - [Repository layout](#repository-layout)
@@ -105,14 +105,14 @@ what to expect at each check-in.
 
 ## Products you can work on
 
-You work on one real open-source product, playing a role that product serves, and you
-pick one focus area within it. The tool calls a product package a case and a focus area a
+You work on one real open-source product as its PM, designing for one of the users that
+product serves, and you pick one focus area within it. The tool calls a product package a case and a focus area a
 lane: a part of the product you research for an hour, choose one opportunity in, and
 prototype as a single flow. Each product's code is downloaded at a fixed snapshot from a
 set date, and only the folders the focus areas need, tens of megabytes rather than
 hundreds.
 
-| Product | Role you take on | That role's goal | Focus areas to choose from (screen you will prototype) |
+| Product | User you design for | Your brief on their behalf | Focus areas to choose from (screen you will prototype) |
 |---|---|---|---|
 | Immich | Household media steward | Make the product easier for less-technical family members without weakening privacy or media integrity | Backup and status confidence (mobile app); Finding and organizing media (desktop web); Private sharing and collaboration (mobile app) |
 | Plane | Product-operations lead | Turn unstructured demand into aligned execution | Intake and triage; Planning and scheduling; Cross-project status readout (desktop web) |
@@ -124,27 +124,20 @@ ERPNext is the advanced option: it downloads the product and the Frappe framewor
 on. The product packages hold boundaries and starting points only, never conclusions, so
 the research is yours.
 
-## How research works
+## Evidence and traceability
 
-Discovery works through a fixed sequence of public sources that need no login and no API
-key, each step reaching people the last one missed. Each product package carries the URL
-templates.
+The discovery skill gathers evidence from public sources that need no login and no API key:
+the product's forum and GitHub, Lemmy, Mastodon, and Hacker News, app store reviews and
+release notes, adoption numbers, the product's own roadmap, competitors' job postings, and
+competitor pricing pages today and a year ago. It works through them in a fixed order,
+within a budget of 20 fetches, and writes down for every item its source, date, and the
+base behind any number. It looks for counter-evidence on each theme and says who the
+sources mostly hear from and who is missing. Verbatim user quotes follow the work into the
+PRD, and every repository constraint cites commit, path, and line range for engineering to
+confirm. The full source list and rules are in
+[plugins/pm/resources/research-guide.md](plugins/pm/resources/research-guide.md).
 
-| Step | Sources |
-|---|---|
-| 1 Community, structured | Product forum search and top threads; GitHub Discussions by upvotes; GitHub issues by reactions, with HTML search pages when the API is rate-limited |
-| 2 Community, fediverse and aggregators | Lemmy; Mastodon hashtags; Hacker News stories and comments |
-| 3 Reviews | Apple App Store review feed and release notes; Google Play reviews pasted in by you from the listing |
-| 4 Adoption | GitHub stars, Docker Hub pulls, PyPI or NuGet downloads; Wikipedia pageviews |
-| 5 Competitors and roadmaps | The product's own boards and milestones; competitors' job postings; competitor pricing pages today and a year ago via the Wayback Machine |
-| 6 Official | Release notes, changelog, blog, docs |
-| 7 Search snippets | Only if web search works; logged as unverified inference, never as evidence |
-
-Budget: 20 fetches and 8 searches per run. Every item gets a stable ID, a URL, dates, and
-a number with its base. Each theme gets one fetch looking for counter-evidence, and the
-file says who the sources mostly hear from and who is missing. Verbatim user quotes form a
-quote bank that follows the work into the PRD. Repository constraints cite commit, path,
-line range, and a quoted line, marked "to confirm with engineering".
+Everything downstream stays traceable to that evidence.
 
 ```mermaid
 flowchart LR
@@ -160,9 +153,7 @@ flowchart LR
 ```
 
 Claude never logs in, asks for keys, bypasses a CAPTCHA, builds a scraper, or loops over
-pages. G2, Capterra, Trustpilot, and Product Hunt block automated reading and are not
-attempted. Reddit is reachable only through an opt-in switch that allows one `curl` of a
-subreddit RSS feed.
+pages. Sites that block automated reading are left alone.
 
 ## Principles and limits
 
