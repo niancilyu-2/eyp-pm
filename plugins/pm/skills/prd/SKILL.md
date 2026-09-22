@@ -65,8 +65,9 @@ Fill every section. Apply the case's `exclusions` from `case.yaml`. Rules:
   scope, user behaviour, data or security behaviour, or acceptance criteria.
 - Appendix A lists touchpoints with labels and paths.
 - Voice of the customer: propose three quotes from the discovery quote bank (section 4b)
-  for section 1. The PM picks two at the scope check-in. Copy them verbatim with
-  their `QUO-###`, role, channel, date, and URL. Never edit a quote.
+  for section 1. The PM picks two at the scope check-in. Copy them verbatim as
+  blockquotes with the attribution line beneath (`QUO-###`, role, date, URL). Never edit a
+  quote.
 
 Keep the draft saved as you go.
 

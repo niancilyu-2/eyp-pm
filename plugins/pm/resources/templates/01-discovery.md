@@ -31,7 +31,7 @@ Main trade-off between the top two: <one sentence>
 
 ## 2. What we learned
 
-<Four or five sentences a newcomer understands: how people use this part of the product today, what keeps going wrong, who it hurts. Product terms defined at first use.>
+<Four or five sentences a newcomer understands: how people use this part of the product today, what keeps going wrong, who it hurts. Product terms defined at first use. Paraphrase only; no composed sentences in quotation marks. Verbatim voice belongs in 4b.>
 
 Themes:
 - <Theme A>: <one sentence> · who says so: <count and places> · fixed or open: <…> · why it matters: <…>
@@ -78,7 +78,15 @@ Gaps: <GAP lines or "none">
 Contradictions: <one line each, citing the IDs that disagree, or "none">
 
 ### 4b. Quote bank
-<One block per QUO-### in the research-guide format. Target 8 across at least 3 source types. Mark single-voice themes and partial quotes.>
+<Target 8 quotes across at least 3 source types. One blockquote per quote, attribution line beneath, blank line between entries. Mark partial quotes and single-voice themes.>
+
+> "<verbatim quote, at most 40 words>"
+
+QUO-001 · <role> · <post date> · supports SIG-### · <weight> · <URL> · accessed <date>
+
+> "<verbatim quote>"
+
+QUO-002 · <role> · <post date> · supports SIG-### · <weight> · <URL> · accessed <date>
 
 ### 4c. Evidence log
 <One block per SIG-### in the research-guide format.>

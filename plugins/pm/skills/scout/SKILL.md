@@ -157,8 +157,8 @@ what happens to them today, what would change, followed by its evidence line. Th
 recommend a `Now / Next / Later` order with one sentence of reasoning per slot and the main
 trade-off between the top two. Name the lens that tipped the order. If the recommended
 `Now` is not the one with the most signal, say so in one sentence and why. Under
-each slot show the strongest quote for that opportunity so the PM decides against real
-words, not only your summary. The five-lens comparison stays in the file; in the reply,
+each slot show the strongest quote for that opportunity as a blockquote with its
+attribution line, so the PM decides against real words, not only your summary. The five-lens comparison stays in the file; in the reply,
 say only what tipped the order. Under 300 words before the blocks. Show **Claude's recommendation** and **Your decision**
 separately. Ask the PM to choose the `Now` opportunity and give their reason in
 their own words. Record `D-###`. The PM's choice wins even if it differs from

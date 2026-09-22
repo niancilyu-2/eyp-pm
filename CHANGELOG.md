@@ -4,7 +4,13 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.7.2 (unreleased)
+## 0.7.3 (unreleased)
+
+- Quotes are Markdown blockquotes with one attribution line beneath, in the brief, at
+  check-ins, and in the PRD. Prose paraphrases; composed sentences are never shown in
+  quotation marks.
+
+## 0.7.2
 
 - Discovery brief restructured answer-first: the decision (chosen opportunity, your reason,
   the tipping lens, the others and why they wait) comes first, then what was learned, the

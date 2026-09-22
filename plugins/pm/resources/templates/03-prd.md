@@ -13,9 +13,15 @@
 - Desired outcome: <…>
 - Persona: <…>
 - Supporting evidence: SIG-### … · CON-### …
-- Voice of the customer (two quotes chosen by the PM from the discovery quote bank):
-  - QUO-###: "<verbatim>" · <role> · <channel> · <date> · <URL>
-  - QUO-###: "<verbatim>" · <role> · <channel> · <date> · <URL>
+- Voice of the customer, two quotes chosen by the PM from the discovery quote bank:
+
+> "<verbatim>"
+
+QUO-### · <role> · <date> · <URL>
+
+> "<verbatim>"
+
+QUO-### · <role> · <date> · <URL>
 
 ## 2. Goals, non-goals, and scope
 - Goals: <…>

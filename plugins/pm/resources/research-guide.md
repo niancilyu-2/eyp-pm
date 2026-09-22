@@ -181,14 +181,21 @@ Rules:
 - Prefer quotes that describe a situation or a workaround over quotes that only praise or
   complain. Prefer recent over old. Note when a quote is the only voice for its theme.
 
-Format:
+Format. Every quote is a Markdown blockquote so it stands apart from the prose, followed by
+one attribution line, with a blank line before the next quote:
 
-```text
-QUO-003 · supports SIG-002 · App Store review (rung 3) · 2026-08-16 · accessed 2026-10-01
-  "…the widget is great but I still open the app twice a day to check whether last night's
-  photos actually went up."
-  Source: https://apps.apple.com/us/app/immich/id1613945652 · rating 5/5 · an App Store reviewer
+```markdown
+> "...the widget is great but I still open the app twice a day to check whether last night's
+> photos actually went up."
+
+QUO-003 · an App Store reviewer · 2026-08-16 · supports SIG-002 · rating 5/5 · https://apps.apple.com/us/app/immich/id1613945652 · accessed 2026-10-01
 ```
+
+Add `partial` to the attribution line when the fetched page was truncated. The same
+blockquote form is used wherever a quote appears: the two strongest quotes at the research
+check-in, the quote under each slot at the priority check-in, and the Voice of the customer
+block in the PRD. Prose sections paraphrase and never put composed sentences in quotation
+marks; verbatim voice lives only in blockquotes.
 
 Show one or two quotes per rung as you go so the PM hears the voice early. Put
 the full bank in section 4b of the discovery file and list quote IDs under each
@@ -261,7 +268,7 @@ Structure, in this order:
    - Why it matters for the persona: one sentence.
    Do not use the words recurring, concentrated, isolated, rung, or skew in the reply.
    Those go in the file.
-3. **Two strongest quotes**, each with who said it and when.
+3. **Two strongest quotes**, each as a blockquote with its attribution line beneath.
 4. **Gaps.** One or two sentences: which kinds of source were empty and who we did not
    hear from.
 5. **Elapsed time and your view**, one sentence each.
