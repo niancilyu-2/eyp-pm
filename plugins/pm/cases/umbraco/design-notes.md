@@ -17,8 +17,12 @@
 The backoffice is built from the **Umbraco UI Library (UUI)**, a set of web components (custom HTML tags such as `<uui-button>`) that lives in a separate repository, `umbraco/Umbraco.UI`. Browse it online; do not clone it.
 
 - UUI dependency, Verified at the pinned SHA: `src/Umbraco.Web.UI.Client/src/external/uui/package.json` depends on `@umbraco-ui/uui` (version 2). (Outside the sparse paths; cited for provenance.)
-- Design tokens (named CSS values for colour, spacing, radius): defined in the UUI repo at `src/styles/custom-properties.css` and `src/styles/custom-properties/` (live `main` branch, not pinned). Used in the backoffice as `--uui-color-...`, `--uui-size-...` variables.
-- Typography: UUI `src/styles/uui-text.css` and `uui-font.css` (Lato font, bundled in `src/assets/fonts/lato`). Backoffice text helpers, Verified: `src/Umbraco.Web.UI.Client/src/packages/core/style/text-style.style.ts`.
+- Design tokens (named CSS values for colour, spacing, radius): defined in the UUI repo. Fetch only these exact files, pinned to commit `6aea03b1` of `umbraco/Umbraco.UI`; do not guess other paths (there is no `packages/uui-css` folder):
+  - https://raw.githubusercontent.com/umbraco/Umbraco.UI/6aea03b112457db814d79a9d4752f746da5dafe2/src/styles/custom-properties.css
+  - https://raw.githubusercontent.com/umbraco/Umbraco.UI/6aea03b112457db814d79a9d4752f746da5dafe2/src/styles/custom-properties/colors.css
+  - https://raw.githubusercontent.com/umbraco/Umbraco.UI/6aea03b112457db814d79a9d4752f746da5dafe2/src/styles/custom-properties/sizes.css
+  - https://raw.githubusercontent.com/umbraco/Umbraco.UI/6aea03b112457db814d79a9d4752f746da5dafe2/src/styles/custom-properties/fonts.css
+- Typography: UUI `src/styles/uui-text.css` (https://raw.githubusercontent.com/umbraco/Umbraco.UI/6aea03b112457db814d79a9d4752f746da5dafe2/src/styles/uui-text.css) and `uui-font.css` (Lato font, bundled in `src/assets/fonts/lato`). Backoffice text helpers, Verified: `src/Umbraco.Web.UI.Client/src/packages/core/style/text-style.style.ts`.
 - Icons, Verified: `src/Umbraco.Web.UI.Client/src/packages/core/icon-registry/icons/` (about 700 named icons, exposed via `<umb-icon>`), plus `icon-dictionary.json` in the same folder. `docs/design-choices.md` lists the small set of "recognisable" icons preferred for everyday UI.
 - Colours: no hex codes in backoffice code by convention; colour comes from UUI tokens. Themes, Verified: `src/Umbraco.Web.UI.Client/src/packages/core/themes/`.
 

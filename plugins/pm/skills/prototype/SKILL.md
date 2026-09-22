@@ -59,7 +59,11 @@ states. Present **Claude's recommendation** (including anything you would cut or
 ## Step 3: Inspect the repository's UI patterns (read-only)
 
 Using `design-notes.md` and the lane's entry points, open the design tokens, shared
-components, layouts, and public UI references. Note what you actually verified (paths at
+components, layouts, and public UI references. Read only the paths and URLs the design
+notes list. When a design system lives in another repository, fetch only the exact URLs
+given there; never guess a path from a package name. If a fetch returns 404, do not try
+variants: use neutral defaults from `prototype-html-guide.md` and record the gap in
+section 6 of the notes. Note what you actually verified (paths at
 the pinned commit) versus what you are inferring. Do not copy source files into
 `outputs/`. Run nothing.
 

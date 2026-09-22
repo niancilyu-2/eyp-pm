@@ -4,7 +4,12 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.7.3 (unreleased)
+## 0.7.4 (unreleased)
+
+- Prototype reads only the design paths the case lists and never guesses URLs; a 404 falls
+  back to neutral defaults. Umbraco design notes pin the exact UUI token files.
+
+## 0.7.3
 
 - Quotes are Markdown blockquotes with one attribution line beneath, in the brief, at
   check-ins, and in the PRD. Prose paraphrases; composed sentences are never shown in
