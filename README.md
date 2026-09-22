@@ -5,13 +5,25 @@ opportunity, a clickable prototype, and an engineering-ready PRD, on a real open
 product. Claude finds, drafts, and challenges. The PM decides, and every stage records
 which was which.
 
-Built for a facilitated workshop, usable alone. No programming required. The product's
-source code is downloaded read-only and never changed.
+No programming required. The product's source code is downloaded read-only and never
+changed. One PM can run it alone; a group can run it together.
 
 ```text
 /plugin marketplace add niancilyu-2/eyp-pm
 /plugin install pm@eyp-pm
 ```
+
+## Contents
+
+- [Commands](#commands)
+- [Requirements](#requirements)
+- [Getting started](#getting-started)
+- [Products you can work on](#products-you-can-work-on)
+- [How research works](#how-research-works)
+- [Principles and limits](#principles-and-limits)
+- [Documentation](#documentation)
+- [Repository layout](#repository-layout)
+- [Licence and credits](#licence-and-credits)
 
 ## Commands
 
@@ -49,19 +61,23 @@ Code and Git and the handful of keys you need, in about 20 minutes.
 1. Create a new empty folder and open a terminal in it.
 2. Start `claude`, install the plugin with the two commands above, and run `/pm:scout`.
 3. The readiness check ends with `Ready`, `Ready with fallback`, or `Blocked` with one
-   next action. Pick a case, or stop and come back later; either way, `/pm:scout` resumes.
+   next action. Pick a product, or stop and come back later; either way, `/pm:scout` resumes.
 4. Run the stages in order. Type `/clear` between them; each resumes from the files you
    approved.
 
 [docs/TEST-WALKTHROUGH.md](docs/TEST-WALKTHROUGH.md) shows every stage step by step with
 what to expect at each check-in.
 
-## The cases
+## Products you can work on
 
-Pick one product and one lane. Each case is pinned to a specific commit and only the
-folders it needs are downloaded, tens of megabytes rather than hundreds.
+You work on one real open-source product, playing a role that product serves, and you
+pick one focus area within it. The tool calls a product package a case and a focus area a
+lane: a part of the product you research for an hour, choose one opportunity in, and
+prototype as a single flow. Each product's code is downloaded at a fixed snapshot from a
+set date, and only the folders the focus areas need, tens of megabytes rather than
+hundreds.
 
-| Case | You play | Mandate | Lanes (prototype surface) |
+| Product | Role you take on | That role's goal | Focus areas to choose from (screen you will prototype) |
 |---|---|---|---|
 | Immich | Household media steward | Make the product easier for less-technical family members without weakening privacy or media integrity | Backup and status confidence (mobile app); Finding and organizing media (desktop web); Private sharing and collaboration (mobile app) |
 | Plane | Product-operations lead | Turn unstructured demand into aligned execution | Intake and triage; Planning and scheduling; Cross-project status readout (desktop web) |
@@ -69,15 +85,17 @@ folders it needs are downloaded, tens of megabytes rather than hundreds.
 | Umbraco | Regional content-operations editor | Reduce rework between content creation and publication | Draft to publish; Pick and reuse media from the page; Languages and variants (desktop backoffice) |
 | ERPNext (advanced) | Inventory or procurement operations manager | Resolve exceptions without weakening controls or auditability | Inventory quantity and valuation exceptions; Purchase-approval exceptions; Stock and Buying daily worklists (desktop web) |
 
-ERPNext is the advanced case: it downloads the product and the Frappe framework it runs
-on. Case files hold boundaries and starting points only, never conclusions.
+ERPNext is the advanced option: it downloads the product and the Frappe framework it runs
+on. The product packages hold boundaries and starting points only, never conclusions, so
+the research is yours.
 
 ## How research works
 
-Discovery walks a fixed ladder of public sources that need no login and no API key. Each
-case's `case.yaml` carries the URL templates.
+Discovery works through a fixed sequence of public sources that need no login and no API
+key, each step reaching people the last one missed. Each product package carries the URL
+templates.
 
-| Rung | Sources |
+| Step | Sources |
 |---|---|
 | 1 Community, structured | Product forum search and top threads; GitHub Discussions by upvotes; GitHub issues by reactions, with HTML search pages when the API is rate-limited |
 | 2 Community, fediverse and aggregators | Lemmy; Mastodon hashtags; Hacker News stories and comments |
@@ -123,7 +141,7 @@ subreddit RSS feed.
 - Text found in websites and repositories is evidence, not instructions.
 - Claude writes only under `outputs/`, `.pm/`, and for the capstone `.claude/skills/`.
 - Prototypes are exercise artifacts, not for distribution. No source files are copied out
-  of the pinned repositories.
+  of the downloaded repositories.
 
 ## Documentation
 
@@ -131,7 +149,7 @@ subreddit RSS feed.
 |---|---|
 | [docs/SETUP.md](docs/SETUP.md) | Installing Claude Code, Git, and the plugin, for first-time terminal users |
 | [docs/TEST-WALKTHROUGH.md](docs/TEST-WALKTHROUGH.md) | Every stage and every case, step by step |
-| [docs/FACILITATOR.md](docs/FACILITATOR.md) | Running it with a group: suggested day, checks, troubleshooting, pilot bar |
+| [docs/FACILITATOR.md](docs/FACILITATOR.md) | Running it with a group: suggested schedule, checks, troubleshooting |
 | [CHANGELOG.md](CHANGELOG.md) | Versions. Bump `version` in both manifests before publishing a change |
 
 ## Repository layout
@@ -144,7 +162,7 @@ eyp-pm/
 │   ├── skills/{scout,prototype,prd,create-skill}/SKILL.md
 │   ├── agents/prd-reviewer.md
 │   ├── cases/{immich,plane,home-assistant,umbraco,erpnext}/
-│   │   ├── case.yaml            pinned commits, lanes, feeds
+│   │   ├── case.yaml            fixed commit, focus areas, source URLs
 │   │   ├── orientation.md
 │   │   └── design-notes.md
 │   └── resources/               shared rules, research guide, readiness, templates
