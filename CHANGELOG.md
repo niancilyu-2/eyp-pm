@@ -4,7 +4,15 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.7.6 (unreleased)
+## 0.7.7 (unreleased)
+
+- PRD opens with a five-sentence Summary for engineering; header splits status, approval,
+  and revision; soft caps of 10 requirements and 15 criteria with one observable outcome
+  each; success measures name their mechanism or a dependency; persona is the role, not a
+  synthetic name. Claude re-checks any new code claim the reviewer makes before proposing
+  a disposition.
+
+## 0.7.6
 
 - PRD engineering appendix opens with a Feasibility read: constraints re-checked at their
   line ranges, touchpoints by label, layers not read, engineering-only questions. The

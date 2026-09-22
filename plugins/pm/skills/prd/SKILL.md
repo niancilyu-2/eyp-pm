@@ -63,6 +63,9 @@ Fill every section. Apply the case's `exclusions` from `case.yaml`. Rules:
 - No estimates, story points, delivery dates, or costs anywhere.
 - Open questions get `OPEN-###` with an owner and a yes/no on whether the answer changes
   scope, user behaviour, data or security behaviour, or acceptance criteria.
+- The Summary for engineering is written last, after the review, and read first.
+- The persona is the role from the case; synthetic names from the prototype do not enter
+  the PRD.
 - Appendix A opens with the Feasibility read: every discovery constraint re-checked at its
   line range, the touchpoints counted by label, which layers were and were not read, and
   the two or three questions only engineering can answer. Then the touchpoints with labels
@@ -100,8 +103,10 @@ Tell the PM the review is running and what it checks (one sentence each).
 ## Step 5: Write the review file and disposition each finding
 
 Write the reviewer's output into `outputs/03-prd-review.md` using
-`${CLAUDE_PLUGIN_ROOT}/resources/templates/03-prd-review.md`. Then go through the
-findings with the PM, blocking ones first. For each, propose one disposition:
+`${CLAUDE_PLUGIN_ROOT}/resources/templates/03-prd-review.md`. Where the reviewer makes a
+new claim about the code, open the cited file and confirm it before proposing a
+disposition; record the re-check in the review file. Then go through the findings with
+the PM, blocking ones first. For each, propose one disposition:
 
 - **Fix in PRD.** Apply the change and reference the finding.
 - **Engineering question.** Allowed only if it does not change product scope, user

@@ -31,7 +31,8 @@ The reviewer reads only; it returns findings as text. `/pm:prd` writes them to
    permission behaviour is stated where the product has roles.
 6. **Untestable acceptance criteria.** Each `AC-###` describes an observable outcome a
    tester could confirm without interpreting intent. Flag vague words ("fast", "intuitive",
-   "appropriate") without a measurable condition.
+   "appropriate") without a measurable condition, and flag any criterion that is a
+   regression sweep rather than one observable outcome.
 7. **Scope conflicts.** Goals, non-goals, and requirements agree with each other and with
    the approved discovery and prototype scope. Flag requirements that belong to another
    lane or that widen scope beyond the prototype.

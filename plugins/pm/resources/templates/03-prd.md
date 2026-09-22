@@ -3,15 +3,20 @@
 | Field | Value |
 |---|---|
 | Status | draft / ready-for-engineering-review |
+| Approved | <date and time, or not yet> |
+| Revision | <n> |
 | Product · case lane | <product> · <lane> |
 | Source commits | <owner/repo @ sha>; <companion @ sha> |
 | Based on | 01-discovery.md rev <n> (OPP-###) · 02-prototype.md rev <n> |
 | Review | outputs/03-prd-review.md |
 
+## Summary for engineering
+<Five sentences at most: what this changes for which user, why now (the strongest evidence), what is out of scope, the riskiest open question, and what you need from engineering first.>
+
 ## 1. Problem and desired outcome
 - Problem: <…>
 - Desired outcome: <…>
-- Persona: <…>
+- Persona: <the role, not a synthetic name; synthetic names stay in the prototype>
 - Supporting evidence: SIG-### … · CON-### …
 - Voice of the customer, two quotes chosen by the PM from the discovery quote bank:
 
@@ -33,11 +38,13 @@ QUO-### · <role> · <date> · <URL>
 - Alternate state A: <…> · Alternate state B: <…>
 
 ## 4. Functional requirements
+<Aim for at most 10. Each is one behaviour an engineer can build and a tester can check. If you need more, the scope is probably two PRDs.>
 | ID | Requirement | Priority (must / should / could) | Traces to |
 |---|---|---|---|
 | REQ-001 | | | OPP-### · SIG-### · screen/state |
 
 ## 5. Acceptance criteria
+<Aim for at most 15. One observable outcome each; no regression sweeps, no "everything else unchanged".>
 | ID | Given / when / then | Verifies |
 |---|---|---|
 | AC-001 | | REQ-### |
@@ -52,7 +59,7 @@ QUO-### · <role> · <date> · <URL>
 | Recovery | | |
 
 ## 7. Success measures and analytics needs
-- Measure: <…> · Event or data needed: <…>
+- Measure: <…> · How it would be measured: <an existing mechanism, verified with a path, or "new instrumentation, engineering-owned dependency">
 
 ## 8. Quality needs
 - Accessibility: <…> · Performance: <…> · Privacy: <…> · Security: <…> · Reliability: <…>
