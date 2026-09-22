@@ -25,7 +25,9 @@ missing or stale, the skill stops and says which one to rerun.
 2. **Draft the PRD.** Problem and evidence with two customer quotes, goals and non-goals,
    the approved flow and states, requirements with IDs, acceptance criteria with IDs, state
    behaviour, success measures, quality needs, rollout considerations, risks and open
-   questions, the decision record, and an engineering appendix.
+   questions, the decision record, and an engineering appendix that opens with a
+   feasibility read: each constraint re-checked, touchpoints by label, layers not read, and
+   the questions only engineering can answer.
 3. **Scope check-in**, in two short turns. First the problem, quotes, goals, and non-goals.
    Then behaviour, states, and acceptance criteria as yes or no items. You approve or edit,
    and you pick which two quotes go in.

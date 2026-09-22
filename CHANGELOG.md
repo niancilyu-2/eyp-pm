@@ -4,7 +4,13 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.7.5 (unreleased)
+## 0.7.6 (unreleased)
+
+- PRD engineering appendix opens with a Feasibility read: constraints re-checked at their
+  line ranges, touchpoints by label, layers not read, engineering-only questions. The
+  reviewer checks it is present.
+
+## 0.7.5
 
 - Prototype walkthrough records one row per checklist area, Claude's check and the PM's
   click-through side by side; error states carry role="alert"; no clickable divs. Design

@@ -74,6 +74,21 @@ QUO-### · <role> · <date> · <URL>
 
 ## Appendix A. Engineering impact
 Every line labelled `Verified` (with path), `Inferred`, or `Engineering-owned`.
+
+### Feasibility read
+What the code says today, verified by reading it, not by running it.
+
+| Constraint | Where (path, lines, commit) | Re-checked in this stage | What it means for this PRD | Status |
+|---|---|---|---|---|
+| CON-### | | yes / no longer matches (now Inferred) | | to confirm with engineering |
+
+Touchpoints found: <n Verified, n Inferred>. Layers covered: <UI / state / permissions / API; say which were not read>.
+
+Questions only engineering can answer:
+- OPEN-###: <question> · <why the PM cannot settle it>
+- OPEN-###: …
+
+
 - Code touchpoints:
 - API implications:
 - Data and state implications:

@@ -63,7 +63,10 @@ Fill every section. Apply the case's `exclusions` from `case.yaml`. Rules:
 - No estimates, story points, delivery dates, or costs anywhere.
 - Open questions get `OPEN-###` with an owner and a yes/no on whether the answer changes
   scope, user behaviour, data or security behaviour, or acceptance criteria.
-- Appendix A lists touchpoints with labels and paths.
+- Appendix A opens with the Feasibility read: every discovery constraint re-checked at its
+  line range, the touchpoints counted by label, which layers were and were not read, and
+  the two or three questions only engineering can answer. Then the touchpoints with labels
+  and paths.
 - Voice of the customer: propose three quotes from the discovery quote bank (section 4b)
   for section 1. The PM picks two at the scope check-in. Copy them verbatim as
   blockquotes with the attribution line beneath (`QUO-###`, role, date, URL). Never edit a
