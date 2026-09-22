@@ -31,28 +31,67 @@ changed. One PM can run it alone; a group can run it together.
 A typical product lifecycle runs from vision and strategy through discovery to a delivery
 PRD and on to execution. This plugin covers the discovery work that can be done from public
 evidence and a product's own code, written up as a discovery brief, and the delivery PRD
-that comes out of it. The highlighted steps
+that comes out of it. The steps marked covered
 are the ones it performs.
 
-```mermaid
-flowchart TB
-  V["<b>Vision</b>"] --> S["<b>Strategy</b>"]
-  S --> D
-  subgraph D["<b>Discovery</b>"]
-    direction LR
-    PR["<b>Primary research</b><br/>• Customer interviews<br/>• Surveys<br/>• Usability tests"]
-    SR["<b>Secondary research</b><br/>• Forum, GitHub, community posts<br/>• App reviews and release notes<br/>• Adoption numbers<br/>• Competitor pages and job postings<br/>• Verbatim quote bank<br/>• Triangulation and counter-evidence"]
-    PT["<b>Prototypes</b><br/>• Clickable prototype of the chosen flow<br/>• Two alternate states<br/>• Design critique and one revision"]
-    EX["<b>Experiments</b><br/>• A/B tests<br/>• Fake doors<br/>• Pilots"]
-    FC["<b>Feasibility checks</b><br/>• Repository constraints with line references<br/>• Likely code touchpoints<br/>• Read-only engineering review<br/>• Open questions for engineering"]
-  end
-  D --> P["<b>Delivery PRD</b><br/>• Requirements and acceptance criteria with IDs<br/>• States and behaviour<br/>• Engineering appendix<br/>• Traceable to the evidence"]
-  P --> E["<b>Execution</b>"]
-  classDef covered fill:#2F5BEA,stroke:#2F5BEA,color:#FFFFFF,text-align:left
-  classDef outside fill:#FAF9F5,stroke:#9A9A9A,color:#5B5F66,text-align:left
-  class SR,PT,FC,P covered
-  class V,S,PR,EX,E outside
-```
+<table>
+  <tr><th colspan="5" align="left">Vision <sub>not covered</sub></th></tr>
+  <tr><th colspan="5" align="left">Strategy <sub>not covered</sub></th></tr>
+  <tr><th colspan="5" align="left">Discovery</th></tr>
+  <tr>
+    <td valign="top" width="20%"><b>Primary research</b><br><sub>not covered</sub>
+      <ul>
+        <li>Customer interviews</li>
+        <li>Surveys</li>
+        <li>Usability tests</li>
+      </ul>
+    </td>
+    <td valign="top" width="20%"><b>Secondary research</b><br><sub><b>covered</b></sub>
+      <ul>
+        <li>Forum, GitHub, community posts</li>
+        <li>App reviews and release notes</li>
+        <li>Adoption numbers</li>
+        <li>Competitor pages and job postings</li>
+        <li>Verbatim quote bank</li>
+        <li>Triangulation and counter-evidence</li>
+      </ul>
+    </td>
+    <td valign="top" width="20%"><b>Prototypes</b><br><sub><b>covered</b></sub>
+      <ul>
+        <li>Clickable prototype of the chosen flow</li>
+        <li>Two alternate states</li>
+        <li>Design critique and one revision</li>
+      </ul>
+    </td>
+    <td valign="top" width="20%"><b>Experiments</b><br><sub>not covered</sub>
+      <ul>
+        <li>A/B tests</li>
+        <li>Fake doors</li>
+        <li>Pilots</li>
+      </ul>
+    </td>
+    <td valign="top" width="20%"><b>Feasibility checks</b><br><sub><b>covered</b></sub>
+      <ul>
+        <li>Repository constraints with line references</li>
+        <li>Likely code touchpoints</li>
+        <li>Read-only engineering review</li>
+        <li>Open questions for engineering</li>
+      </ul>
+    </td>
+  </tr>
+  <tr><th colspan="5" align="left">Delivery PRD <sub><b>covered</b></sub></th></tr>
+  <tr>
+    <td colspan="5">
+      <ul>
+        <li>Requirements and acceptance criteria with IDs</li>
+        <li>States and behaviour</li>
+        <li>Engineering appendix</li>
+        <li>Traceable to the evidence</li>
+      </ul>
+    </td>
+  </tr>
+  <tr><th colspan="5" align="left">Execution <sub>not covered</sub></th></tr>
+</table>
 
 Outside its scope: setting vision and strategy, primary research with real users,
 experiments, and execution. The research it does is secondary, a public scan rather than
