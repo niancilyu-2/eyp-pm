@@ -1,84 +1,97 @@
-# Discovery: <case name> · <lane name>
+# Discovery brief: <product> · <focus area>
 
 | Field | Value |
 |---|---|
 | Status | draft / provisional / approved |
-| Case · lane | <case id> · <lane id> |
-| Persona · mandate | <persona> · <mandate> |
-| Pinned sources | <owner/repo @ sha> (primary); <owner/repo @ sha> (companion, if any) |
-| Research window | started <time> · ended <time> · fetches <n>/20 · searches <n>/8 |
-| Selected opportunity | OPP-### |
+| Product · focus area | <case id> · <lane id> |
+| User you design for · your brief | <persona> · <mandate> |
+| Code snapshot | <owner/repo @ short sha> (primary); <companion, if any> |
+| Research window | <start> to <end> · fetches <n>/20 · searches <n>/8 |
+| Chosen opportunity | OPP-### |
 
-## 1. Problem framing
-<2–4 sentences in the persona's words. Mark each sentence Evidence / Inference / Assumption.>
+## 1. The decision
 
-In plain words: <the four-or-five-sentence story from the research check-in, with product terms defined>
+### Chosen: OPP-### <title>
+- What it is: <two sentences: who is stuck, what happens to them today, what would change>
+- Why you chose it: "<your reason, in your words>"
+- What tipped the recommendation: <the lens that decided the order, one sentence; if this was not the densest opportunity, say so and why>
+- Evidence: <n signals, k source types · strongest: … · counter-evidence: … · constraints: …>
 
-Themes in plain words:
+### Considered and placed later
+- **Next, OPP-### <title>.** <One-sentence story.> Evidence: <line>. Why not now: <one sentence>.
+- **Later, OPP-### <title>.** <One-sentence story.> Evidence: <line>. Why not now: <one sentence>.
+
+Main trade-off between the top two: <one sentence>
+
+| Slot | Opportunity | Reasoning (one sentence) |
+|---|---|---|
+| Now | | |
+| Next | | |
+| Later | | |
+
+## 2. What we learned
+
+<Four or five sentences a newcomer understands: how people use this part of the product today, what keeps going wrong, who it hurts. Product terms defined at first use.>
+
+Themes:
 - <Theme A>: <one sentence> · who says so: <count and places> · fixed or open: <…> · why it matters: <…>
 - <Theme B>: …
 - <Theme C>: …
 
-## 2. Research coverage
+Who we heard from: <3 or 4 sentences: which crowds the sources sample, and who is missing>
+
+## 3. The three opportunities in detail
+
+### OPP-001: <title>
+- For: <user> · Job: <job>
+- Supported by: <SIG/CON IDs>
+- In their words: <QUO IDs>
+- Evidence: <n signals, k source types · strongest: … · counter-evidence: … · constraints: …>
+- Evidence strength / user impact / fit with the brief / delivery constraints / uncertainty: <one short phrase each>
+- Exclusions check: <none triggered, or what and why>
+
+### OPP-002: <title>
+…
+
+### OPP-003: <title>
+…
+
+## 4. Evidence
+
+### 4a. Coverage
 | Kind | Target | Logged | Channels used | Who those channels mostly hear from |
 |---|---|---|---|---|
 | Customer or community signals | 3 | | | |
 | Market or competitor observations | 2 | | | |
 | Official product or release signal | 1 | | | |
-| Verified repository constraints | 2 | | | |
+| Repository constraints | 2 | | | |
 
 Queries used: <exact search terms, one per line>
-
-Rungs reached: <list of ladder rungs that returned results; note any that were unreachable>
+Sources reached: <which kinds returned results; which were empty or unreachable>
 
 Triangulation (at most three decision-relevant themes):
-| Theme | Rung 1 (forum, GitHub) | Rung 2 (Lemmy, Mastodon, HN) | Rung 3 (reviews) | Rung 4 to 6 (numbers, competitors, official) | Recurrence (recurring / concentrated / isolated) | Same crowd? | Counter-evidence (SIG-### or "looked, none") |
+| Theme | Forum, GitHub | Lemmy, Mastodon, HN | Reviews | Numbers, competitors, official | Recurrence (recurring / concentrated / isolated) | Same crowd? | Counter-evidence (SIG-### or "looked, none") |
 |---|---|---|---|---|---|---|---|
 | | SIG-### | | | | | | |
-
-Who we heard from: <3 or 4 sentences: which crowds the rungs used sample, and who is missing>
 
 Gaps: <GAP lines or "none">
 Contradictions: <one line each, citing the IDs that disagree, or "none">
 
-## 3. Evidence log
+### 4b. Quote bank
+<One block per QUO-### in the research-guide format. Target 8 across at least 3 source types. Mark single-voice themes and partial quotes.>
+
+### 4c. Evidence log
 <One block per SIG-### in the research-guide format.>
 
-## 3b. Quote bank
-<One block per QUO-### in the research-guide format. Target 8 across at least 3 rungs. Mark single-voice themes and partial quotes.>
-
-## 4. Repository constraints
+### 4d. Repository constraints
 <One block per CON-###: claim, path with line range and commit, one quoted line, implication, and `Status: to confirm with engineering`.>
 
-## 5. Opportunities
-### OPP-001: <title>
-- For: <actor> · Job: <job>
-- Supported by: <SIG/CON IDs>
-- In their words: <QUO IDs>
-- Evidence: <n signals, k source types · strongest: … · counter-evidence: … · constraints: …>
-- Evidence strength / user impact / mandate fit / delivery constraints / uncertainty: <one short phrase each>
-### OPP-002: <title>
-…
-### OPP-003: <title>
-…
-
-## 6. Now / Next / Later
-| Slot | Opportunity | Claude's reasoning (one sentence) |
-|---|---|---|
-<!-- After the table: one sentence naming the lens that tipped the order, and if Now is not the densest opportunity, why. -->
-| Now | | |
-| Next | | |
-| Later | | |
-
-## 7. Selected opportunity
-**OPP-###: <title>** · chosen by the PM. Reason in the PM's words: <…>
-
-## 8. Assumptions and open questions
+## 5. Assumptions and open questions
 - ASSUMPTION: <…>
 - OPEN-001: <…> (who should answer; does it change scope?)
 
-## 9. Claude-versus-PM decision record
-| Check-in | Claude recommended | PM decided | Reason |
+## 6. Decision record
+| Check-in | Recommendation | Your decision | Reason |
 |---|---|---|---|
 | Research check | | | |
 | Priority check | | | |

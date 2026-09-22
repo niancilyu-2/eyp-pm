@@ -18,7 +18,7 @@ accountable product decision. In practice:
   seeing a skill listed. Quote their words as written; never merge two answers into one
   sentence or add words they did not use.
 - After each check-in, record both blocks and the PM's reason in the stage output
-  file (in its "Claude-versus-PM decision record" section) and in `.pm/session.yaml`
+  file (in its "Decision record" section) and in `.pm/session.yaml`
   under `decisions`.
 - Engineering owns architecture, implementation design, and estimates. Do not ask the
   PM to invent them and do not invent them yourself.

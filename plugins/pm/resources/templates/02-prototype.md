@@ -49,7 +49,7 @@
 ## 10. Remaining limitations
 - <…>
 
-## 11. Claude-versus-PM decision record
+## 11. Decision record
 | Check-in | Claude recommended | PM decided | Reason / trade-off |
 |---|---|---|---|
 | Flow check | | | |

@@ -157,8 +157,8 @@ extra fetch at the check-in.
 
 Then write three or four sentences under "Who we heard from": which crowds the rungs you
 used sample, and who is missing (typically non-technical users who never post, and anyone
-using the hosted or paid version). Put the table and the paragraph in section 2 of the
-discovery file.
+using the hosted or paid version). Put the paragraph in section 2 of the discovery file and
+the table in section 4a.
 
 ## Quote bank
 
@@ -191,8 +191,8 @@ QUO-003 · supports SIG-002 · App Store review (rung 3) · 2026-08-16 · access
 ```
 
 Show one or two quotes per rung as you go so the PM hears the voice early. Put
-the full bank in section 3b of the discovery file and list quote IDs under each
-opportunity in section 5.
+the full bank in section 4b of the discovery file and list quote IDs under each
+opportunity in section 3.
 
 ## Logging an item
 

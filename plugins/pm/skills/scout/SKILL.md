@@ -166,8 +166,10 @@ yours; note the difference without arguing.
 
 ## Step 10: Save and close
 
-- Complete the draft, copy it to `outputs/01-discovery.md`, delete the draft: status `approved` (or `provisional` if the research
-  was cut short or coverage was weak; say so in the status line and in section 2),
+- Complete the draft, copy it to `outputs/01-discovery.md`, delete the draft. Section 1 is
+  written last and first-read: the chosen opportunity, your reason as typed, the lens that
+  tipped the order, and the other two with why they were placed later. Status `approved` (or `provisional` if the research
+  was cut short or coverage was weak; say so in the status line and in section 4a),
   selected opportunity, assumptions, open questions, decision record.
 - Update `session.yaml`: `stages.discovery` (`status: approved`, `revision` +1,
   `approved_at`, `selected_opportunity`, `provisional`), `stage.current: prototype`,

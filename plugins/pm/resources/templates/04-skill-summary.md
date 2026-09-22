@@ -25,8 +25,8 @@
 Copy the folder `.claude/skills/<slug>/` into another project's `.claude/skills/` folder.
 Remove the `disable-model-invocation` line later if you want Claude to choose it automatically.
 
-## Claude-versus-PM decision record
-| Check-in | Claude recommended | PM decided | Reason |
+## Decision record
+| Check-in | Recommendation | Your decision | Reason |
 |---|---|---|---|
 | Scope check | | | |
 | Ownership check | | | |

@@ -60,8 +60,8 @@
 - Assumption: <…>
 - OPEN-###: <question> · owner · changes scope? yes/no
 
-## 11. Claude-versus-PM decision record
-| Check-in | Claude recommended | PM decided | Reason |
+## 11. Decision record
+| Check-in | Recommendation | Your decision | Reason |
 |---|---|---|---|
 | Scope check | | | |
 | Handoff check | | | |

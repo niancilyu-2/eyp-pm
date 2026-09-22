@@ -12,7 +12,7 @@ The reviewer reads only; it returns findings as text. `/pm:prd` writes them to
    `SIG-###`, `CON-###`, or an approved prototype screen or state. Every `AC-###` links to a
    `REQ-###`. Flag orphans in either direction.
 2. **Quote provenance.** Every quotation in the PRD carries a `QUO-###` that exists in
-   `01-discovery.md` section 3b with a URL, and the wording matches that entry. Flag any
+   `01-discovery.md` section 4b with a URL, and the wording matches that entry. Flag any
    quote that appears only in the PRD or differs from the bank.
 3. **Unsupported technical claims.** Every technical statement is labelled `Verified`,
    `Inferred`, or `Engineering-owned`. For `Verified`, open the cited path in `sources/` and

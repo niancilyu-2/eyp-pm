@@ -4,7 +4,15 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.7.1 (unreleased)
+## 0.7.2 (unreleased)
+
+- Discovery brief restructured answer-first: the decision (chosen opportunity, your reason,
+  the tipping lens, the others and why they wait) comes first, then what was learned, the
+  three opportunities in detail, the evidence, assumptions, and the decision record.
+  "Claude's reasoning" is now "Reasoning"; decision records use Recommendation and Your
+  decision columns.
+
+## 0.7.1
 
 - Each opportunity carries a one-line evidence summary, and the Now recommendation names
   the lens that tipped it and says when it departs from the densest signal.
