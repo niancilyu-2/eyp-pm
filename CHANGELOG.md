@@ -4,7 +4,14 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.6.1 (unreleased)
+## 0.6.2 (unreleased)
+
+- Check-ins read as plain-language briefings: story first, three themes in a four-line
+  shape, quotes, gaps. Tables and rigour vocabulary stay in the draft file. Orientation
+  walks through how the chosen lane works in the product today and defines every product
+  term. Priority check-in introduces each opportunity as a two-sentence story.
+
+## 0.6.1
 
 - The plugin no longer refers to a workshop, participants, or a facilitator anywhere. It
   addresses the PM directly, the stop-after-setup prompt says "continue later", the Reddit

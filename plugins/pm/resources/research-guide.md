@@ -234,8 +234,32 @@ Rules:
 
 ## Research check-in (first check-in)
 
-Show, in this order: coverage against the table above, the triangulation table, the two
-strongest quotes, contradictions, gaps (including which rungs were unreachable), elapsed time, and one plain
-sentence on whether you think the problem framing is good enough to continue. Then ask the
-PM to decide: continue, do one more targeted fetch (say which rung), or narrow
+The PM may have met this product an hour ago. The reply is a short briefing first and
+evidence second. Keep it under 300 words before the decision blocks. No tables in the
+reply; the coverage table, triangulation table, and skew notes live in the draft file. Say
+once: "full tables are in the draft discovery file".
+
+Structure, in this order:
+
+1. **The story.** Four or five sentences a newcomer understands: how people use this part
+   of the product today, what keeps going wrong, who it hurts. Define any product term you
+   cannot avoid in a few words the first time it appears (for example: the backoffice is
+   Umbraco's editing screen; a toast is the small pop-up confirmation; unroutable means the
+   page was published but has no web address). Never use version numbers without saying
+   what shipped in them.
+2. **Three themes at most**, each in this shape and nothing more:
+   - In plain words: one sentence.
+   - Who says so: the count and the places, for example "five forum threads over ten months
+     and two GitHub issues".
+   - Fixed or still open: one sentence from the counter-evidence pass.
+   - Why it matters for the persona: one sentence.
+   Do not use the words recurring, concentrated, isolated, rung, or skew in the reply.
+   Those go in the file.
+3. **Two strongest quotes**, each with who said it and when.
+4. **Gaps.** One or two sentences: which kinds of source were empty and who we did not
+   hear from.
+5. **Elapsed time and your view**, one sentence each.
+
+Then the two blocks, **Claude's recommendation** and **Your decision**, and the question:
+continue, one more targeted fetch (name it in plain words, not by rung number), or narrow
 the framing. Record the decision as `D-###`.

@@ -12,6 +12,13 @@
 ## 1. Problem framing
 <2–4 sentences in the persona's words. Mark each sentence Evidence / Inference / Assumption.>
 
+In plain words: <the four-or-five-sentence story from the research check-in, with product terms defined>
+
+Themes in plain words:
+- <Theme A>: <one sentence> · who says so: <count and places> · fixed or open: <…> · why it matters: <…>
+- <Theme B>: …
+- <Theme C>: …
+
 ## 2. Research coverage
 | Kind | Target | Logged | Channels used | Who those channels mostly hear from |
 |---|---|---|---|---|

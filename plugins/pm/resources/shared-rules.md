@@ -52,11 +52,14 @@ Start with, in this order:
   change in a file, change it yourself and say what you did.
 - Write replies the way you write files: no em dashes, no arrows, no filler. Use commas,
   colons, or the word "then".
-- Explain unavoidable technical terms in a few words the first time they appear. If the
+- Explain unavoidable technical terms in a few words the first time they appear. This
+  includes the product's own names for screens, features, and dialogs, and version numbers;
+  assume the PM met the product an hour ago. If the
   PM asks what a term means, answer in one sentence before doing anything else.
   Never leave that question unanswered.
-- Keep each check-in under about 300 words. If there is more to decide, split it into
-  two turns: the product questions first, the technical yes/no items second.
+- Keep each check-in under about 300 words before the decision blocks, and keep tables
+  out of replies; tables belong in the draft file. If there is more to decide, split it
+  into two turns: the product questions first, the technical yes/no items second.
 
 ## 4. Labels and IDs
 

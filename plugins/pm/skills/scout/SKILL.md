@@ -55,10 +55,12 @@ and `case.chosen_at` to `session.yaml`.
 Before the orientation, define three words in one line each, because they recur all
 day: repository (the product's source code, kept in a folder), pinned commit (a fixed
 snapshot of that code from a set date), and sources clean (nothing in that folder has
-changed). Then give a short orientation from the case's `orientation.md`: what the product is, who the
-persona is, the lane's territory, surface, and viewport, and the two or three repository
-folders most relevant to the lane. Keep it under 200 words. Do not offer opinions about
-what the problems are.
+changed). Then give a short orientation from the case's `orientation.md`: what the product is in two
+sentences, who the persona is, and how the chosen lane works in this product today, as a
+concrete walk-through an editor or operator would recognise ("you write a page, pick the
+languages it applies to, and press Save and Publish; a small confirmation appears"). Name
+the two or three repository folders most relevant to the lane, and define every product
+term you use. Keep it under 250 words. Do not offer opinions about what the problems are.
 
 ## Step 4: Acquire the sources
 
@@ -131,10 +133,10 @@ persona.
 
 ## Step 7: Research check-in (check-in 1)
 
-Present, in this order: coverage table with the skew column, triangulation table with
-recurrence labels and counter-evidence, "Who we heard from", the two strongest quotes,
-contradictions, gaps and unreachable rungs, elapsed time, and one sentence of your view on whether the framing is
-good enough. Then show two blocks,
+Write the reply exactly as the research guide's "Research check-in" section prescribes: a
+plain-language story first, three themes at most in the four-line shape, two quotes, gaps,
+elapsed time, your view. No tables in the reply, no rung numbers, no rigour vocabulary;
+those stay in the draft file. Under 300 words before the blocks. Then show two blocks,
 **Claude's recommendation** and **Your decision**, and ask the PM to choose:
 continue, do one more targeted fetch (say which rung), or narrow the framing. Record
 `D-###`. If they choose the extra fetch, do it (within budget) and return here once.
@@ -148,9 +150,12 @@ each against the case `exclusions`; drop and replace anything excluded.
 
 ## Step 9: Priority check-in (check-in 2)
 
-Recommend a `Now / Next / Later` order with one sentence of reasoning per slot and the main
-trade-off between the top two. Under each slot show the strongest quote for that
-opportunity so the PM decides against real words, not only your summary. Show **Claude's recommendation** and **Your decision**
+Introduce each opportunity as a two-sentence story a newcomer understands: who is stuck,
+what happens to them today, what would change. Then recommend a `Now / Next / Later` order
+with one sentence of reasoning per slot and the main trade-off between the top two. Under
+each slot show the strongest quote for that opportunity so the PM decides against real
+words, not only your summary. The five-lens comparison stays in the file; in the reply,
+say only what tipped the order. Under 300 words before the blocks. Show **Claude's recommendation** and **Your decision**
 separately. Ask the PM to choose the `Now` opportunity and give their reason in
 their own words. Record `D-###`. The PM's choice wins even if it differs from
 yours; note the difference without arguing.
