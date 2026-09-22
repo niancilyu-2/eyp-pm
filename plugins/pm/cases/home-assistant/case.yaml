@@ -152,7 +152,7 @@ feeds:
     - { name: "Hubitat", page: "https://hubitat.com/products", wayback: "https://archive.org/wayback/available?url=hubitat.com/products&timestamp={yyyymmdd}" }
     - { name: "Homey", page: "https://homey.app/en-us/homey-pro", wayback: "https://archive.org/wayback/available?url=homey.app/en-us/homey-pro&timestamp={yyyymmdd}" }
     - { name: "openHAB", page: "https://www.openhab.org", wayback: "https://archive.org/wayback/available?url=www.openhab.org&timestamp={yyyymmdd}" }
-  reddit_rss_optional: "https://www.reddit.com/r/homeassistant.rss"   # facilitator opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl if the facilitator says so
+  reddit_rss_optional: "https://www.reddit.com/r/homeassistant.rss"   # opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl only if the PM asks
   forum_top_json: "https://community.home-assistant.io/top.json?period=yearly"
   forum_tag_top_json:
     - { tag: dashboard, url: "https://community.home-assistant.io/tag/dashboard/l/top.json?period=yearly" }
@@ -162,7 +162,7 @@ feeds:
   hackernews_comments: "https://hn.algolia.com/api/v1/search?query={query}&tags=comment&hitsPerPage=10"
   app_store_lookup:
     - { app: "Home Assistant", id: 1099568401, url: "https://itunes.apple.com/lookup?id=1099568401&country=us", fields: "averageUserRating, userRatingCount, version, releaseNotes, currentVersionReleaseDate" }
-  play_store_page: { app: "Home Assistant", package: io.homeassistant.companion.android, url: "https://play.google.com/store/apps/details?id=io.homeassistant.companion.android" }   # participant opens and pastes reviews; not fetched
+  play_store_page: { app: "Home Assistant", package: io.homeassistant.companion.android, url: "https://play.google.com/store/apps/details?id=io.homeassistant.companion.android" }   # the PM opens it and pastes reviews; not fetched
   wikipedia_pageviews:
     - { article: "Home_Assistant", url: "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Home_Assistant/monthly/{start}/{end}" }
   roadmap:

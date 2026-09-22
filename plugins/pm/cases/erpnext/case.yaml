@@ -172,7 +172,7 @@ feeds:
     - { name: "Dolibarr", page: "https://www.dolibarr.org/features", wayback: "https://archive.org/wayback/available?url=www.dolibarr.org/features&timestamp={yyyymmdd}" }
     - { name: "Zoho Inventory", page: "https://www.zoho.com/us/inventory/pricing/", wayback: "https://archive.org/wayback/available?url=www.zoho.com/us/inventory/pricing/&timestamp={yyyymmdd}" }
     - { name: "Katana", page: "https://katanamrp.com/pricing/", wayback: "https://archive.org/wayback/available?url=katanamrp.com/pricing/&timestamp={yyyymmdd}" }
-  reddit_rss_optional: "https://www.reddit.com/r/ERPNext.rss"   # facilitator opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl if the facilitator says so
+  reddit_rss_optional: "https://www.reddit.com/r/ERPNext.rss"   # opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl only if the PM asks
   forum_top_json: "https://discuss.frappe.io/top.json?period=yearly"
   forum_tag_top_json:
     - { tag: stock, url: "https://discuss.frappe.io/tag/stock/l/top.json?period=yearly" }

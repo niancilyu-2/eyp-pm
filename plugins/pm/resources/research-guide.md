@@ -1,20 +1,20 @@
 # Public research guide (Discovery)
 
 This is a quick public research pass, not representative customer research and not social
-listening. Say that to the participant once, plainly. What makes it different from a
+listening. Say that to the PM once, plainly. What makes it different from a
 normal PM desk-research hour is the source ladder below: keyless public feeds that most
 teams never open, read in a fixed order, with provenance attached to every item.
 
 ## Effort budget
 
-Claude cannot see a clock, so the budget is counted in actions, and the facilitator calls
-time. Record the start time with `date` and show elapsed time at the research check-in.
+Claude cannot see a clock, so the budget is counted in actions, and you decide when time
+is up. Record the start time with `date` and show elapsed time at the research check-in.
 
 | Budget | Limit |
 |---|---|
 | Feed and page fetches | 20 |
 | Web searches (if the search tool works) | 8 |
-| Stop when | the coverage table is met, the fetch budget is spent, or the participant says time is up |
+| Stop when | the coverage table is met, the fetch budget is spent, or the PM says time is up |
 
 Do not exceed the limits to "finish the set". A provisional result with stated gaps is a
 correct outcome.
@@ -85,10 +85,10 @@ the coverage table:
 - `app_store_lookup`: the same app's rating count, average, current version, and release
   notes in one call. Release notes tell you what the maker shipped last.
 - `play_store_page`: Google Play has no public review feed and its listing cannot be read
-  by the fetch tool. Ask the participant to open the page in their browser, tap "See all
+  by the fetch tool. Ask the PM to open the page in their browser, tap "See all
   reviews", sort by most recent, and paste three to five reviews with their star ratings
   and dates. Log each as `Evidence` with the listing URL and the note `pasted by
-  participant`. Record the total review count shown on the page. Do not attempt to fetch
+  the PM`. Record the total review count shown on the page. Do not attempt to fetch
   or parse the page yourself.
 - Review directories listed under `public_channels` (OpenAlternative, Slashdot, App Store
   listing pages). G2, Capterra, Trustpilot, and Product Hunt block automated reading; do
@@ -119,8 +119,8 @@ the coverage table:
 - Use for Reddit, X, YouTube, and review sites that block fetching. A snippet is
   `Inference (unverified snippet)` with its URL, never `Evidence`.
 
-**Optional, facilitator switch only: Reddit RSS.** Claude Code's fetch tool refuses
-reddit.com. If the facilitator has said this is allowed for the session, a single
+**Optional, opt-in only: Reddit RSS.** Claude Code's fetch tool refuses
+reddit.com. If the PM has explicitly asked for it (`readiness.reddit_rss: true`), a single
 `curl -s "<reddit_rss_optional>"` reads the subreddit's newest posts as an RSS feed. No
 search, no login, one call. Otherwise skip Reddit entirely and say so in the gaps.
 
@@ -152,7 +152,7 @@ Counter-evidence pass. For each of those themes, spend one fetch looking for the
 an issue closed as working as intended, a maintainer reply, a release note that already
 shipped it, a review that praises the very thing others complain about. Log what you find
 under Contradictions even when it weakens the theme, and note when you looked and found
-nothing. Themes marked "sources disagree" are the first candidate for the participant's
+nothing. Themes marked "sources disagree" are the first candidate for the PM's
 extra fetch at the check-in.
 
 Then write three or four sentences under "Who we heard from": which crowds the rungs you
@@ -162,7 +162,7 @@ discovery file.
 
 ## Quote bank
 
-While walking the ladder, collect the participant's future evidence in the users' own
+While walking the ladder, collect the PM's future evidence in the users' own
 words. Target eight quotes across at least three rungs. Quotes come only from text you
 fetched in this session: forum post bodies, GitHub issue and discussion bodies and
 comments, App Store review text, Lemmy and Mastodon posts, Hacker News comments. A search
@@ -190,7 +190,7 @@ QUO-003 · supports SIG-002 · App Store review (rung 3) · 2026-08-16 · access
   Source: https://apps.apple.com/us/app/immich/id1613945652 · rating 5/5 · an App Store reviewer
 ```
 
-Show one or two quotes per rung as you go so the participant hears the voice early. Put
+Show one or two quotes per rung as you go so the PM hears the voice early. Put
 the full bank in section 3b of the discovery file and list quote IDs under each
 opportunity in section 5.
 
@@ -232,10 +232,10 @@ Rules:
   evidence strength, user impact, fit with the case mandate, delivery constraints,
   uncertainty.
 
-## Research check-in (first participant check-in)
+## Research check-in (first check-in)
 
 Show, in this order: coverage against the table above, the triangulation table, the two
 strongest quotes, contradictions, gaps (including which rungs were unreachable), elapsed time, and one plain
 sentence on whether you think the problem framing is good enough to continue. Then ask the
-participant to decide: continue, do one more targeted fetch (say which rung), or narrow
+PM to decide: continue, do one more targeted fetch (say which rung), or narrow
 the framing. Record the decision as `D-###`.

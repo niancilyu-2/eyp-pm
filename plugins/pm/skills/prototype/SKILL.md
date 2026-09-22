@@ -1,6 +1,6 @@
 ---
 name: prototype
-description: Prototype stage of the EYP PM workshop. Turn the selected opportunity into one focused user flow and a clickable prototype using Claude Design or a standalone HTML file, then improve it through a design critique. Run after /pm:scout.
+description: Prototype stage of the pm workflow. Turn the selected opportunity into one focused user flow and a clickable prototype using Claude Design or a standalone HTML file, then improve it through a design critique. Run after /pm:scout.
 disable-model-invocation: true
 ---
 
@@ -48,13 +48,13 @@ Then ask, one at a time or in pairs, with options drawn from the opportunity and
    loading. Explain each in a few words.
 
 Constrain everything to the lane's surface and viewport, one main path, and two states.
-If the participant proposes more, explain the workshop limit and ask which to keep.
+If the PM proposes more, explain the one-flow limit and ask which to keep.
 
-## Step 2: Flow check-in (participant check-in 1)
+## Step 2: Flow check-in (check-in 1)
 
 Show the proposed actor, job, start and end, main path (3–7 numbered steps), and the two
 states. Present **Claude's recommendation** (including anything you would cut or add) and
-**Your decision**. The participant approves or edits. Record `D-###`.
+**Your decision**. The PM approves or edits. Record `D-###`.
 
 ## Step 3: Inspect the repository's UI patterns (read-only)
 
@@ -78,13 +78,13 @@ Read `readiness.design` from `session.yaml`.
 - `available`: go to **Step 6a (Claude Design)**. Mention that the HTML path is available if
   Design gives trouble.
 - `unavailable`: go to **Step 7 (HTML)**. Say the HTML path is being used and why.
-- `unknown`: ask the participant to type `/design` once and report; record the answer in
+- `unknown`: ask the PM to type `/design` once and report; record the answer in
   `readiness.design`, then route as above.
 
 ## Step 6a: Claude Design
 
 Claude Design runs inside Claude Code as `/design`, but this skill cannot start it for you.
-Give the participant **one** instruction, exactly:
+Give the PM **one** instruction, exactly:
 
 > Type `/design` and paste the brief I saved at `.pm/design-brief.md` (I will print it
 > below). When the design is ready, ask Design to export it as a single standalone HTML
@@ -114,12 +114,12 @@ Build `outputs/prototype/index.html` yourself following
 build step, lane viewport, main path clickable end to end, both states reachable,
 keyboard-usable, synthetic data, "Prototype · synthetic data" badge. Use verified tokens
 and patterns from Step 3 and list them in section 6 of the notes. Set
-`stages.prototype.path: html-fallback`. Open the file for the participant (`start`,
+`stages.prototype.path: html-fallback`. Open the file for the PM (`start`,
 `open`, or `xdg-open`).
 
 ## Step 8: Walkthrough (PM design critique)
 
-Ask the participant to open the file if they have not said so. Record only what they
+Ask the PM to open the file if they have not said so. Record only what they
 report. Walk the main path and each state
 together, using the checklist in `prototype-html-guide.md`: labels, navigation, keyboard,
 state clarity, obvious contrast, scope. Record findings in section 8 of the notes. This is
@@ -129,14 +129,14 @@ a design critique, not customer validation; say so once.
 
 Propose one change tied to a discovery item (`SIG-###`/`CON-###`) or a walkthrough
 finding. Make at least one change after approval, in the HTML (either path; if Design
-produced the file, edit the exported HTML directly or ask the participant to make the
+produced the file, edit the exported HTML directly or ask the PM to make the
 change in Design and re-export). Record before and after in section 9 and show `revision 1` in this reply's usage line.
 
-## Step 10: Prototype check-in (participant check-in 2)
+## Step 10: Prototype check-in (check-in 2)
 
 Show the findings, the revision made, remaining limitations, and where the prototype
 differs from the product UI. Present **Claude's recommendation** and **Your decision**.
-The participant approves the revised experience and records deliberate trade-offs.
+The PM approves the revised experience and records deliberate trade-offs.
 Record `D-###`.
 
 ## Step 11: Save and close
@@ -146,13 +146,13 @@ Record `D-###`.
 - Update `session.yaml`: `stages.prototype` (`status: approved`, `revision` +1,
   `approved_at`, `path`), `stage.current: prd`, `stage.status: not-started`.
 - Source check; record `clean_at_end`.
-- Close with three lines: what Claude contributed, what the participant decided, next
+- Close with three lines: what Claude contributed, what the PM decided, next
   command: `/clear`, then `/pm:prd`.
 
 ## If things go wrong
 
 - Design produces nothing reusable: switch to the HTML path; record it in the header
   table (Path used) and in section 10.
-- The participant changes actor, job, or states after approval: save the change, mark
+- The PM changes actor, job, or states after approval: save the change, mark
   `prd` stale if it exists, and re-run from Step 2.
 - Visual similarity is not a completion gate. A clear, testable flow is.

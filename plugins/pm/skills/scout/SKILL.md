@@ -1,6 +1,6 @@
 ---
 name: scout
-description: Discovery stage of the EYP PM workshop. Compare public customer, market, competitor, and repository evidence for one product case and choose one opportunity to prototype. Run first; performs the readiness check on first use.
+description: Discovery stage of the pm workflow. Compare public customer, market, competitor, and repository evidence for one product case and choose one opportunity to prototype. Run first; performs the readiness check on first use.
 disable-model-invocation: true
 ---
 
@@ -13,7 +13,7 @@ whole stage. This skill takes no arguments.
 **Learning objective:** use Claude to compare mixed, imperfect evidence while keeping the
 prioritisation judgment with the PM.
 
-**Outcome:** `outputs/01-discovery.md` and one participant-selected opportunity.
+**Outcome:** `outputs/01-discovery.md` and one PM-selected opportunity.
 
 ## Open the stage
 
@@ -76,7 +76,7 @@ Set `stage.current: discovery`, `stage.status: in-progress`,
 ## Step 5: Public research pass (the source ladder)
 
 Follow `${CLAUDE_PLUGIN_ROOT}/resources/research-guide.md` exactly. Record the start time.
-Tell the participant once what a rung is: one kind of public source, and the ladder is
+Tell the PM once what a rung is: one kind of public source, and the ladder is
 the order you read them in. Read the `feeds:` block of the case's `case.yaml`. The
 sources it can hold, all public and keyless:
 
@@ -89,29 +89,29 @@ sources it can hold, all public and keyless:
 | `mastodon_tags` | recent posts under the product's hashtags |
 | `hackernews_search`, `hackernews_comments` | Hacker News stories and comments with points |
 | `app_store_reviews`, `app_store_lookup` | Apple App Store review text, rating counts, current version and release notes |
-| `play_store_page` | Google Play listing for the participant to open and paste reviews from; Claude does not fetch it |
+| `play_store_page` | Google Play listing for the PM to open and paste reviews from; Claude does not fetch it |
 | `adoption` | GitHub stars, Docker Hub pulls, PyPI or NuGet downloads |
 | `wikipedia_pageviews` | monthly Wikipedia article views, a public-interest trend |
 | `roadmap.own` | the product's own project boards, milestones, or roadmap page |
 | `roadmap.competitor_jobs` | competitors' live job postings, a roadmap tell |
 | `competitors` | competitor pricing or feature pages, today and a year ago via Wayback |
-| `reddit_rss_optional` | one subreddit feed, only if the facilitator has switched it on |
+| `reddit_rss_optional` | one subreddit feed, only if you have switched it on |
 
 A key set to `null` or `[]` means that source does not exist for this case; say so once
 and move on. Pick two or three lane terms with the
-participant (one question) and walk the ladder in order: forum search JSON and GitHub
+PM (one question) and walk the ladder in order: forum search JSON and GitHub
 (discussions by upvotes, issues by reactions), then Lemmy, Mastodon tags, and Hacker
 News, then App Store reviews, then adoption numbers, then competitor pages today versus
 their Wayback snapshot from a year ago, then official release notes, and only then search
 snippets if `readiness.search` is `ok`. Reddit only if `readiness.reddit_rss` is true.
 
 Respect the budget: 20 fetches, 8 searches, stop at 8 usable items or when the
-participant says time is up. As you read, fill the quote bank (research guide, "Quote
+PM says time is up. As you read, fill the quote bank (research guide, "Quote
 bank"): verbatim, role not handle, linked to a signal, only from text fetched in this
 session. Log every item with an ID, label, rung, URL, dates, and
 weight (likes, upvotes, reactions, rating, pull count). Keep a running draft in
 `.pm/drafts/01-discovery.md` from `${CLAUDE_PLUGIN_ROOT}/resources/templates/01-discovery.md`
-so nothing is lost if the session is interrupted. Tell the participant which rung you are
+so nothing is lost if the session is interrupted. Tell the PM which rung you are
 on as you go, and show one striking number or quote per rung so they can see the breadth.
 
 After the last rung you reach, apply the counting rules, build the triangulation table with
@@ -129,13 +129,13 @@ line, and `Status: to confirm with engineering`. Read only; never run anything f
 there. Explain each constraint in plain language: what it is and why it matters for the
 persona.
 
-## Step 7: Research check-in (participant check-in 1)
+## Step 7: Research check-in (check-in 1)
 
 Present, in this order: coverage table with the skew column, triangulation table with
 recurrence labels and counter-evidence, "Who we heard from", the two strongest quotes,
 contradictions, gaps and unreachable rungs, elapsed time, and one sentence of your view on whether the framing is
 good enough. Then show two blocks,
-**Claude's recommendation** and **Your decision**, and ask the participant to choose:
+**Claude's recommendation** and **Your decision**, and ask the PM to choose:
 continue, do one more targeted fetch (say which rung), or narrow the framing. Record
 `D-###`. If they choose the extra fetch, do it (within budget) and return here once.
 
@@ -146,13 +146,13 @@ supporting IDs and the quote IDs that voice it, and gives one short phrase for e
 user impact, mandate fit, delivery constraints, uncertainty. Do not compute a score. Check
 each against the case `exclusions`; drop and replace anything excluded.
 
-## Step 9: Priority check-in (participant check-in 2)
+## Step 9: Priority check-in (check-in 2)
 
 Recommend a `Now / Next / Later` order with one sentence of reasoning per slot and the main
 trade-off between the top two. Under each slot show the strongest quote for that
-opportunity so the participant decides against real words, not only your summary. Show **Claude's recommendation** and **Your decision**
-separately. Ask the participant to choose the `Now` opportunity and give their reason in
-their own words. Record `D-###`. The participant's choice wins even if it differs from
+opportunity so the PM decides against real words, not only your summary. Show **Claude's recommendation** and **Your decision**
+separately. Ask the PM to choose the `Now` opportunity and give their reason in
+their own words. Record `D-###`. The PM's choice wins even if it differs from
 yours; note the difference without arguing.
 
 ## Step 10: Save and close
@@ -164,7 +164,7 @@ yours; note the difference without arguing.
   `approved_at`, `selected_opportunity`, `provisional`), `stage.current: prototype`,
   `stage.status: not-started`.
 - Run the source check again; record `clean_at_end`.
-- Close with three lines: what Claude contributed, what the participant decided, and the
+- Close with three lines: what Claude contributed, what the PM decided, and the
   next command: `/clear`, then `/pm:prototype`.
 
 ## If things go wrong
@@ -174,8 +174,8 @@ yours; note the difference without arguing.
 - The GitHub API returns 403 or 429: switch to the `_html` templates in `feeds:` at once;
   everyone in the room shares one address and the limit. Any other rung that refuses or
   rate-limits: log `GAP` and move to the next. Do not retry in a loop.
-- GitHub unreachable for cloning: use the facilitator copy path in `workspace.md`.
+- GitHub unreachable for cloning: use the offline copy path in `workspace.md`.
 - Source folder changed: follow the source-protection steps in `workspace.md`; do not
   reset it.
-- Participant wants a different case or lane after research began: confirm, mark
+- The PM wants a different case or lane after research began: confirm, mark
   discovery as restarting, keep the old file until the new one is approved.

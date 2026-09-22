@@ -1,16 +1,16 @@
 # `.pm/session.yaml` schema
 
-The participant never edits this file. Skills own it. Keep it flat, small, and valid YAML.
+The PM never edits this file. Skills own it. Keep it flat, small, and valid YAML.
 Before every write: read the whole file, change only the keys you own, keep `decisions`
 append-only, then write the whole file back. If the file is unreadable, do not guess: show
-the participant the error, offer to rebuild it from the approved output files, and record
+the PM the error, offer to rebuild it from the approved output files, and record
 that you did so under `notes`.
 
 ```yaml
 schema: 1
 plugin_version: "0.1.0"          # from plugin.json at the time of setup
 created_at: "2026-10-01T09:12:00Z"
-workspace: "/absolute/path/to/workshop-folder"
+workspace: "/absolute/path/to/workspace"
 
 readiness:
   status: ready                  # ready | ready-with-fallback | blocked | not-run
@@ -19,10 +19,10 @@ readiness:
   web: ok                        # ok | unavailable            (fetch tool)
   search: ok                     # ok | unavailable            (web search tool)
   feeds: [fetch, search]         # which of the two worked
-  reddit_rss: false              # facilitator switch; true only if the facilitator said so
+  reddit_rss: false              # opt-in; true only if the PM asked for Reddit RSS
   browser_test: confirmed        # confirmed | unconfirmed
-  design: unknown                # available | unavailable | unknown  (participant typed /design)
-  stopped_after_setup: true      # participant chose to stop after readiness
+  design: unknown                # available | unavailable | unknown  (PM typed /design)
+  stopped_after_setup: true      # PM chose to stop after readiness
   notes: []
 
 case:
@@ -37,7 +37,7 @@ sources:
     clone_to: sources/primary
     pinned_sha: 9994eb3bedc77a63e652cb4195d843433696d036
     verified_sha: 9994eb3bedc77a63e652cb4195d843433696d036   # from git rev-parse HEAD after clone
-    method: sparse-clone         # sparse-clone | facilitator-copy
+    method: sparse-clone         # sparse-clone | offline-copy
     clean_at_start: true         # git status --porcelain empty at the start of the last stage
     clean_at_end: true
 

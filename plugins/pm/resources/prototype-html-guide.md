@@ -1,7 +1,7 @@
 # Standalone HTML prototype: contract and skeleton
 
 Used when Claude Design is unavailable, when it does not produce a reusable file, or when
-the participant prefers it. The PRD stage relies on this file, never on a Design share link.
+the PM prefers it. The PRD stage relies on this file, never on a Design share link.
 
 ## Contract
 
@@ -117,4 +117,4 @@ Go through the main path once and each alternate state once, and check:
 - Scope: nothing on screen belongs to another lane.
 
 Write findings as a short list, propose one revision tied to discovery evidence or a
-finding, and let the participant approve or choose a different revision.
+finding, and let the PM approve or choose a different revision.

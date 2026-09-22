@@ -6,7 +6,7 @@ Immich is free, open-source software for keeping a household's photos and videos
 
 ## Who the persona is
 
-The household media steward is the person who set Immich up for the family and feels responsible for it: they answer questions and sort out accounts. Their mandate in this workshop is to make Immich easier for the less-technical members of the household without weakening privacy (who can see what) or media integrity (originals staying complete and unaltered). They may be comfortable with technology but are not necessarily a developer.
+The household media steward is the person who set Immich up for the family and feels responsible for it: they answer questions and sort out accounts. Their mandate in this case is to make Immich easier for the less-technical members of the household without weakening privacy (who can see what) or media integrity (originals staying complete and unaltered). They may be comfortable with technology but are not necessarily a developer.
 
 ## The three lanes
 

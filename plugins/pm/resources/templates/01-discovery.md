@@ -62,7 +62,7 @@ Contradictions: <one line each, citing the IDs that disagree, or "none">
 | Later | | |
 
 ## 7. Selected opportunity
-**OPP-###: <title>** · chosen by the participant. Reason in the participant's words: <…>
+**OPP-###: <title>** · chosen by the PM. Reason in the PM's words: <…>
 
 ## 8. Assumptions and open questions
 - ASSUMPTION: <…>

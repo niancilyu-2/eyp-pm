@@ -99,7 +99,7 @@ feeds:
     - { name: "WordPress.com", page: "https://wordpress.com/pricing/", wayback: "https://archive.org/wayback/available?url=wordpress.com/pricing&timestamp={yyyymmdd}" }
     - { name: "Kentico", page: "https://www.kentico.com/platform/how-to-buy", wayback: "https://archive.org/wayback/available?url=www.kentico.com/platform/how-to-buy&timestamp={yyyymmdd}" }
     - { name: "Sanity", page: "https://www.sanity.io/pricing", wayback: "https://archive.org/wayback/available?url=www.sanity.io/pricing&timestamp={yyyymmdd}" }
-  reddit_rss_optional: "https://www.reddit.com/r/umbraco.rss"   # facilitator opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl if the facilitator says so
+  reddit_rss_optional: "https://www.reddit.com/r/umbraco.rss"   # opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl only if the PM asks
   forum_top_json: "https://forum.umbraco.com/top.json?period=yearly"
   forum_tag_top_json:   # forum has no publishing, validation or language tags; these are the closest lane-relevant tags with yearly top topics
     - { tag: media-management, url: "https://forum.umbraco.com/tag/media-management/l/top.json?period=yearly" }

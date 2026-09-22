@@ -4,7 +4,14 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.6.0 (unreleased)
+## 0.6.1 (unreleased)
+
+- The plugin no longer refers to a workshop, participants, or a facilitator anywhere. It
+  addresses the PM directly, the stop-after-setup prompt says "continue later", the Reddit
+  feed is a PM opt-in, and offline repository copies replace facilitator copies. All
+  workshop material lives in `docs/FACILITATOR.md`.
+
+## 0.6.0
 
 - Repositioned as a distributable skill package. README is a package front page with a
   flow diagram and a traceability diagram; facilitation material moved to

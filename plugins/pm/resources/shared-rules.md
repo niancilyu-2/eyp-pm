@@ -12,16 +12,16 @@ accountable product decision. In practice:
 - (`/pm:create-skill` is the exception: it records its check-ins only in
   `outputs/04-skill-summary.md` and never writes `session.yaml`.)
 - Every check-in shows two clearly separated blocks: **Claude's recommendation** and
-  **Your decision**. Never merge them. Never pre-fill the participant's decision.
-- Record only what the participant said or did in this conversation. Do not record actions
+  **Your decision**. Never merge them. Never pre-fill the PM's decision.
+- Record only what the PM said or did in this conversation. Do not record actions
   you did not observe, such as opening a file, typing a command in another window, or
   seeing a skill listed. Quote their words as written; never merge two answers into one
   sentence or add words they did not use.
-- After each check-in, record both blocks and the participant's reason in the stage output
+- After each check-in, record both blocks and the PM's reason in the stage output
   file (in its "Claude-versus-PM decision record" section) and in `.pm/session.yaml`
   under `decisions`.
 - Engineering owns architecture, implementation design, and estimates. Do not ask the
-  participant to invent them and do not invent them yourself.
+  PM to invent them and do not invent them yourself.
 - A technical question may stay open for engineering only if answering it would not change
   product scope, user behavior, data or security behavior, or acceptance criteria.
 
@@ -38,7 +38,7 @@ Start with, in this order:
    action (which earlier stage to run).
 4. **Resume or restart.** If this stage already has saved progress, offer to *resume* or
    *restart*. Running drafts live in `.pm/drafts/` and are copied to `outputs/` only when
-   the participant approves the stage, so a restart never overwrites an approved file.
+   the PM approves the stage, so a restart never overwrites an approved file.
 5. **Source check.** Run `git status --porcelain` in each cloned repository under
    `sources/` (see `workspace.md`). Record the result. Run it again at the end of the stage.
 
@@ -46,14 +46,14 @@ Start with, in this order:
 
 - Use the AskUserQuestion tool. One question at a time, or a short group of two or three
   closely related questions.
-- Offer concrete options with plain-language descriptions. Always let the participant
+- Offer concrete options with plain-language descriptions. Always let the PM
   type their own answer.
-- Never require the participant to edit code, YAML, or file paths. If something must
+- Never require the PM to edit code, YAML, or file paths. If something must
   change in a file, change it yourself and say what you did.
 - Write replies the way you write files: no em dashes, no arrows, no filler. Use commas,
   colons, or the word "then".
 - Explain unavoidable technical terms in a few words the first time they appear. If the
-  participant asks what a term means, answer in one sentence before doing anything else.
+  PM asks what a term means, answer in one sentence before doing anything else.
   Never leave that question unanswered.
 - Keep each check-in under about 300 words. If there is more to decide, split it into
   two turns: the product questions first, the technical yes/no items second.
@@ -66,7 +66,7 @@ Label every material claim in outputs:
 |---|---|
 | `Evidence` | A specific public source you read. Must carry a direct URL, source type, publication date when available, and access date. A search-result snippet alone is **not** evidence; label it `Inference` and say it is unverified. |
 | `Inference` | A reasonable conclusion drawn from evidence or from reading the repository. |
-| `Assumption` | Something you or the participant are taking as true without support. |
+| `Assumption` | Something you or the PM are taking as true without support. |
 | `Constraint` | A verified limit from the repository or documentation that shapes what is feasible. |
 
 Technical statements in the PRD use a second set: `Verified` (you opened the file and cite
@@ -96,18 +96,18 @@ Stable IDs, assigned in order and never reused within a workspace:
 - Use public information and synthetic example data only. Never ask for logins, API keys,
   private customer data, or confidential company material. If offered, decline and continue
   with synthetic data.
-- Prototypes are workshop exercise artifacts. Do not copy source files or large code blocks
+- Prototypes are exercise artifacts. Do not copy source files or large code blocks
   from `sources/` into `outputs/`.
 
 ## 6. Stale stages
 
-If the participant changes an approved upstream decision (for example, picks a different
+If the PM changes an approved upstream decision (for example, picks a different
 `Now` opportunity after the prototype exists), do all of the following:
 
 1. Save the new decision.
 2. Add each affected later stage to `stale` in `session.yaml` and set that stage's
    `status: stale`.
-3. Tell the participant exactly which files must be refreshed and which skill to run.
+3. Tell the PM exactly which files must be refreshed and which skill to run.
 
 Do not silently edit later files to match.
 
@@ -117,7 +117,7 @@ Do not silently edit later files to match.
   `.pm/session.yaml`, so nothing is lost and the context stays small.
 - When you write `session.yaml`, re-read it first, change only the keys you own, and keep
   the `decisions` list append-only. See `session-schema.md`.
-- Keep the participant oriented: say which step of the stage you are on and what is next.
+- Keep the PM oriented: say which step of the stage you are on and what is next.
 
 ## 8. Effort and time
 
@@ -125,24 +125,23 @@ Claude cannot see a clock reliably. Use `date` to record the start time, write i
 the stage's draft file header at once (the capstone writes it into the summary draft), and
 mention elapsed time at each check-in. After a session resume, re-read that recorded start
 time; never start the clock again. Respect the effort budgets in each skill (for example the research
-budget in `research-guide.md`). The facilitator calls time; when the participant says time
-is up, save a clearly labelled *provisional* result rather than pushing on.
+budget in `research-guide.md`). When the PM says time is up, save a clearly labelled *provisional* result rather than pushing on.
 
-Suggested time budget for the workshop day (the facilitator may change it):
+Suggested time budget per stage:
 
 | Block | Minutes |
 |---|---|
-| Setup and readiness (ideally done the day before) | 15 |
+| Setup and readiness (ideally done in advance) | 15 |
 | Discovery (`/pm:scout`) | 60 |
 | Prototype (`/pm:prototype`) | 60 |
 | PRD (`/pm:prd`) | 45 |
-| Capstone demo (`/pm:create-skill`, facilitator shows it; participants run it later on their own) | 15 |
-| Breaks and buffer | 45 |
+| Capstone (`/pm:create-skill`) | 30 |
+| Breaks and buffer | 30 |
 
 ## 9. Usage line
 
 End every reply during a stage with one short line, set apart by a blank line, so the
-participant always knows where they are and what has been spent. Use middle dots as
+PM always knows where they are and what has been spent. Use middle dots as
 separators and keep it under 100 characters. Omit any field that does not apply yet.
 
 | Stage | Format |

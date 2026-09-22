@@ -1,7 +1,7 @@
 # Project skill template and self-check (capstone)
 
 `/pm:create-skill` writes exactly one file: `.claude/skills/<slug>/SKILL.md`. Nothing else
-goes in the folder in the workshop version: no scripts, no subagents, no extra files.
+goes in the folder in the first version: no scripts, no subagents, no extra files.
 
 ## Slug rules
 
@@ -20,7 +20,7 @@ disable-model-invocation: true
 ---
 ```
 
-Tell the participant: `disable-model-invocation: true` keeps the first version manual, so it
+Tell the PM: `disable-model-invocation: true` keeps the first version manual, so it
 only runs when they type `/<slug>`. Removing that line later lets Claude pick the skill
 automatically when a request matches the description.
 
@@ -60,7 +60,7 @@ If something is missing, ask for it once; do not guess.
 ## Self-check before testing
 
 Run through this list and fix anything that fails, then run
-`claude plugin validate .claude/skills --strict` from the workshop folder (point it at the
+`claude plugin validate .claude/skills --strict` from the workspace folder (point it at the
 **skills folder**, not the skill's own folder).
 
 - [ ] Folder name equals `name`; slug passes the rules above.
@@ -75,9 +75,9 @@ Run through this list and fix anything that fails, then run
 ## Testing in a fresh session
 
 The authoring conversation can hide missing instructions, so test from a **new** Claude
-Code session in the same workshop folder:
+Code session in the same workspace folder:
 
-1. Ask the participant to open a second terminal window in the same folder and run
+1. Ask the PM to open a second terminal window in the same folder and run
    `claude` (or quit this session, run `claude`, and later return with `claude --continue`).
 2. In the new session, type `/skills` and confirm `/<slug>` is listed. Then run
    `/<slug>` with the agreed public or synthetic test input.
@@ -89,5 +89,5 @@ success.
 ## Reuse
 
 Copying the folder `.claude/skills/<slug>/` into another project's `.claude/skills/` makes
-the skill available there. The workshop version is not installed globally, published,
+the skill available there. The first version is not installed globally, published,
 committed, or added to the `pm` plugin.

@@ -90,7 +90,7 @@ synthetic_data_rules:
   - Use invented member names and clearly fake emails (for example priya.n@example.com); do not reuse names of real Plane contributors or staff.
   - Work-item titles should read like plausible product requests or bugs but must not describe a real, identifiable customer incident.
   - Keep volumes realistic for a mid-size team (roughly 5–12 members, 3–6 projects, 20–80 work items per project) unless the exercise says otherwise.
-  - Dates should be relative to the workshop date; avoid embedding real release dates or real quarter names tied to a real company.
+  - Dates should be relative to today's date; avoid embedding real release dates or real quarter names tied to a real company.
 public_channels:
   - { type: github-issues, url: https://github.com/makeplane/plane/issues, note: "Bug reports and feature requests; filter by label and sort by reactions" }
   - { type: github-discussions, url: https://github.com/makeplane/plane/discussions, note: "Q&A, ideas, and announcements from maintainers and users" }
@@ -119,13 +119,13 @@ feeds:
     - { name: "Jira", page: "https://www.atlassian.com/software/jira/pricing", wayback: "https://archive.org/wayback/available?url=www.atlassian.com/software/jira/pricing&timestamp={yyyymmdd}" }
     - { name: "Shortcut", page: "https://www.shortcut.com/pricing", wayback: "https://archive.org/wayback/available?url=www.shortcut.com/pricing&timestamp={yyyymmdd}" }
     - { name: "Huly", page: "https://huly.io/pricing", wayback: "https://archive.org/wayback/available?url=huly.io/pricing&timestamp={yyyymmdd}" }
-  reddit_rss_optional: "https://www.reddit.com/r/selfhosted.rss"   # facilitator opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl if the facilitator says so
+  reddit_rss_optional: "https://www.reddit.com/r/selfhosted.rss"   # opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl only if the PM asks
   forum_top_json: null   # no Discourse forum (see forum_search_json)
   forum_tag_top_json: []
   hackernews_comments: "https://hn.algolia.com/api/v1/search?query={query}&tags=comment&hitsPerPage=10"   # "plane" alone matches aircraft; pair it with a lane word
   app_store_lookup:
     - { app: "Plane: Projects, Wiki, AI", id: 6657986465, url: "https://itunes.apple.com/lookup?id=6657986465&country=us", fields: "averageUserRating, userRatingCount, version, releaseNotes, currentVersionReleaseDate" }
-  play_store_page: { app: "Plane: Projects, Wiki, AI", package: com.plane.so, url: "https://play.google.com/store/apps/details?id=com.plane.so" }   # participant opens and pastes reviews; not fetched
+  play_store_page: { app: "Plane: Projects, Wiki, AI", package: com.plane.so, url: "https://play.google.com/store/apps/details?id=com.plane.so" }   # the PM opens it and pastes reviews; not fetched
   wikipedia_pageviews: []   # no English Wikipedia article; page summary for Plane_(software) returns 404
   roadmap:
     own:

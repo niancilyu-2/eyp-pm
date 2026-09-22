@@ -1,6 +1,6 @@
 ---
 name: create-skill
-description: Closing capstone of the EYP PM workshop. Turn one repeatable PM practice into a small project-local Claude skill, test it once in a fresh session, and revise it once. Independent of the other stages. Optional text after the command describes the task or pastes existing material.
+description: Capstone of the pm workflow. Turn one repeatable PM practice into a small project-local Claude skill, test it once in a fresh session, and revise it once. Independent of the other stages. Optional text after the command describes the task or pastes existing material.
 disable-model-invocation: true
 argument-hint: "[describe the recurring PM task or paste an existing prompt/checklist]"
 ---
@@ -40,7 +40,7 @@ Invocation text: `$ARGUMENTS`
   template, or notes, treat it as context. Do not ask for it again; skip the menu and ask
   only for missing details in Step 3.
 - Otherwise offer two options: *describe a recurring PM task*, or *paste an existing
-  prompt, checklist, template, or set of notes*. Something noticed during today's workshop
+  prompt, checklist, template, or set of notes*. Something noticed while using the other pm stages
   is fine; so is a task from their day job.
 
 ## Step 3: Four guided questions (one at a time)
@@ -61,12 +61,12 @@ line instead.
 six steps, or more than three meaningful branches, stop and offer two or three narrower
 jobs. Ask which one to build today.
 
-## Step 4: Scope check-in (participant check-in 1)
+## Step 4: Scope check-in (check-in 1)
 
 Before writing any file, show the proposed contract: slug and name, plain-language
 trigger ("Use when …"), inputs, output, workflow steps, PM-owned decisions and stop
 points, quality checks, and exclusions. Present **Claude's recommendation** and **Your
-decision**. The participant approves or narrows. Record the decision for the summary.
+decision**. The PM approves or narrows. Record the decision for the summary.
 
 ## Step 5: Write the skill
 
@@ -76,7 +76,7 @@ Create `.claude/skills/<slug>/SKILL.md` exactly as specified in
 `disable-model-invocation: true` does and how to remove it later.
 
 Run the self-check list from the template, fix anything that fails, then run from the
-workshop folder:
+workspace folder:
 
 ```bash
 claude plugin validate .claude/skills --strict
@@ -86,21 +86,21 @@ Show the result in one line. If it fails, fix and re-run.
 
 ## Step 6: Test in a fresh session
 
-Follow the testing section of `project-skill-template.md`: the participant opens a new
+Follow the testing section of `project-skill-template.md`: the PM opens a new
 Claude Code session in the same folder, confirms `/<slug>` appears in `/skills`, runs it
 with the agreed public or synthetic input, and pastes the result back here. Wait for the
 paste. If nothing comes back, record `not tested`; never infer success. Record only what
-the participant reports; do not write that the skill appeared in `/skills` unless they say
+the PM reports; do not write that the skill appeared in `/skills` unless they say
 so.
 
 Review the pasted result against: trigger clarity, missing context, output usefulness,
 unsupported assumptions, PM decision ownership, scope.
 
-## Step 7: One revision and ownership check-in (participant check-in 2)
+## Step 7: One revision and ownership check-in (check-in 2)
 
 Propose at most one revision from the review, or explain why none is needed. Present
-**Claude's recommendation** and **Your decision**. After the participant approves, apply
-it and re-run the validate command. Then ask the participant to state, in their words,
+**Claude's recommendation** and **Your decision**. After the PM approves, apply
+it and re-run the validate command. Then ask the PM to state, in their words,
 what the skill automates and what remains their judgment, and to confirm the skill
 provides the intended help. Copy those answers into the summary exactly as typed, as
 separate quotations. Do not merge or extend them.
@@ -122,5 +122,5 @@ published, or committed.
   creator.
 - No scripts, subagents, integrations, custom metadata, or global installation.
 - Never modify the `pm` plugin or anything under `sources/`.
-- If the participant asks for a skill that needs logins, private data, or external
+- If the PM asks for a skill that needs logins, private data, or external
   services, help them narrow it to a version that works on pasted or public input.

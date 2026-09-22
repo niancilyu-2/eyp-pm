@@ -1,6 +1,6 @@
 ---
 name: prd
-description: PRD stage of the EYP PM workshop. Turn the approved discovery and prototype into an engineering handoff grounded in the pinned repository, with an independent read-only review. Run after /pm:prototype.
+description: PRD stage of the pm workflow. Turn the approved discovery and prototype into an engineering handoff grounded in the pinned repository, with an independent read-only review. Run after /pm:prototype.
 disable-model-invocation: true
 ---
 
@@ -65,18 +65,18 @@ Fill every section. Apply the case's `exclusions` from `case.yaml`. Rules:
   scope, user behaviour, data or security behaviour, or acceptance criteria.
 - Appendix A lists touchpoints with labels and paths.
 - Voice of the customer: propose three quotes from the discovery quote bank (section 3b)
-  for section 1. The participant picks two at the scope check-in. Copy them verbatim with
+  for section 1. The PM picks two at the scope check-in. Copy them verbatim with
   their `QUO-###`, role, channel, date, and URL. Never edit a quote.
 
 Keep the draft saved as you go.
 
-## Step 3: Scope check-in (participant check-in 1)
+## Step 3: Scope check-in (check-in 1)
 
 Two turns, each under about 300 words. First turn: the problem statement, the three
 candidate quotes (ask which two to keep), goals, and non-goals. Second turn: expected
 behaviour, alternate states, and the acceptance criteria as short yes/no items, with any
 number or threshold explained in plain words. Show **Claude's recommendation** (including anything you
-think is over- or under-scoped) and **Your decision**. The participant approves or edits.
+think is over- or under-scoped) and **Your decision**. The PM approves or edits.
 Apply edits, then record `D-###`.
 
 ## Step 4: Independent review
@@ -91,13 +91,13 @@ conversation, so the prompt must contain:
 - The full text of `${CLAUDE_PLUGIN_ROOT}/resources/prd-review-checklist.md`.
 - The instruction to return findings in the checklist's output format and to write no files.
 
-Tell the participant the review is running and what it checks (one sentence each).
+Tell the PM the review is running and what it checks (one sentence each).
 
 ## Step 5: Write the review file and disposition each finding
 
 Write the reviewer's output into `outputs/03-prd-review.md` using
 `${CLAUDE_PLUGIN_ROOT}/resources/templates/03-prd-review.md`. Then go through the
-findings with the participant, blocking ones first. For each, propose one disposition:
+findings with the PM, blocking ones first. For each, propose one disposition:
 
 - **Fix in PRD.** Apply the change and reference the finding.
 - **Engineering question.** Allowed only if it does not change product scope, user
@@ -106,13 +106,13 @@ findings with the participant, blocking ones first. For each, propose one dispos
 - **Accept with note.** For minor items. Record why.
 
 A blocking finding cannot be converted to an engineering question. If a blocking finding
-requires a product decision, ask the participant for it now.
+requires a product decision, ask the PM for it now.
 
-## Step 6: Handoff check-in (participant check-in 2)
+## Step 6: Handoff check-in (check-in 2)
 
 Show the disposition table, the remaining `OPEN-###` list split into *product questions*
 and *engineering questions*, and confirm no blocking finding remains. Present **Claude's
-recommendation** and **Your decision**. The participant approves the dispositions and
+recommendation** and **Your decision**. The PM approves the dispositions and
 confirms the open product questions. Record `D-###`.
 
 ## Step 7: Save and close
@@ -123,15 +123,15 @@ confirms the open product questions. Record `D-###`.
 - Update `session.yaml`: `stages.prd` (`status: approved`, `revision` +1, `approved_at`),
   `stage.current: done`, `stage.status: approved`.
 - Source check; record `clean_at_end`.
-- Close with three lines: what Claude contributed, what the participant decided, and the
+- Close with three lines: what Claude contributed, what the PM decided, and the
   next step: the closing capstone `/pm:create-skill` (after `/clear`).
 
 ## If things go wrong
 
 - The reviewer returns nothing or errors: retry once with the same prompt. If it still
   fails, run the checklist yourself, label the review file `self-review (reviewer
-  unavailable)`, and tell the participant.
-- The participant changes scope during the review: apply the change, re-run the review
+  unavailable)`, and tell the PM.
+- The PM changes scope during the review: apply the change, re-run the review
   on the changed sections, and note the second pass in the review file.
 - A required product answer is unknown: it stays a **product** open question and the PRD
   cannot be `ready-for-engineering-review`. Save as `draft`, explain, and stop.
