@@ -15,6 +15,7 @@ changed. One PM can run it alone; a group can run it together.
 
 ## Contents
 
+- [Where it fits](#where-it-fits)
 - [Commands](#commands)
 - [Requirements](#requirements)
 - [Getting started](#getting-started)
@@ -24,6 +25,37 @@ changed. One PM can run it alone; a group can run it together.
 - [Documentation](#documentation)
 - [Repository layout](#repository-layout)
 - [Licence and credits](#licence-and-credits)
+
+## Where it fits
+
+A typical product lifecycle runs from vision and strategy through discovery to a validated
+PRD and on to execution. This plugin covers the discovery work that can be done from public
+evidence and a product's own code, and the PRD that comes out of it. The highlighted steps
+are the ones it performs.
+
+```mermaid
+flowchart TB
+  V["Vision"] --> S["Strategy"]
+  S --> D
+  subgraph D["Discovery"]
+    direction TB
+    CR["Customer research<br/>public evidence, quotes, triangulation"]
+    PT["Prototypes<br/>one flow, clickable"]
+    EX["Experiments"]
+    FC["Feasibility checks<br/>repository constraints, engineering review"]
+  end
+  D --> P["Validated PRD<br/>traceable requirements and acceptance criteria"]
+  P --> E["Execution"]
+  classDef covered fill:#2F5BEA,stroke:#2F5BEA,color:#FFFFFF
+  classDef partial fill:#DCE3F9,stroke:#2F5BEA,color:#1A1A1A
+  classDef outside fill:#FAF9F5,stroke:#9A9A9A,color:#5B5F66
+  class CR,PT,FC,P covered
+  class V,S,EX,E outside
+```
+
+Outside its scope: setting vision and strategy, running live experiments with real users,
+and execution. The research it does is a public scan, not customer validation, and the PRD
+it produces is marked ready for engineering review, not ready to build.
 
 ## Commands
 
