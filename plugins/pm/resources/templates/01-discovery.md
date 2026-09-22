@@ -55,6 +55,7 @@ Contradictions: <one line each, citing the IDs that disagree, or "none">
 - For: <actor> · Job: <job>
 - Supported by: <SIG/CON IDs>
 - In their words: <QUO IDs>
+- Evidence: <n signals, k source types · strongest: … · counter-evidence: … · constraints: …>
 - Evidence strength / user impact / mandate fit / delivery constraints / uncertainty: <one short phrase each>
 ### OPP-002: <title>
 …
@@ -64,6 +65,7 @@ Contradictions: <one line each, citing the IDs that disagree, or "none">
 ## 6. Now / Next / Later
 | Slot | Opportunity | Claude's reasoning (one sentence) |
 |---|---|---|
+<!-- After the table: one sentence naming the lens that tipped the order, and if Now is not the densest opportunity, why. -->
 | Now | | |
 | Next | | |
 | Later | | |

@@ -145,15 +145,18 @@ continue, do one more targeted fetch (say which rung), or narrow the framing. Re
 ## Step 8: Draft three opportunities
 
 Write exactly three `OPP-###` entries. Each names one actor and one job, cites its
-supporting IDs and the quote IDs that voice it, and gives one short phrase for each of the five lenses: evidence strength,
+supporting IDs and the quote IDs that voice it, carries one evidence line in the research
+guide's fixed shape (signals, source types, strongest weight, counter-evidence, constraints), and gives one short phrase for each of the five lenses: evidence strength,
 user impact, mandate fit, delivery constraints, uncertainty. Do not compute a score. Check
 each against the case `exclusions`; drop and replace anything excluded.
 
 ## Step 9: Priority check-in (check-in 2)
 
 Introduce each opportunity as a two-sentence story a newcomer understands: who is stuck,
-what happens to them today, what would change. Then recommend a `Now / Next / Later` order
-with one sentence of reasoning per slot and the main trade-off between the top two. Under
+what happens to them today, what would change, followed by its evidence line. Then
+recommend a `Now / Next / Later` order with one sentence of reasoning per slot and the main
+trade-off between the top two. Name the lens that tipped the order. If the recommended
+`Now` is not the one with the most signal, say so in one sentence and why. Under
 each slot show the strongest quote for that opportunity so the PM decides against real
 words, not only your summary. The five-lens comparison stays in the file; in the reply,
 say only what tipped the order. Under 300 words before the blocks. Show **Claude's recommendation** and **Your decision**

@@ -4,7 +4,12 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.7.0 (unreleased)
+## 0.7.1 (unreleased)
+
+- Each opportunity carries a one-line evidence summary, and the Now recommendation names
+  the lens that tipped it and says when it departs from the densest signal.
+
+## 0.7.0
 
 - Lanes re-cut from an evidence audit of each product (forum, GitHub, reviews, release
   history). Immich: lane 2 boundary tightened. Plane: two lanes reshaped so nothing relies

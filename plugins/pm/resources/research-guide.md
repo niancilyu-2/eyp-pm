@@ -231,6 +231,12 @@ Rules:
 - Do not calculate a composite score. Compare opportunities in words across five lenses:
   evidence strength, user impact, fit with the case mandate, delivery constraints,
   uncertainty.
+- Every opportunity carries one evidence line so the PM can see how much stands behind it,
+  in this fixed shape and no longer:
+  `Evidence: 4 signals, 2 source types · strongest: 12-like thread · counter-evidence: none found · constraints: CON-002 helps`
+  Signal density feeds the evidence-strength lens; it does not decide the order. When the
+  recommended `Now` is not the densest, the recommendation says so and gives the reason in
+  one sentence, for example "OPP-002 has more signal, but 18.1.0 shipped most of it".
 
 ## Research check-in (first check-in)
 
