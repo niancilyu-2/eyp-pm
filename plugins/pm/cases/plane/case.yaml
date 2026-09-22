@@ -34,7 +34,9 @@ lanes:
     territory: >-
       The project Intake queue where incoming requests are listed, opened, and either accepted,
       declined, snoozed, or marked duplicate, plus the work-item detail panel and the state,
-      priority, label, and filter controls used while sorting them.
+      priority, label, and filter controls used while sorting them. Intake forms and email intake
+      are paid-tier features and out of scope; the in-app queue with accept, decline, snooze, and
+      duplicate is in scope.
     repo_entry_points:
       - apps/web/core/components/inbox
       - apps/web/core/components/issues/issue-detail
@@ -43,41 +45,38 @@ lanes:
       - apps/web/core/components/labels
       - apps/web/app/routes/core.ts
       - packages/i18n/src/locales/en/inbox.json
-  - id: planning-to-execution-visibility
-    name: Planning-to-execution visibility
+  - id: planning-and-scheduling
+    name: Planning and scheduling
     surface: desktop web
     viewport: { width: 1440, height: 900 }
     territory: >-
-      The planning containers (Cycles, Modules, Views) and the work-item layouts (list, kanban,
-      calendar, spreadsheet, gantt) through which planned work is arranged and tracked as it
-      moves toward done.
+      Cycles, Modules, and the five work-item layouts (list, board, calendar, spreadsheet,
+      timeline) used to arrange planned work, including transferring unfinished items between
+      cycles. Timeline dependencies are a Pro feature and out of scope.
     repo_entry_points:
       - apps/web/core/components/cycles
       - apps/web/core/components/modules
-      - apps/web/core/components/views
       - apps/web/core/components/issues/issue-layouts
       - apps/web/core/components/gantt-chart
-      - apps/web/core/components/active-cycles
-      - apps/web/core/components/workspace/views
+      - apps/web/core/components/views
       - packages/i18n/src/locales/en/cycle.json
       - packages/i18n/src/locales/en/module.json
-  - id: stakeholder-progress
-    name: Stakeholder progress
+  - id: cross-project-status-readout
+    name: Cross-project status readout
     surface: desktop web
     viewport: { width: 1440, height: 900 }
     territory: >-
-      The places where progress is summarised for people who are not doing the work day to day:
-      the workspace Home page and its widgets, the Analytics pages, the progress side panels on
-      a cycle or module, and workspace notifications.
+      The workspace-level views that list and group work items across projects, the Analytics
+      "Work items" tab available in the Community Edition, and the progress panel on a cycle or
+      module, as read by someone outside the daily work.
     repo_entry_points:
+      - apps/web/core/components/workspace/views
       - apps/web/core/components/analytics
-      - apps/web/core/components/home
       - apps/web/core/components/cycles/analytics-sidebar
       - apps/web/core/components/modules/analytics-sidebar
-      - apps/web/core/components/workspace-notifications
       - apps/web/core/components/chart
       - packages/propel/src/charts
-      - packages/i18n/src/locales/en/home.json
+    # Home widgets, dashboards, project overview, and most analytics tabs are Pro and out of scope.
 exclusions:
   - Community Edition only. Do not treat Pro, Business, or Enterprise features as available, even if code paths or upgrade badges for them appear in the repository.
   - No billing, licensing, plan-upgrade, or seat-management features.

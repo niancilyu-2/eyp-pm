@@ -32,6 +32,11 @@ Paths are inside `sources/primary`; all Verified at the pinned commit.
 - https://design.home-assistant.io/: official design site: components, colours, typography, concepts.
 - https://www.home-assistant.io/dashboards/: user docs for dashboards with current screenshots.
 - https://www.home-assistant.io/dashboards/cards/: catalogue of card types with screenshots.
+- https://www.home-assistant.io/dashboards/dashboards/: managing multiple dashboards and setting the default one.
+- https://www.home-assistant.io/integrations/repairs/: the Repairs page, with screenshots of the issue list and fix flow.
+- https://www.home-assistant.io/integrations/backup/: the Backup page, schedule, locations and restore.
+- https://www.home-assistant.io/common-tasks/general/: the Updates page and the update-with-backup flow.
+- https://www.home-assistant.io/docs/automation/troubleshooting/: the automation trace view, step by step.
 - https://developers.home-assistant.io/docs/frontend/design/: short developer-facing design guidelines.
 
 ## Synthetic data guidance
@@ -47,5 +52,5 @@ Paths are inside `sources/primary`; all Verified at the pinned commit.
 
 - One self-contained HTML file per prototype; no build step, no external scripts.
 - One main path plus two alternate states (for example normal, something unavailable, and an error or empty state).
-- Match the lane viewport: 1024×768 for Dashboards, 390×844 for Health and recovery, 1440×900 for Automations.
+- Match the lane viewport: 1024x768 for Household dashboards and defaults, 390x844 for Repairs, backups, and recovery from updates, 1440x900 for Automation troubleshooting and safe edits.
 - Borrow the patterns above so reviewers recognise the product, but visual similarity is not a completion gate; clarity of the flow is.

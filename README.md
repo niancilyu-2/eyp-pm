@@ -64,10 +64,10 @@ folders it needs are downloaded, tens of megabytes rather than hundreds.
 | Case | You play | Mandate | Lanes (prototype surface) |
 |---|---|---|---|
 | Immich | Household media steward | Make the product easier for less-technical family members without weakening privacy or media integrity | Backup and status confidence (mobile app); Finding and organizing media (desktop web); Private sharing and collaboration (mobile app) |
-| Plane | Product-operations lead | Turn unstructured demand into aligned execution | Intake and triage; Planning-to-execution visibility; Stakeholder progress (desktop web) |
-| Home Assistant | Nontechnical household co-admin | Make routine configuration and recovery safer while preserving local control | Dashboards (tablet web); Device and entity health and recovery (mobile web); Automation creation and troubleshooting (desktop web) |
-| Umbraco | Regional content-operations editor | Reduce rework between content creation and publication | Draft to publish; Media reuse; Validation and localization (desktop backoffice) |
-| ERPNext | Inventory or procurement operations manager | Resolve exceptions without weakening controls or auditability | Inventory exceptions; Purchase-approval exceptions; Role-based daily navigation (desktop web) |
+| Plane | Product-operations lead | Turn unstructured demand into aligned execution | Intake and triage; Planning and scheduling; Cross-project status readout (desktop web) |
+| Home Assistant | Nontechnical household co-admin | Make routine configuration and recovery safer while preserving local control | Household dashboards and defaults (tablet web); Repairs, backups, and recovery from updates (mobile web); Automation troubleshooting and safe edits (desktop web) |
+| Umbraco | Regional content-operations editor | Reduce rework between content creation and publication | Draft to publish; Pick and reuse media from the page; Languages and variants (desktop backoffice) |
+| ERPNext (advanced) | Inventory or procurement operations manager | Resolve exceptions without weakening controls or auditability | Inventory quantity and valuation exceptions; Purchase-approval exceptions; Stock and Buying daily worklists (desktop web) |
 
 ERPNext is the advanced case: it downloads the product and the Frappe framework it runs
 on. Case files hold boundaries and starting points only, never conclusions.

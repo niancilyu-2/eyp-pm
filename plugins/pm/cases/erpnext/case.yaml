@@ -9,6 +9,8 @@ product_summary: >-
   framework, a Python and JavaScript toolkit that supplies the forms, list views, workflows,
   and permission rules that every ERPNext screen uses. It is used by small and mid-sized
   manufacturers, distributors, retailers and service firms, either self-hosted or on Frappe Cloud.
+  The persona covers two ERPNext roles, Stock Manager and Purchase Manager, often held by one
+  person in a small or mid-sized company; lanes 1 and 2 map to those two hats.
 repositories:
   - role: primary
     owner_repo: frappe/erpnext
@@ -26,6 +28,7 @@ repositories:
       - erpnext/controllers
       - erpnext/workspace_sidebar
       - erpnext/desktop_icon
+      - erpnext/dock
   - role: companion
     owner_repo: frappe/frappe
     url: https://github.com/frappe/frappe
@@ -42,23 +45,25 @@ repositories:
       - frappe/core
       - frappe/model
 lanes:
-  - id: inventory-exceptions
-    name: Inventory exceptions
+  - id: inventory-quantity-and-valuation-exceptions
+    name: Inventory quantity and valuation exceptions
     surface: desktop web
     viewport: { width: 1440, height: 900 }
-    territory: The screens and records an inventory manager uses when a stock quantity, movement, or valuation does not match expectations, including stock entries, stock reconciliations, material requests, warehouses, stock settings, and the stock ledger and balance reports.
+    territory: Stock entries, stock reconciliations, transfer-type material requests, serial and batch bundles, repost item valuation, and the Stock Ledger, Stock Balance, and Stock Ageing reports, as a Stock Manager sees them when a quantity or valuation is being checked or corrected.
     repo_entry_points:
       - sources/primary/erpnext/stock/doctype/stock_entry/
       - sources/primary/erpnext/stock/doctype/stock_reconciliation/
       - sources/primary/erpnext/stock/doctype/material_request/
-      - sources/primary/erpnext/stock/doctype/warehouse/
-      - sources/primary/erpnext/stock/doctype/stock_settings/
+      - sources/primary/erpnext/stock/doctype/serial_and_batch_bundle/
       - sources/primary/erpnext/stock/doctype/repost_item_valuation/
       - sources/primary/erpnext/stock/doctype/stock_ledger_entry/
+      - sources/primary/erpnext/stock/doctype/warehouse/
+      - sources/primary/erpnext/stock/doctype/stock_settings/
       - sources/primary/erpnext/stock/report/stock_ledger/
       - sources/primary/erpnext/stock/report/stock_balance/
       - sources/primary/erpnext/stock/report/stock_ageing/
       - sources/primary/erpnext/stock/stock_ledger.py
+      - sources/primary/erpnext/stock/serial_batch_bundle.py
       - sources/primary/erpnext/stock/reorder_item.py
       - sources/primary/erpnext/controllers/stock_controller.py
       - sources/primary/erpnext/public/js/controllers/stock_controller.js
@@ -70,7 +75,7 @@ lanes:
     name: Purchase-approval exceptions
     surface: desktop web
     viewport: { width: 1440, height: 900 }
-    territory: The purchase order, material request, supplier, and buying-settings screens together with the Frappe workflow and authorization-rule machinery that decides who may approve, amend, reject, or reopen a purchasing document.
+    territory: Purchase orders and purchase-type material requests that are stuck in, rejected by, or bypassing an approval step, as seen on ERPNext screens by a Purchase Manager; the Frappe workflow engine and Authorization Rule are fixed machinery read for context, not changed.
     repo_entry_points:
       - sources/primary/erpnext/buying/doctype/purchase_order/
       - sources/primary/erpnext/buying/doctype/buying_settings/
@@ -93,40 +98,38 @@ lanes:
       - sources/companion/frappe/public/js/frappe/form/workflow.js
       - sources/companion/frappe/public/js/frappe/form/toolbar.js
       - sources/companion/frappe/public/js/frappe/form/footer/form_timeline.js
-  - id: role-based-daily-navigation
-    name: Role-based daily navigation
+  - id: stock-and-buying-daily-worklists
+    name: Stock and Buying daily worklists
     surface: desktop web
     viewport: { width: 1440, height: 900 }
-    territory: The home, Stock and Buying workspaces, the left sidebar, top navbar, search bar, notification panel, and list-view defaults that a user with a given role sees when they sign in and move between tasks during a normal working day.
+    territory: The ERPNext-owned Stock and Buying workspace sidebars, number cards, dashboard charts, and list-view defaults that a Stock Manager or Purchase Manager lands on and moves between during a day, in the v16 persistent-sidebar layout. Role, role profile, and permission configuration are out of scope.
     repo_entry_points:
+      - sources/primary/erpnext/workspace_sidebar/
       - sources/primary/erpnext/workspace_sidebar/stock.json
       - sources/primary/erpnext/workspace_sidebar/buying.json
       - sources/primary/erpnext/workspace_sidebar/home.json
       - sources/primary/erpnext/desktop_icon/
+      - sources/primary/erpnext/dock/
       - sources/primary/erpnext/stock/workspace/stock/
       - sources/primary/erpnext/buying/workspace/buying/
       - sources/primary/erpnext/setup/workspace/home/
       - sources/primary/erpnext/stock/number_card/
       - sources/primary/erpnext/stock/dashboard_chart/
+      - sources/primary/erpnext/buying/number_card/
+      - sources/primary/erpnext/buying/dashboard_chart/
       - sources/primary/erpnext/stock/doctype/stock_entry/stock_entry_list.js
       - sources/primary/erpnext/buying/doctype/purchase_order/purchase_order_list.js
       - sources/companion/frappe/desk/doctype/workspace/
       - sources/companion/frappe/desk/doctype/workspace_sidebar/
       - sources/companion/frappe/desk/doctype/desktop_icon/
+      - sources/companion/frappe/desk/doctype/number_card/
+      - sources/companion/frappe/desk/doctype/dashboard_chart/
       - sources/companion/frappe/desk/doctype/list_view_settings/
-      - sources/companion/frappe/desk/doctype/notification_settings/
       - sources/companion/frappe/desk/desktop.py
-      - sources/companion/frappe/desk/notifications.py
-      - sources/companion/frappe/desk/search.py
       - sources/companion/frappe/public/js/frappe/views/workspace/
-      - sources/companion/frappe/public/js/frappe/ui/sidebar/
-      - sources/companion/frappe/public/js/frappe/ui/toolbar/
-      - sources/companion/frappe/public/js/frappe/ui/notifications/
-      - sources/companion/frappe/core/doctype/role/
-      - sources/companion/frappe/core/doctype/role_profile/
-      - sources/companion/frappe/core/doctype/user_permission/
-      - sources/companion/frappe/core/doctype/custom_docperm/
-      - sources/companion/frappe/core/page/permission_manager/
+      - sources/companion/frappe/public/js/frappe/ui/
+      - sources/companion/frappe/public/js/frappe/list/list_view.js
+      - sources/companion/frappe/public/js/frappe/list/list_filter/
 exclusions:
   - Tax calculation, tax templates, and anything that changes how tax is computed or reported.
   - Payroll and HR pay processing.

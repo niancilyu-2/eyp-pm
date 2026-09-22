@@ -4,7 +4,17 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.6.2 (unreleased)
+## 0.7.0 (unreleased)
+
+- Lanes re-cut from an evidence audit of each product (forum, GitHub, reviews, release
+  history). Immich: lane 2 boundary tightened. Plane: two lanes reshaped so nothing relies
+  on Pro-only features. Home Assistant: lanes renamed around household defaults, recovery
+  from updates, and automation troubleshooting. Umbraco: media lane narrowed to the picker,
+  validation folded into draft-to-publish, localization stands alone. ERPNext: lanes name
+  serial and batch handling and reposting, the navigation lane becomes Stock and Buying
+  worklists, and notes corrected for v16 general availability.
+
+## 0.6.2
 
 - Check-ins read as plain-language briefings: story first, three themes in a four-line
   shape, quotes, gaps. Tables and rigour vocabulary stay in the draft file. Orientation

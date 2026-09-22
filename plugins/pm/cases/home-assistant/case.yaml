@@ -27,6 +27,7 @@ repositories:
       - src/data
       - src/resources
       - src/translations
+      - src/panels/profile
   - role: web-reference
     owner_repo: home-assistant/core
     url: https://github.com/home-assistant/core
@@ -46,64 +47,52 @@ repositories:
       - https://github.com/home-assistant/core/tree/0cb1d21d32d4281dd4834f303ec6404402f3044d/homeassistant/components/backup
       - https://github.com/home-assistant/core/tree/0cb1d21d32d4281dd4834f303ec6404402f3044d/homeassistant/components/repairs
 lanes:
-  - id: dashboards
-    name: Dashboards
+  - id: household-dashboards-and-defaults
+    name: Household dashboards and defaults
     surface: tablet web
     viewport: { width: 1024, height: 768 }
     territory: >-
-      The screens where a household views and edits dashboards: the default Home view,
-      dashboard views and sections, the cards that show and control devices, and the
-      in-browser editor used to add, move and configure cards.
+      The Home view and the dashboards a household sees on a shared tablet, the setting
+      that decides which dashboard each device and each user opens by default, and light
+      edits to cards on an existing dashboard.
     repo_entry_points:
-      - src/panels/lovelace/views
-      - src/panels/lovelace/sections
-      - src/panels/lovelace/cards
-      - src/panels/lovelace/card-features
       - src/panels/lovelace/editor
+      - src/panels/lovelace/views
+      - src/panels/lovelace/cards
       - src/panels/home
-      - src/panels/config/lovelace
-      - src/data/lovelace
-      - src/data/lovelace.ts
-  - id: device-entity-health-recovery
-    name: Device and entity health and recovery
+      - src/panels/profile/ha-pick-dashboard-row.ts   # per-user default dashboard
+      - src/panels/config/lovelace/dashboards   # admin "set as default" for the whole system
+  - id: repairs-backups-and-recovery
+    name: Repairs, backups, and recovery from updates
     surface: mobile web
     viewport: { width: 390, height: 844 }
     territory: >-
-      The settings pages and pop-ups that list devices and entities (an entity is one
-      controllable or measurable thing, such as a single light or a temperature reading),
-      show whether they are available, let someone rename, disable or re-enable them, and
-      the Repairs, Backups and System pages used when something needs to be restored.
+      The Repairs list, backup status and restore, update notices, and the device and
+      entity pages used to find what stopped working after a change.
+    # This lane never opens an automation trace; that belongs to lane 3.
     repo_entry_points:
-      - src/panels/config/devices
-      - src/panels/config/entities
-      - src/panels/config/integrations
       - src/panels/config/repairs
       - src/panels/config/backup
-      - src/dialogs/more-info
-      - src/dialogs/repairs-flow
-      - src/data/device
-      - src/data/entity
-      - src/data/backup.ts
-      - src/data/repairs.ts
-  - id: automation-creation-troubleshooting
-    name: Automation creation and troubleshooting
+      - src/panels/config/core/ha-config-section-updates.ts   # Settings > System > Updates
+      - src/panels/config/dashboard/ha-config-updates.ts   # update notices at the top of Settings
+      - src/panels/config/devices
+      - src/panels/config/entities
+  - id: automation-troubleshooting-and-safe-edits
+    name: Automation troubleshooting and safe edits
     surface: desktop web
     viewport: { width: 1440, height: 900 }
     territory: >-
-      The visual automation editor where triggers, conditions and actions are assembled,
-      the list of existing automations, and the trace view that shows step by step what
-      happened the last time an automation ran.
+      The trace view for a past automation run, the tools for testing triggers and
+      conditions, and editing an existing automation without breaking it.
+    # May show an unavailable-entity alternate state. Creation from scratch is a lesser
+    # focus because the maker has shipped creation work in most recent releases.
     repo_entry_points:
       - src/panels/config/automation
-      - src/panels/config/automation/trigger
-      - src/panels/config/automation/condition
-      - src/panels/config/automation/action
-      - src/panels/config/automation/sidebar
-      - src/panels/config/blueprint
+      - src/panels/config/automation/ha-automation-editor.ts
+      - src/panels/config/automation/ha-automation-trace.ts
       - src/components/trace
-      - src/components/automation
-      - src/data/automation.ts
-      - src/data/trace.ts
+      - src/panels/config/script   # scripts share the editor and trace components
+      - src/panels/config/blueprint
 exclusions:
   - Safety-critical device classes: locks, garage doors, alarm panels, heating and gas appliances, and medical devices. Do not use them in scenarios, prototypes or synthetic data.
   - Cloud subscription features (Home Assistant Cloud / Nabu Casa remote access, cloud voice assistants, cloud backup locations).
@@ -154,11 +143,11 @@ feeds:
     - { name: "openHAB", page: "https://www.openhab.org", wayback: "https://archive.org/wayback/available?url=www.openhab.org&timestamp={yyyymmdd}" }
   reddit_rss_optional: "https://www.reddit.com/r/homeassistant.rss"   # opt-in only; Claude Code's fetch tool refuses reddit.com; read with curl only if the PM asks
   forum_top_json: "https://community.home-assistant.io/top.json?period=yearly"
-  forum_tag_top_json:
-    - { tag: dashboard, url: "https://community.home-assistant.io/tag/dashboard/l/top.json?period=yearly" }
-    - { tag: devices, url: "https://community.home-assistant.io/tag/devices/l/top.json?period=yearly" }
-    - { tag: backup, url: "https://community.home-assistant.io/tag/backup/l/top.json?period=yearly" }
+  forum_tag_top_json:   # tags.json counts on 2026-09-22: automation 21134, dashboard 1778, update 740, backup 627; devices (157) and repairs (13) dropped
     - { tag: automation, url: "https://community.home-assistant.io/tag/automation/l/top.json?period=yearly" }
+    - { tag: dashboard, url: "https://community.home-assistant.io/tag/dashboard/l/top.json?period=yearly" }
+    - { tag: update, url: "https://community.home-assistant.io/tag/update/l/top.json?period=yearly" }
+    - { tag: backup, url: "https://community.home-assistant.io/tag/backup/l/top.json?period=yearly" }
   hackernews_comments: "https://hn.algolia.com/api/v1/search?query={query}&tags=comment&hitsPerPage=10"
   app_store_lookup:
     - { app: "Home Assistant", id: 1099568401, url: "https://itunes.apple.com/lookup?id=1099568401&country=us", fields: "averageUserRating, userRatingCount, version, releaseNotes, currentVersionReleaseDate" }

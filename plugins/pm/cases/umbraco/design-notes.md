@@ -3,11 +3,14 @@
 ## Established visual patterns
 
 - **Layout.** A left sidebar of sections and a tree of pages, a wide editing workspace in the middle, and a sticky footer holding the main actions (Save, Save and preview, Publish). Header and sidebar sizes are fixed CSS values in `src/Umbraco.Web.UI.Client/src/css/umb-css.css` (outside the sparse paths; view on GitHub).
-- **Workspaces and tabs.** Fields are grouped into tabs and boxed groups. Multi-language pages can open in a split view with one language per side.
+- **Workspaces and tabs.** Fields are grouped into tabs and boxed groups.
+- **Variant split view.** Multi-language pages can open in a split view with one language per side; each side carries its own language selector in its header, and per-language publish state is shown there (Verified: `src/Umbraco.Web.UI.Client/src/packages/documents/documents/workspace/document-workspace-split-view.element.ts`).
 - **Restraint by default.** The in-repo `docs/design-choices.md` states the house rules: no icon unless text cannot carry the meaning, no colour except on the single primary action per screen, one non-default button per view, very short UX copy ("New", "Upload", "Saved").
 - **Dialogs.** Modals and side panels, headline as a short verb phrase ("Delete 'My Page'"), one confirming button and Cancel; the description explains the effect rather than repeating the headline.
 - **Notifications.** Short corner toasts for saved, published and failed states.
 - **Cards and grids.** The media library is a card grid with a list toggle; pickers reuse the cards.
+- **Media picker modal.** Opened from a media field in the page as a side panel: folder path at the top, search, a card or list toggle, an embedded upload dropzone, paging, and a single confirming button in the footer (Verified: `src/Umbraco.Web.UI.Client/src/packages/media/media/modals/media-picker`).
+- **Picker churn.** Pickers changed in 17.4, 18.1 and 18.2. Start the prototype from the current picker, not from older screenshots; check the release notes linked below.
 
 ## Where the design system lives
 
@@ -25,7 +28,9 @@ The backoffice is built from the **Umbraco UI Library (UUI)**, a set of web comp
 - UUI source, including `src/styles` for tokens and typography. https://github.com/umbraco/Umbraco.UI
 - Official page on using the UI Library. https://docs.umbraco.com/umbraco-cms/customizing/ui-library
 - Official tour of the backoffice with screenshots. https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice
-- Official explanation of language variants in the editing screen. https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/variants
+- Official explanation of language variants in the editing screen, including the split view. https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/variants
+- Official page on the media picker property editor (the picker modal opened from a page). https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker-3
+- Release notes per version; see 17.4, 18.1 and 18.2 for picker changes. https://github.com/umbraco/Umbraco-CMS/releases
 
 ## Synthetic data guidance
 

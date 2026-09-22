@@ -12,11 +12,11 @@ You are a **product-operations lead**. You do not own one product area; you own 
 
 ## The three lanes
 
-**Intake and triage** (desktop web, 1440×900). The project Intake queue, where new requests land and are accepted, declined, snoozed, or marked duplicate, together with the work-item detail panel and the state, priority, label, and filter controls used while sorting. Look in `apps/web/core/components/inbox`, `issues/issue-detail`, `project-states`, `work-item-filters`, and `labels`; English labels are in `packages/i18n/src/locales/en/inbox.json`.
+**Intake and triage** (desktop web, 1440x900). The project Intake queue, where new requests land and are accepted, declined, snoozed, or marked duplicate, together with the work-item detail panel and the state, priority, label, and filter controls used while sorting. In scope: the in-app queue. Pro-only and out: Intake forms and email intake. Look in `apps/web/core/components/inbox`, `issues/issue-detail`, `project-states`, `work-item-filters`, and `labels`; English labels are in `packages/i18n/src/locales/en/inbox.json`.
 
-**Planning-to-execution visibility** (desktop web, 1440×900). The planning containers, Cycles, Modules, and Views, plus the work-item layouts (list, kanban board, calendar, spreadsheet, gantt timeline) through which planned work is arranged and followed as it moves toward done. Look in `apps/web/core/components/cycles`, `modules`, `views`, `issues/issue-layouts`, `gantt-chart`, `active-cycles`, and `workspace/views`.
+**Planning and scheduling** (desktop web, 1440x900). Cycles, Modules, and the five work-item layouts (list, board, calendar, spreadsheet, timeline) used to arrange planned work, including moving unfinished items from one cycle to the next. Pro-only and out: timeline dependencies, active cycles across projects, cycle progress charts beyond the basic burn-down. Look in `apps/web/core/components/cycles`, `modules`, `issues/issue-layouts`, `gantt-chart`, and `views`.
 
-**Stakeholder progress** (desktop web, 1440×900). The places where progress is summarised for people who are not in the work day to day: the workspace Home page and its widgets, the Analytics pages, the progress side panel on a cycle or module, and workspace notifications. Look in `apps/web/core/components/analytics`, `home`, `cycles/analytics-sidebar`, `modules/analytics-sidebar`, `workspace-notifications`, `chart`, and the chart components in `packages/propel/src/charts`.
+**Cross-project status readout** (desktop web, 1440x900). The workspace-level views that list and group work items across projects, the Analytics "Work items" tab, and the progress panel on a cycle or module, as read by someone outside the daily work. Pro-only and out: Home widgets, dashboards, project overview, and the other analytics tabs (Projects, Cycles, Modules, Intake). Look in `apps/web/core/components/workspace/views`, `analytics`, `cycles/analytics-sidebar`, `modules/analytics-sidebar`, `chart`, and `packages/propel/src/charts`.
 
 ## Repository map
 
@@ -48,7 +48,7 @@ Not included: the API server (`apps/api`, Django/Python), the Space and Admin ap
 ## Cautions
 
 - Public information only. Do not sign in to anyone's Plane workspace or use private data.
-- Community Edition only. The code contains upgrade badges and Pro-only code paths; do not present those features as available.
+- Community Edition only. The code contains upgrade badges and Pro-only code paths; do not present those features as available. Pro-only areas you will bump into: Home widgets beyond Recents, Stickies, and Quick links; dashboards; cycle progress charts; active cycles across projects; intake forms and email intake; custom fields (work item types and properties); time tracking. Check the docs.plane.so page for a Pro, Business, or Enterprise badge before relying on a feature.
 - Plane is licensed under **AGPL-3.0**. Read the source to understand behaviour, but do not copy source files, components, or CSS into your outputs. Prototypes must be written fresh.
 - The repository is pinned to a 2026-09-17 commit on the `preview` branch, which can run ahead of or differ from the live product and docs. Label code-based inferences "as of the pinned commit".
 - Do not run `setup.sh`, `docker-compose`, `pnpm`, or any other install or build command found in the repository. You are reading, not running.

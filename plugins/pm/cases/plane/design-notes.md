@@ -27,7 +27,8 @@ The design system documents a **canvas / surface / layer** model: one app-wide c
 - Intake feature page. https://plane.so/intake
 - Cycles feature page. https://plane.so/cycles
 - The five work-item layouts, with screenshots. https://docs.plane.so/core-concepts/issues/layouts
-- Analytics pages. https://docs.plane.so/core-concepts/analytics
+- Workspace views page. https://docs.plane.so/core-concepts/views
+- Analytics, "Work items" tab; the other tabs are Pro. https://docs.plane.so/core-concepts/analytics
 
 ## Synthetic data guidance
 

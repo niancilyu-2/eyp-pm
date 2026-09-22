@@ -47,11 +47,11 @@ lanes:
     surface: desktop web
     viewport: { width: 1440, height: 900 }
     territory: >-
-      The web pages used in a desktop browser to scroll the photo timeline, search, and
-      group photos into albums, folders, tags, people and places.
+      The web timeline in a desktop browser and the ways photos are grouped and found:
+      albums, people names, stacks, folders, tags and places. Album sharing and the search
+      modal, rebuilt in v3.2.0, are outside this lane.
     repo_entry_points:
       - web/src/routes/(user)/photos
-      - web/src/routes/(user)/search
       - web/src/routes/(user)/explore
       - web/src/routes/(user)/albums
       - web/src/routes/(user)/folders
@@ -61,7 +61,6 @@ lanes:
       - web/src/lib/components/timeline
       - web/src/lib/components/album-page
       - web/src/lib/components/faces-page
-      - docs/docs/features/searching.md
       - docs/docs/features/tags.md
       - docs/docs/features/folder-view.md
   - id: private-sharing-collaboration
@@ -71,7 +70,8 @@ lanes:
     territory: >-
       The mobile app screens for sharing with other people on the same server and with
       outsiders: shared albums, partner sharing, shared links, and album activity such as
-      comments and likes.
+      comments and likes. Includes making visible who can see and do what in a shared
+      album, shared link or partner library, started from the album on the phone.
     repo_entry_points:
       - mobile/lib/pages/library/shared_link
       - mobile/lib/pages/library/partner

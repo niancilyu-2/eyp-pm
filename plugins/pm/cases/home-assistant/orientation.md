@@ -22,11 +22,11 @@ A nontechnical household co-admin. Someone else set the system up; this person h
 
 ## The three lanes
 
-**Dashboards (tablet web, 1024×768).** The pages where a household views and controls its home: the default Home view, dashboards made of views, sections and cards, and the in-browser editor for arranging them. Look in `src/panels/lovelace` (views, sections, cards, card-features, editor), `src/panels/home`, `src/panels/config/lovelace` and `src/data/lovelace`.
+**Household dashboards and defaults (tablet web, 1024x768).** Used on the shared tablet that acts as the household display. Covers the Home view, the dashboards a household sees, which dashboard each device and each user opens by default, and light edits to cards. Look in `src/panels/lovelace` (editor, views, cards), `src/panels/home`, `src/panels/profile/ha-pick-dashboard-row.ts` and `src/panels/config/lovelace/dashboards`.
 
-**Device and entity health and recovery (mobile web, 390×844).** The settings pages that list devices, entities and integrations, show whether they are available, with rename, disable, enable and delete; plus the Repairs, Backups and System pages. Look in `src/panels/config/devices`, `src/panels/config/entities`, `src/panels/config/integrations`, `src/panels/config/repairs`, `src/panels/config/backup`, `src/dialogs/more-info` and `src/dialogs/repairs-flow`.
+**Repairs, backups, and recovery from updates (mobile web, 390x844).** Used on the phone, where the co-admin notices something and starts recovery. Covers the Repairs list, backup status and restore, update notices, and the device and entity pages used to find what stopped working after a change. Look in `src/panels/config/repairs`, `src/panels/config/backup`, `src/panels/config/core/ha-config-section-updates.ts`, `src/panels/config/devices` and `src/panels/config/entities`. This lane never opens an automation trace.
 
-**Automation creation and troubleshooting (desktop web, 1440×900).** The visual editor where triggers, conditions and actions are assembled, the automations list, blueprints (ready-made automation templates), and the trace view that replays what an automation did. Look in `src/panels/config/automation` (trigger, condition, action, sidebar), `src/panels/config/blueprint`, `src/components/trace` and `src/data/automation.ts`.
+**Automation troubleshooting and safe edits (desktop web, 1440x900).** Used at a desk, where there is room to read a trace. Covers the trace view for a past run, testing triggers and conditions, and editing an existing automation without breaking it. Creation from scratch is a lesser focus. Look in `src/panels/config/automation` (`ha-automation-editor.ts`, `ha-automation-trace.ts`), `src/components/trace`, `src/panels/config/script` and `src/panels/config/blueprint`.
 
 ## Repository map
 
@@ -54,7 +54,7 @@ Core (`home-assistant/core`) is read online only, never cloned. Open the pinned 
 
 ## Where to start public research
 
-1. **Community forum** (`community.home-assistant.io`): the busiest channel. Search the lane's nouns ("backup", "restore", "dashboard", "automation", "entity", "device"). Note dates; the interface changes monthly.
+1. **Community forum** (`community.home-assistant.io`): the busiest channel. Search the lane's nouns ("backup", "restore", "repair", "update", "trace", "default dashboard", "dashboard", "automation", "entity", "device"). Note dates; the interface changes monthly.
 2. **GitHub issues** for `frontend` and `core`: use label filters and terms matching each lane (`dashboard`, `automation editor`, `repairs`, `backup`). Read closed issues too.
 3. **Official docs**: confirm what the product already does before assuming a gap. Start at `/dashboards/`, `/docs/automation/`, `/docs/automation/troubleshooting/`, `/integrations/backup/`, `/integrations/repairs/` and `/common-tasks/general/`.
 4. **Release blog**: skim the last six monthly posts for changes in your lane.
