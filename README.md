@@ -23,7 +23,6 @@ changed. One PM can run it alone; a group can run it together.
   - [Getting started](#getting-started)
 - [Using it](#using-it)
   - [Choose a product and a focus area](#choose-a-product-and-a-focus-area)
-  - [How evidence is gathered and traced](#how-evidence-is-gathered-and-traced)
   - [Principles and limits](#principles-and-limits)
 - [Reference](#reference)
   - [Documentation](#documentation)
@@ -75,12 +74,12 @@ it produces is marked ready for engineering review, not ready to build.
 
 Four skills. Each runs only when you type it.
 
-| Skill | What it does | You leave with |
-|---|---|---|
-| `/pm:scout` | Readiness check on first run, then a research pass over a fixed sequence of public sources, repository constraints, three opportunities, and your choice of one | `outputs/01-discovery.md`, the discovery brief |
-| `/pm:prototype` | One actor, one job, one flow. A clickable prototype in Claude Design or as a standalone HTML file, a design critique, one revision | `outputs/02-prototype.md`, `outputs/prototype/index.html` |
-| `/pm:prd` | A delivery PRD grounded in the product's code, reviewed by a separate read-only agent that has not seen your conversation | `outputs/03-prd.md`, `outputs/03-prd-review.md` |
-| `/pm:create-skill` | Turn one PM practice of your own into a small project skill, test it once in a fresh session, revise it once | `.claude/skills/<name>/SKILL.md`, `outputs/04-skill-summary.md` |
+| Skill | What it does | You leave with | Details |
+|---|---|---|---|
+| `/pm:scout` | Readiness check on first run, then a research pass over a fixed sequence of public sources, repository constraints, three opportunities, and your choice of one | `outputs/01-discovery.md`, the discovery brief | [docs/skills/scout.md](docs/skills/scout.md) |
+| `/pm:prototype` | One actor, one job, one flow. A clickable prototype in Claude Design or as a standalone HTML file, a design critique, one revision | `outputs/02-prototype.md`, `outputs/prototype/index.html` | [docs/skills/prototype.md](docs/skills/prototype.md) |
+| `/pm:prd` | A delivery PRD grounded in the product's code, reviewed by a separate read-only agent that has not seen your conversation | `outputs/03-prd.md`, `outputs/03-prd-review.md` | [docs/skills/prd.md](docs/skills/prd.md) |
+| `/pm:create-skill` | Turn one PM practice of your own into a small project skill, test it once in a fresh session, revise it once | `.claude/skills/<name>/SKILL.md`, `outputs/04-skill-summary.md` | [docs/skills/create-skill.md](docs/skills/create-skill.md) |
 
 Each skill opens by saying what you will practise, what Claude will do, and what you
 decide, and ends every reply with a status line such as
@@ -144,38 +143,6 @@ ERPNext is the advanced option: it downloads the product and the Frappe framewor
 on. The product packages hold boundaries and starting points only, never conclusions, so
 the research is yours.
 
-### How evidence is gathered and traced
-
-
-The discovery skill gathers evidence from public sources that need no login and no API key:
-the product's forum and GitHub, Lemmy, Mastodon, and Hacker News, app store reviews and
-release notes, adoption numbers, the product's own roadmap, competitors' job postings, and
-competitor pricing pages today and a year ago. It works through them in a fixed order,
-within a budget of 20 fetches, and writes down for every item its source, date, and the
-base behind any number. It looks for counter-evidence on each theme and says who the
-sources mostly hear from and who is missing. Verbatim user quotes follow the work into the
-PRD, and every repository constraint cites commit, path, and line range for engineering to
-confirm. The full source list and rules are in
-[plugins/pm/resources/research-guide.md](plugins/pm/resources/research-guide.md).
-
-Everything downstream stays traceable to that evidence.
-
-```mermaid
-flowchart LR
-  SIG["SIG-### signals<br/>QUO-### quotes"] --> OPP["OPP-###<br/>chosen by the PM"]
-  CON["CON-### constraints<br/>commit, path, lines"] --> OPP
-  OPP --> FLOW["approved flow<br/>main path + 2 states"]
-  FLOW --> REQ["REQ-###"] --> AC["AC-###"]
-  QUO["two quotes,<br/>PM-chosen"] --> PRD["03-prd.md"]
-  REQ --> PRD
-  AC --> PRD
-  CON --> PRD
-  PRD --> REV["pm:prd-reviewer<br/>read-only, no conversation"]
-```
-
-Claude never logs in, asks for keys, bypasses a CAPTCHA, builds a scraper, or loops over
-pages. Sites that block automated reading are left alone.
-
 ### Principles and limits
 
 
@@ -198,6 +165,7 @@ pages. Sites that block automated reading are left alone.
 
 | Doc | For |
 |---|---|
+| [docs/skills/](docs/skills/) | One page per skill: what it produces, how a run goes, the rules it follows |
 | [docs/SETUP.md](docs/SETUP.md) | Installing Claude Code, Git, and the plugin, for first-time terminal users |
 | [docs/TEST-WALKTHROUGH.md](docs/TEST-WALKTHROUGH.md) | Every stage and every product, step by step |
 | [docs/FACILITATOR.md](docs/FACILITATOR.md) | Running it with a group: suggested schedule, checks, troubleshooting |
