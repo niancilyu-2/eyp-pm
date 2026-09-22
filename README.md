@@ -16,7 +16,7 @@ changed. One PM can run it alone; a group can run it together.
 ## Contents
 
 - [Where it fits](#where-it-fits)
-- [Commands](#commands)
+- [Skills](#skills)
 - [Requirements](#requirements)
 - [Getting started](#getting-started)
 - [Products you can work on](#products-you-can-work-on)
@@ -28,9 +28,10 @@ changed. One PM can run it alone; a group can run it together.
 
 ## Where it fits
 
-A typical product lifecycle runs from vision and strategy through discovery to a validated
+A typical product lifecycle runs from vision and strategy through discovery to a delivery
 PRD and on to execution. This plugin covers the discovery work that can be done from public
-evidence and a product's own code, and the PRD that comes out of it. The highlighted steps
+evidence and a product's own code, written up as a discovery brief, and the delivery PRD
+that comes out of it. The highlighted steps
 are the ones it performs.
 
 ```mermaid
@@ -44,7 +45,7 @@ flowchart TB
     EX["Experiments"]
     FC["Feasibility checks<br/>repository constraints, engineering review"]
   end
-  D --> P["Validated PRD<br/>traceable requirements and acceptance criteria"]
+  D --> P["Delivery PRD<br/>traceable requirements and acceptance criteria"]
   P --> E["Execution"]
   classDef covered fill:#2F5BEA,stroke:#2F5BEA,color:#FFFFFF
   classDef partial fill:#DCE3F9,stroke:#2F5BEA,color:#1A1A1A
@@ -57,24 +58,26 @@ Outside its scope: setting vision and strategy, running live experiments with re
 and execution. The research it does is a public scan, not customer validation, and the PRD
 it produces is marked ready for engineering review, not ready to build.
 
-## Commands
+## Skills
 
-| Command | What it does | You leave with |
+Four skills. Each runs only when you type it.
+
+| Skill | What it does | You leave with |
 |---|---|---|
-| `/pm:scout` | Readiness check on first run, then a research pass over a fixed ladder of public sources, repository constraints, three opportunities, and your choice of one | `outputs/01-discovery.md` |
+| `/pm:scout` | Readiness check on first run, then a research pass over a fixed sequence of public sources, repository constraints, three opportunities, and your choice of one | `outputs/01-discovery.md`, the discovery brief |
 | `/pm:prototype` | One actor, one job, one flow. A clickable prototype in Claude Design or as a standalone HTML file, a design critique, one revision | `outputs/02-prototype.md`, `outputs/prototype/index.html` |
-| `/pm:prd` | A PRD grounded in the product's code, reviewed by a separate read-only agent that has not seen your conversation | `outputs/03-prd.md`, `outputs/03-prd-review.md` |
+| `/pm:prd` | A delivery PRD grounded in the product's code, reviewed by a separate read-only agent that has not seen your conversation | `outputs/03-prd.md`, `outputs/03-prd-review.md` |
 | `/pm:create-skill` | Turn one PM practice of your own into a small project skill, test it once in a fresh session, revise it once | `.claude/skills/<name>/SKILL.md`, `outputs/04-skill-summary.md` |
 
-Each command runs only when you type it. Each opens by saying what you will practise,
-what Claude will do, and what you decide, and ends every reply with a status line such as
+Each skill opens by saying what you will practise, what Claude will do, and what you
+decide, and ends every reply with a status line such as
 `Scout · step 5/10 · fetches 6/20 · 14 min`.
 
 ```mermaid
 flowchart LR
-  S["/pm:scout<br/>research ladder, 3 opportunities"] -->|"01-discovery.md"| P["/pm:prototype<br/>one flow, HTML or Design"]
+  S["/pm:scout<br/>public-source research, 3 opportunities"] -->|"01-discovery.md<br/>discovery brief"| P["/pm:prototype<br/>one flow, HTML or Design"]
   P -->|"02-prototype.md<br/>index.html"| R["/pm:prd<br/>PRD + read-only review"]
-  R --> H["03-prd.md<br/>03-prd-review.md"]
+  R --> H["03-prd.md, delivery PRD<br/>03-prd-review.md"]
   P -. "opportunity changed" .-> stale["prototype and PRD marked stale"]
   C["/pm:create-skill<br/>independent capstone"] --> K["SKILL.md<br/>04-skill-summary.md"]
 ```
@@ -91,7 +94,7 @@ Code and Git and the handful of keys you need, in about 20 minutes.
 ## Getting started
 
 1. Create a new empty folder and open a terminal in it.
-2. Start `claude`, install the plugin with the two commands above, and run `/pm:scout`.
+2. Start `claude`, install the plugin with the two install lines above, and run `/pm:scout`.
 3. The readiness check ends with `Ready`, `Ready with fallback`, or `Blocked` with one
    next action. Pick a product, or stop and come back later; either way, `/pm:scout` resumes.
 4. Run the stages in order. Type `/clear` between them; each resumes from the files you
