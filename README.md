@@ -36,27 +36,28 @@ are the ones it performs.
 
 ```mermaid
 flowchart TB
-  V["Vision"] --> S["Strategy"]
+  V["<b>Vision</b>"] --> S["<b>Strategy</b>"]
   S --> D
-  subgraph D["Discovery"]
-    direction TB
-    CR["Customer research<br/>public evidence, quotes, triangulation"]
-    PT["Prototypes<br/>one flow, clickable"]
-    EX["Experiments"]
-    FC["Feasibility checks<br/>repository constraints, engineering review"]
+  subgraph D["<b>Discovery</b>"]
+    direction LR
+    PR["<b>Primary research</b><br/>• Customer interviews<br/>• Surveys<br/>• Usability tests"]
+    SR["<b>Secondary research</b><br/>• Forum, GitHub, community posts<br/>• App reviews and release notes<br/>• Adoption numbers<br/>• Competitor pages and job postings<br/>• Verbatim quote bank<br/>• Triangulation and counter-evidence"]
+    PT["<b>Prototypes</b><br/>• Clickable prototype of the chosen flow<br/>• Two alternate states<br/>• Design critique and one revision"]
+    EX["<b>Experiments</b><br/>• A/B tests<br/>• Fake doors<br/>• Pilots"]
+    FC["<b>Feasibility checks</b><br/>• Repository constraints with line references<br/>• Likely code touchpoints<br/>• Read-only engineering review<br/>• Open questions for engineering"]
   end
-  D --> P["Delivery PRD<br/>traceable requirements and acceptance criteria"]
-  P --> E["Execution"]
-  classDef covered fill:#2F5BEA,stroke:#2F5BEA,color:#FFFFFF
-  classDef partial fill:#DCE3F9,stroke:#2F5BEA,color:#1A1A1A
-  classDef outside fill:#FAF9F5,stroke:#9A9A9A,color:#5B5F66
-  class CR,PT,FC,P covered
-  class V,S,EX,E outside
+  D --> P["<b>Delivery PRD</b><br/>• Requirements and acceptance criteria with IDs<br/>• States and behaviour<br/>• Engineering appendix<br/>• Traceable to the evidence"]
+  P --> E["<b>Execution</b>"]
+  classDef covered fill:#2F5BEA,stroke:#2F5BEA,color:#FFFFFF,text-align:left
+  classDef outside fill:#FAF9F5,stroke:#9A9A9A,color:#5B5F66,text-align:left
+  class SR,PT,FC,P covered
+  class V,S,PR,EX,E outside
 ```
 
-Outside its scope: setting vision and strategy, running live experiments with real users,
-and execution. The research it does is a public scan, not customer validation, and the PRD
-it produces is marked ready for engineering review, not ready to build.
+Outside its scope: setting vision and strategy, primary research with real users,
+experiments, and execution. The research it does is secondary, a public scan rather than
+customer validation, and the PRD it produces is marked ready for engineering review, not
+ready to build.
 
 ## Skills
 
