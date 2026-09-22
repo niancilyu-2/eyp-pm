@@ -148,7 +148,7 @@ subreddit RSS feed.
 | Doc | For |
 |---|---|
 | [docs/SETUP.md](docs/SETUP.md) | Installing Claude Code, Git, and the plugin, for first-time terminal users |
-| [docs/TEST-WALKTHROUGH.md](docs/TEST-WALKTHROUGH.md) | Every stage and every case, step by step |
+| [docs/TEST-WALKTHROUGH.md](docs/TEST-WALKTHROUGH.md) | Every stage and every product, step by step |
 | [docs/FACILITATOR.md](docs/FACILITATOR.md) | Running it with a group: suggested schedule, checks, troubleshooting |
 | [CHANGELOG.md](CHANGELOG.md) | Versions. Bump `version` in both manifests before publishing a change |
 
