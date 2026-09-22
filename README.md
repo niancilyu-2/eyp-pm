@@ -15,90 +15,63 @@ changed. One PM can run it alone; a group can run it together.
 
 ## Contents
 
-- [Where it fits](#where-it-fits)
-- [Skills](#skills)
-- [Requirements](#requirements)
-- [Getting started](#getting-started)
-- [Products you can work on](#products-you-can-work-on)
-- [Evidence and traceability](#evidence-and-traceability)
-- [Principles and limits](#principles-and-limits)
-- [Documentation](#documentation)
-- [Repository layout](#repository-layout)
-- [Licence and credits](#licence-and-credits)
+- [Overview](#overview)
+  - [Where it fits](#where-it-fits)
+  - [What it does](#what-it-does)
+- [Setup](#setup)
+  - [Requirements](#requirements)
+  - [Getting started](#getting-started)
+- [Using it](#using-it)
+  - [Choose a product and a focus area](#choose-a-product-and-a-focus-area)
+  - [How evidence is gathered and traced](#how-evidence-is-gathered-and-traced)
+  - [Principles and limits](#principles-and-limits)
+- [Reference](#reference)
+  - [Documentation](#documentation)
+  - [Repository layout](#repository-layout)
+  - [Licence and credits](#licence-and-credits)
 
-## Where it fits
+## Overview
+
+### Where it fits
 
 A typical product lifecycle runs from vision and strategy through discovery to a delivery
 PRD and on to execution. This plugin covers the discovery work that can be done from public
 evidence and a product's own code, written up as a discovery brief, and the delivery PRD
-that comes out of it. The steps marked covered
-are the ones it performs.
+that comes out of it. Filled boxes are the steps it performs.
 
-<table>
-  <tr><th colspan="5" align="left">Vision <sub>not covered</sub></th></tr>
-  <tr><th colspan="5" align="left">Strategy <sub>not covered</sub></th></tr>
-  <tr><th colspan="5" align="left">Discovery</th></tr>
-  <tr>
-    <td valign="top" width="20%"><b>Primary research</b><br><sub>not covered</sub>
-      <ul>
-        <li>Customer interviews</li>
-        <li>Surveys</li>
-        <li>Usability tests</li>
-      </ul>
-    </td>
-    <td valign="top" width="20%"><b>Secondary research</b><br><sub><b>covered</b></sub>
-      <ul>
-        <li>Forum, GitHub, community posts</li>
-        <li>App reviews and release notes</li>
-        <li>Adoption numbers</li>
-        <li>Competitor pages and job postings</li>
-        <li>Verbatim quote bank</li>
-        <li>Triangulation and counter-evidence</li>
-      </ul>
-    </td>
-    <td valign="top" width="20%"><b>Prototypes</b><br><sub><b>covered</b></sub>
-      <ul>
-        <li>Clickable prototype of the chosen flow</li>
-        <li>Two alternate states</li>
-        <li>Design critique and one revision</li>
-      </ul>
-    </td>
-    <td valign="top" width="20%"><b>Experiments</b><br><sub>not covered</sub>
-      <ul>
-        <li>A/B tests</li>
-        <li>Fake doors</li>
-        <li>Pilots</li>
-      </ul>
-    </td>
-    <td valign="top" width="20%"><b>Feasibility checks</b><br><sub><b>covered</b></sub>
-      <ul>
-        <li>Repository constraints with line references</li>
-        <li>Likely code touchpoints</li>
-        <li>Read-only engineering review</li>
-        <li>Open questions for engineering</li>
-      </ul>
-    </td>
-  </tr>
-  <tr><th colspan="5" align="left">Delivery PRD <sub><b>covered</b></sub></th></tr>
-  <tr>
-    <td colspan="5">
-      <ul>
-        <li>Requirements and acceptance criteria with IDs</li>
-        <li>States and behaviour</li>
-        <li>Engineering appendix</li>
-        <li>Traceable to the evidence</li>
-      </ul>
-    </td>
-  </tr>
-  <tr><th colspan="5" align="left">Execution <sub>not covered</sub></th></tr>
-</table>
+```mermaid
+flowchart LR
+  V["Vision"] --> S["Strategy"] --> D["Discovery"] --> P["Delivery PRD"] --> E["Execution"]
+  D --> PR["Primary research"]
+  D --> SR["Secondary research"]
+  D --> PT["Prototypes"]
+  D --> EX["Experiments"]
+  D --> FC["Feasibility checks"]
+  classDef covered fill:#2F5BEA,stroke:#2F5BEA,color:#FFFFFF
+  classDef outside fill:#FAF9F5,stroke:#9A9A9A,color:#5B5F66
+  class SR,PT,FC,P covered
+  class V,S,D,PR,EX,E outside
+```
 
-Outside its scope: setting vision and strategy, primary research with real users,
-experiments, and execution. The research it does is secondary, a public scan rather than
-customer validation, and the PRD it produces is marked ready for engineering review, not
-ready to build.
+What each covered step contains:
 
-## Skills
+- **Secondary research.** Forum, GitHub, and community posts; app reviews and release notes;
+  adoption numbers; competitor pages and job postings; a verbatim quote bank; triangulation
+  and a counter-evidence pass.
+- **Prototypes.** A clickable prototype of the chosen flow with two alternate states, a
+  design critique, and one revision.
+- **Feasibility checks.** Repository constraints with line references, likely code
+  touchpoints, a read-only engineering review, and open questions for engineering.
+- **Delivery PRD.** Requirements and acceptance criteria with IDs, states and behaviour, an
+  engineering appendix, all traceable to the evidence.
+
+Outside its scope: vision and strategy, primary research with real users (interviews,
+surveys, usability tests), experiments (A/B tests, fake doors, pilots), and execution. The
+research it does is secondary, a public scan rather than customer validation, and the PRD
+it produces is marked ready for engineering review, not ready to build.
+
+### What it does
+
 
 Four skills. Each runs only when you type it.
 
@@ -122,7 +95,10 @@ flowchart LR
   C["/pm:create-skill<br/>independent capstone"] --> K["SKILL.md<br/>04-skill-summary.md"]
 ```
 
-## Requirements
+## Setup
+
+### Requirements
+
 
 - Claude Code on Windows or macOS, with a Claude Pro, Max, Team, or Enterprise account.
 - Git.
@@ -131,7 +107,8 @@ flowchart LR
 First time in a terminal? [docs/SETUP.md](docs/SETUP.md) walks through installing Claude
 Code and Git and the handful of keys you need, in about 20 minutes.
 
-## Getting started
+### Getting started
+
 
 1. Create a new empty folder and open a terminal in it.
 2. Start `claude`, install the plugin with the two install lines above, and run `/pm:scout`.
@@ -143,7 +120,10 @@ Code and Git and the handful of keys you need, in about 20 minutes.
 [docs/TEST-WALKTHROUGH.md](docs/TEST-WALKTHROUGH.md) shows every stage step by step with
 what to expect at each check-in.
 
-## Products you can work on
+## Using it
+
+### Choose a product and a focus area
+
 
 You work on one real open-source product as its PM, designing for one of the users that
 product serves, and you pick one focus area within it. The tool calls a product package a case and a focus area a
@@ -164,7 +144,8 @@ ERPNext is the advanced option: it downloads the product and the Frappe framewor
 on. The product packages hold boundaries and starting points only, never conclusions, so
 the research is yours.
 
-## Evidence and traceability
+### How evidence is gathered and traced
+
 
 The discovery skill gathers evidence from public sources that need no login and no API key:
 the product's forum and GitHub, Lemmy, Mastodon, and Hacker News, app store reviews and
@@ -195,7 +176,8 @@ flowchart LR
 Claude never logs in, asks for keys, bypasses a CAPTCHA, builds a scraper, or loops over
 pages. Sites that block automated reading are left alone.
 
-## Principles and limits
+### Principles and limits
+
 
 - Public information and synthetic data only. No logins, API keys, private customer data,
   or confidential material.
@@ -209,7 +191,10 @@ pages. Sites that block automated reading are left alone.
 - Prototypes are exercise artifacts, not for distribution. No source files are copied out
   of the downloaded repositories.
 
-## Documentation
+## Reference
+
+### Documentation
+
 
 | Doc | For |
 |---|---|
@@ -218,7 +203,8 @@ pages. Sites that block automated reading are left alone.
 | [docs/FACILITATOR.md](docs/FACILITATOR.md) | Running it with a group: suggested schedule, checks, troubleshooting |
 | [CHANGELOG.md](CHANGELOG.md) | Versions. Bump `version` in both manifests before publishing a change |
 
-## Repository layout
+### Repository layout
+
 
 ```text
 eyp-pm/
@@ -246,7 +232,8 @@ claude plugin validate ./plugins/pm --strict
 claude --plugin-dir ./plugins/pm
 ```
 
-## Licence and credits
+### Licence and credits
+
 
 Original content is MIT licensed. The five product repositories keep their own licences:
 Immich and Plane AGPL-3.0, Home Assistant Apache-2.0, Umbraco MIT, ERPNext GPL-3.0,
