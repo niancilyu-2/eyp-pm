@@ -117,5 +117,5 @@ Go through the main path once and each alternate state once, and check:
 - Contrast: body text and primary buttons pass a quick 4.5:1 check.
 - Scope: nothing on screen belongs to another lane.
 
-Write findings as a short list, propose one revision tied to discovery evidence or a
-finding, and let the PM approve or choose a different revision.
+Record one row per area, pass or a specific finding, then propose one revision tied to
+discovery evidence or a finding, and let the PM approve or choose a different revision.
