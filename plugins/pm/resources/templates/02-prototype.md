@@ -28,7 +28,12 @@
 - Out: <…>
 
 ## 5. Design brief
-<Copy of .pm/design-brief.md or a link to it.>
+<details>
+<summary>Design brief as used to build the prototype</summary>
+
+<Paste the brief here with every heading demoted to #### so the document outline stays intact.>
+
+</details>
 
 ## 6. Repository UI references
 | What | Path at pinned commit | Used for |
@@ -38,8 +43,15 @@
 - <…> (deliberate / limitation)
 
 ## 8. Walkthrough findings
-| # | Area (labels / navigation / keyboard / state clarity / contrast / scope) | Finding | Severity |
+<One row per area. Claude checks each area first, then the PM confirms from their own click-through. "Pass" is a valid finding; an empty row is not.>
+| Area | Claude's check | PM's click-through | Severity |
 |---|---|---|---|
+| Labels | | | |
+| Navigation | | | |
+| Keyboard (Tab order, Enter and Space, focus moves to the new screen's heading) | | | |
+| State clarity (each state visibly different, each offers a next step, error uses role="alert") | | | |
+| Contrast (body text and primary buttons at least 4.5 to 1) | | | |
+| Scope (nothing from another focus area) | | | |
 
 ## 9. Revision made
 - Change: <…>

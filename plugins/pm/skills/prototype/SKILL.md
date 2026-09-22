@@ -123,11 +123,14 @@ and patterns from Step 3 and list them in section 6 of the notes. Set
 
 ## Step 8: Walkthrough (PM design critique)
 
-Ask the PM to open the file if they have not said so. Record only what they
-report. Walk the main path and each state
-together, using the checklist in `prototype-html-guide.md`: labels, navigation, keyboard,
-state clarity, obvious contrast, scope. Record findings in section 8 of the notes. This is
-a design critique, not customer validation; say so once.
+Ask the PM to open the file if they have not said so. Record only what they report.
+First run the checklist in `prototype-html-guide.md` yourself, area by area: labels,
+navigation, keyboard (including that focus moves to the new screen's heading and the
+error state carries `role="alert"`), state clarity, contrast, scope. Write one row per
+area in section 8 with a pass or a specific finding; never leave an area blank and never
+summarise six areas as "none". Then walk the main path and each state with the PM and
+record their click-through in the same rows. This is a design critique, not customer
+validation; say so once.
 
 ## Step 9: One evidence-tied revision
 

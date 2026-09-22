@@ -4,7 +4,14 @@ All notable changes to the `pm` plugin are recorded here. Bump `version` in
 `plugins/pm/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
 whenever a changed build is distributed, otherwise existing installs will not refresh.
 
-## 0.7.4 (unreleased)
+## 0.7.5 (unreleased)
+
+- Prototype walkthrough records one row per checklist area, Claude's check and the PM's
+  click-through side by side; error states carry role="alert"; no clickable divs. Design
+  brief embeds collapsed with demoted headings. When the PM overrides a recommendation,
+  Claude asks once for the reason before recording.
+
+## 0.7.4
 
 - Prototype reads only the design paths the case lists and never guesses URLs; a 404 falls
   back to neutral defaults. Umbraco design notes pin the exact UUI token files.

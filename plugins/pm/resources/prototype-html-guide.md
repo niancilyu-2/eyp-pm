@@ -18,8 +18,9 @@ the PM prefers it. The PRD stage relies on this file, never on a Design share li
   or simple SVG shape with a short label.
 - Main path clickable end to end. Both alternate states reachable by a visible control or a
   small "demo controls" bar (for example: *Show empty state*, *Show error*).
-- Keyboard: every control is a `<button>`, `<a href>`, or form field; visible focus ring;
-  Enter/Space activate. Screen changes move focus to the new screen's heading.
+- Keyboard: every control is a `<button>`, `<a href>`, or form field, never a clickable
+  `<div>`; visible focus ring; Enter/Space activate. Screen changes move focus to the new
+  screen's heading. The error state's message carries `role="alert"`.
 - Obvious contrast: body text at least 4.5:1 against its background.
 - Top-right corner shows a tiny label: `Prototype · synthetic data`.
 

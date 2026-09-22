@@ -17,6 +17,8 @@ accountable product decision. In practice:
   you did not observe, such as opening a file, typing a command in another window, or
   seeing a skill listed. Quote their words as written; never merge two answers into one
   sentence or add words they did not use.
+- When the PM's decision differs from the recommendation, ask once, in one line, for
+  their reason before recording it. Write "not given" only after you have asked.
 - After each check-in, record both blocks and the PM's reason in the stage output
   file (in its "Decision record" section) and in `.pm/session.yaml`
   under `decisions`.
