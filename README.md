@@ -33,41 +33,46 @@ changed. One PM can run it alone; a group can run it together.
 
 ### Where it fits
 
-A typical product lifecycle runs from vision and strategy through discovery to a delivery
-PRD and on to execution. This plugin covers the discovery work that can be done from public
-evidence and a product's own code, written up as a discovery brief, and the delivery PRD
-that comes out of it. Filled boxes are the steps it performs.
+A typical product lifecycle runs from vision and strategy through design to execution.
+This plugin covers the discovery part of design that can be done from public evidence and
+a product's own code, and the delivery PRD that comes out of it. Items marked covered are
+the steps it performs.
 
-```mermaid
-flowchart LR
-  V["Vision"] --> S["Strategy"] --> D["Discovery"] --> P["Delivery PRD"] --> E["Execution"]
-  D --> PR["Primary research"]
-  D --> SR["Secondary research"]
-  D --> PT["Prototypes"]
-  D --> EX["Experiments"]
-  D --> FC["Feasibility checks"]
-  classDef covered fill:#2F5BEA,stroke:#2F5BEA,color:#FFFFFF
-  classDef outside fill:#FAF9F5,stroke:#9A9A9A,color:#5B5F66
-  class SR,PT,FC,P covered
-  class V,S,D,PR,EX,E outside
+```text
+Vision
+ ↓
+Strategy
+ ↓
+Design
+ └─ Discovery
+     ├─ Customer insights          covered
+     ├─ Competitor insights        covered
+     ├─ Prototypes                 covered
+     ├─ Experiments
+     ├─ Feasibility validation     covered
+     └─ Delivery PRD               covered
+ ↓
+Execution
 ```
 
 What each covered step contains:
 
-- **Secondary research.** Forum, GitHub, and community posts; app reviews and release notes;
-  adoption numbers; competitor pages and job postings; a verbatim quote bank; triangulation
-  and a counter-evidence pass.
+- **Customer insights.** Forum, GitHub, and community posts; app reviews and release notes;
+  a verbatim quote bank; triangulation and a counter-evidence pass; a note on who the
+  sources hear from and who is missing.
+- **Competitor insights.** Competitor pricing and feature pages today and a year ago,
+  competitors' job postings, the product's own roadmap, and adoption numbers.
 - **Prototypes.** A clickable prototype of the chosen flow with two alternate states, a
   design critique, and one revision.
-- **Feasibility checks.** Repository constraints with line references, likely code
+- **Feasibility validation.** Repository constraints with line references, likely code
   touchpoints, a read-only engineering review, and open questions for engineering.
 - **Delivery PRD.** Requirements and acceptance criteria with IDs, states and behaviour, an
   engineering appendix, all traceable to the evidence.
 
-Outside its scope: vision and strategy, primary research with real users (interviews,
-surveys, usability tests), experiments (A/B tests, fake doors, pilots), and execution. The
-research it does is secondary, a public scan rather than customer validation, and the PRD
-it produces is marked ready for engineering review, not ready to build.
+Outside its scope: vision and strategy, experiments with real users (A/B tests, fake doors,
+pilots), and execution. The customer insights come from public sources rather than
+interviews or surveys, so they are a scan, not customer validation, and the PRD is marked
+ready for engineering review, not ready to build.
 
 ### What it does
 
